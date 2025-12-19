@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ExternalLink, ChevronDown, ChevronUp, Search, Star, Lightbulb, FileText, Building2 } from 'lucide-react'
+import { ExternalLink, ChevronDown, ChevronUp, Search, Star, Lightbulb, FileText, Building2, BookOpen, TrendingUp, Target, Coins } from 'lucide-react'
 import { categories, summary, opportunities, Company, Category } from '../data/companies'
 
 function CompanyCard({ company }: { company: Company }) {
@@ -124,6 +124,262 @@ function OpportunityCard({ opportunity, index }: { opportunity: { title: string;
   )
 }
 
+function SummarySection() {
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())
+  const [showAllTokenTypes, setShowAllTokenTypes] = useState(false)
+  const [showAllBeliefs, setShowAllBeliefs] = useState(false)
+  const [showAllSections, setShowAllSections] = useState(false)
+
+  const toggleSection = (section: string) => {
+    const newExpanded = new Set(expandedSections)
+    if (newExpanded.has(section)) {
+      newExpanded.delete(section)
+    } else {
+      newExpanded.add(section)
+    }
+    setExpandedSections(newExpanded)
+  }
+
+  return (
+    <section className="mb-12 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      {/* Header */}
+      <div className="gradient-bg text-white p-6">
+        <div className="flex items-center gap-3 mb-2">
+          <FileText className="w-6 h-6" />
+          <h2 className="text-2xl font-bold">Letter Summary</h2>
+        </div>
+        <p className="text-green-100 text-lg">{summary.subtitle}</p>
+      </div>
+
+      <div className="p-6">
+        {/* Key Thesis */}
+        <div className="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+          <p className="text-gray-800 font-medium italic">&ldquo;{summary.keyThesis}&rdquo;</p>
+        </div>
+
+        {/* Overview - Expandable */}
+        <div className="mb-6">
+          <button
+            onClick={() => toggleSection('overview')}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <BookOpen className="w-5 h-5 text-green-600" />
+              <h3 className="font-semibold text-gray-900 text-lg">Overview</h3>
+            </div>
+            {expandedSections.has('overview') ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+          {expandedSections.has('overview') && (
+            <div className="mt-3 text-gray-700 leading-relaxed">
+              {summary.overview}
+            </div>
+          )}
+        </div>
+
+        {/* Token Types - Expandable */}
+        <div className="mb-6 border-t border-gray-100 pt-6">
+          <button
+            onClick={() => toggleSection('tokenTypes')}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Coins className="w-5 h-5 text-green-600" />
+              <h3 className="font-semibold text-gray-900 text-lg">The 7 Token Types</h3>
+            </div>
+            {expandedSections.has('tokenTypes') ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+
+          {/* Always show token type names */}
+          <div className="mt-3 flex flex-wrap gap-2">
+            {summary.tokenTypes.map((token, i) => (
+              <span key={i} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                {token.name}
+              </span>
+            ))}
+          </div>
+
+          {expandedSections.has('tokenTypes') && (
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {(showAllTokenTypes ? summary.tokenTypes : summary.tokenTypes.slice(0, 4)).map((token, i) => (
+                <div key={i} className="p-3 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900">{token.name}</h4>
+                  <p className="text-sm text-gray-600 mt-1">{token.description}</p>
+                  <p className="text-xs text-gray-500 mt-2"><span className="font-medium">Examples:</span> {token.examples}</p>
+                </div>
+              ))}
+              {!showAllTokenTypes && summary.tokenTypes.length > 4 && (
+                <button
+                  onClick={() => setShowAllTokenTypes(true)}
+                  className="col-span-full text-sm text-green-600 hover:text-green-700 flex items-center justify-center gap-1 py-2"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                  Show all {summary.tokenTypes.length} token types
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* 10 Strong Beliefs - Expandable */}
+        <div className="mb-6 border-t border-gray-100 pt-6">
+          <button
+            onClick={() => toggleSection('beliefs')}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Target className="w-5 h-5 text-green-600" />
+              <h3 className="font-semibold text-gray-900 text-lg">10 Strong Beliefs (Loosely Held)</h3>
+            </div>
+            {expandedSections.has('beliefs') ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+
+          {expandedSections.has('beliefs') && (
+            <div className="mt-4 space-y-3">
+              {(showAllBeliefs ? summary.strongBeliefs : summary.strongBeliefs.slice(0, 5)).map((belief, i) => (
+                <div key={i} className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h4 className="font-medium text-gray-900">{belief.title}</h4>
+                    <p className="text-sm text-gray-600 mt-1">{belief.detail}</p>
+                  </div>
+                </div>
+              ))}
+              {!showAllBeliefs && summary.strongBeliefs.length > 5 && (
+                <button
+                  onClick={() => setShowAllBeliefs(true)}
+                  className="text-sm text-green-600 hover:text-green-700 flex items-center gap-1 ml-9"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                  Show all 10 beliefs
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Main Sections - Expandable */}
+        <div className="mb-6 border-t border-gray-100 pt-6">
+          <button
+            onClick={() => toggleSection('mainSections')}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <BookOpen className="w-5 h-5 text-green-600" />
+              <h3 className="font-semibold text-gray-900 text-lg">Key Themes & Sections</h3>
+            </div>
+            {expandedSections.has('mainSections') ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+
+          {expandedSections.has('mainSections') && (
+            <div className="mt-4 space-y-4">
+              {(showAllSections ? summary.mainSections : summary.mainSections.slice(0, 4)).map((section, i) => (
+                <div key={i} className="border-l-2 border-green-200 pl-4">
+                  <h4 className="font-medium text-gray-900">{section.title}</h4>
+                  <p className="text-sm text-green-600 mt-1">{section.summary}</p>
+                  <p className="text-sm text-gray-600 mt-2">{section.content}</p>
+                </div>
+              ))}
+              {!showAllSections && summary.mainSections.length > 4 && (
+                <button
+                  onClick={() => setShowAllSections(true)}
+                  className="text-sm text-green-600 hover:text-green-700 flex items-center gap-1 ml-4"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                  Show all {summary.mainSections.length} sections
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Key Statistics - Always visible with option to expand */}
+        <div className="border-t border-gray-100 pt-6">
+          <button
+            onClick={() => toggleSection('stats')}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-green-600" />
+              <h3 className="font-semibold text-gray-900 text-lg">Key Statistics</h3>
+            </div>
+            {expandedSections.has('stats') ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+
+          {/* Preview stats */}
+          <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-3">
+            {summary.keyStats.slice(0, 4).map((stat, i) => (
+              <div key={i} className="p-3 bg-gray-50 rounded-lg text-center">
+                <p className="text-sm text-gray-700">{stat}</p>
+              </div>
+            ))}
+          </div>
+
+          {expandedSections.has('stats') && (
+            <div className="mt-3 grid grid-cols-2 md:grid-cols-3 gap-3">
+              {summary.keyStats.slice(4).map((stat, i) => (
+                <div key={i} className="p-3 bg-gray-50 rounded-lg text-center">
+                  <p className="text-sm text-gray-700">{stat}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Investment Focus */}
+        <div className="mt-6 border-t border-gray-100 pt-6">
+          <button
+            onClick={() => toggleSection('focus')}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Target className="w-5 h-5 text-green-600" />
+              <h3 className="font-semibold text-gray-900 text-lg">What Ribbit is Hunting For</h3>
+            </div>
+            {expandedSections.has('focus') ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+
+          {expandedSections.has('focus') && (
+            <div className="mt-4 grid gap-2 md:grid-cols-2">
+              {summary.investmentFocus.map((focus, i) => (
+                <div key={i} className="flex items-start gap-2 p-2 bg-green-50 rounded-lg">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0"></span>
+                  <p className="text-sm text-gray-700">{focus}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeSection, setActiveSection] = useState<'companies' | 'opportunities'>('companies')
@@ -231,40 +487,8 @@ export default function Home() {
       </nav>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* PDF Summary Section */}
-        <section className="mb-12 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <FileText className="w-6 h-6 text-green-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Letter Summary</h2>
-          </div>
-          <p className="text-lg text-gray-600 mb-2">{summary.subtitle}</p>
-          <p className="text-gray-700 mb-6 italic border-l-4 border-green-500 pl-4">{summary.keyThesis}</p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Key Sections</h3>
-              <ul className="space-y-3">
-                {summary.mainSections.slice(0, 4).map((section, i) => (
-                  <li key={i} className="text-sm">
-                    <span className="font-medium text-gray-900">{section.title}:</span>
-                    <span className="text-gray-600 ml-1">{section.content.slice(0, 150)}...</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Key Statistics</h3>
-              <div className="space-y-2">
-                {summary.keyStats.map((stat, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0"></span>
-                    {stat}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* PDF Summary Section - Enhanced with Expandable Content */}
+        <SummarySection />
 
         {activeSection === 'companies' ? (
           /* Companies View */

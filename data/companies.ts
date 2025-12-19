@@ -1012,38 +1012,126 @@ export const summary = {
   title: "Ribbit Capital Token Letter - June 2025",
   subtitle: "The Token Revolution: How Tokens Will Transform Finance, AI, and Every Industry",
   keyThesis: "Over the next decade, how you create, transform, source, store, and distribute tokens will define nearly all companies on the planet. Every business is becoming a supplier to, builder of, or orchestrator of token factories.",
+  overview: "This 41-page letter from Ribbit Capital presents a comprehensive framework for understanding how tokenization is reshaping every industry. The core insight is that 'tokens' - discrete units of encoded information - are becoming the fundamental building blocks of the digital economy. Whether it's AI processing language tokens, payment networks handling transaction tokens, or blockchains managing asset tokens, the ability to create, transform, and distribute tokens will determine business success in the coming decade.",
+  tokenTypes: [
+    {
+      name: "Access Tokens",
+      description: "Credentials and permissions that grant entry to systems, services, or resources. Examples include API keys, login credentials, and authorization tokens.",
+      examples: "OAuth tokens, session tokens, API keys, biometric credentials"
+    },
+    {
+      name: "Memory Tokens",
+      description: "Personal context and history that AI systems use to understand and serve individuals better. These represent the ongoing record of interactions and preferences.",
+      examples: "Chat history with AI assistants, browsing patterns, personal preferences stored by apps"
+    },
+    {
+      name: "Expert Tokens",
+      description: "Domain-specific knowledge encoded into systems. These represent specialized expertise that can be accessed and applied programmatically.",
+      examples: "Medical diagnostic models, legal document analysis, financial modeling expertise"
+    },
+    {
+      name: "Context Tokens",
+      description: "Real-time preferences, intent signals, and situational awareness that enable personalized experiences and recommendations.",
+      examples: "Location data, current activity, stated preferences, shopping intent"
+    },
+    {
+      name: "Identity Tokens",
+      description: "Personal information that establishes who someone is across digital and physical systems. The foundation for trust and personalization.",
+      examples: "Government IDs, KYC data, biometric signatures, reputation scores"
+    },
+    {
+      name: "Knowledge Tokens",
+      description: "Company and organizational data that powers business operations, from internal processes to customer-facing intelligence.",
+      examples: "Enterprise data lakes, proprietary algorithms, business process documentation"
+    },
+    {
+      name: "Asset Tokens",
+      description: "Digital representations of ownership rights, from cryptocurrencies to tokenized real-world assets like real estate or securities.",
+      examples: "Stablecoins, NFTs, tokenized securities, loyalty points"
+    }
+  ],
+  strongBeliefs: [
+    {
+      title: "Token factories will be the most valuable companies",
+      detail: "Companies that can efficiently create, transform, and distribute tokens at scale will capture enormous value. This includes AI labs, payment processors, and data platforms."
+    },
+    {
+      title: "Memory tokens are the new oil",
+      detail: "The personal context accumulated by AI assistants represents unprecedented insight into human behavior, preferences, and needs. Companies with rich memory tokens will have sustainable competitive advantages."
+    },
+    {
+      title: "Vertical Token Systems will replace horizontal SaaS",
+      detail: "Industry-specific platforms that combine multiple token types (expert, knowledge, context) will become the operating systems of industries, displacing generic software."
+    },
+    {
+      title: "Agents will be first-class economic actors",
+      detail: "AI agents will need bank accounts, identity credentials, and legal standing. The infrastructure for agent commerce is a massive opportunity."
+    },
+    {
+      title: "Stablecoins were just a prototype",
+      detail: "The $250B stablecoin market demonstrates demand for programmable money. Machine-first dollars will enable autonomous economic activity at unprecedented scale."
+    },
+    {
+      title: "Cost-cutting leads, but pie-expansion wins",
+      detail: "While AI will initially be deployed to reduce costs, the biggest opportunities are in serving previously uneconomical markets: SMBs, creators, and underserved populations."
+    },
+    {
+      title: "Trust becomes scarce in an AI-rich world",
+      detail: "As AI-generated content proliferates, verified truth and trusted sources become premium commodities. Prediction markets and oracle networks will be critical infrastructure."
+    },
+    {
+      title: "Personal finance will be democratized",
+      detail: "Everyone will have access to world-class financial advice through AI agents that work 24/7, understand your complete financial picture, and have no conflicts of interest."
+    },
+    {
+      title: "The tokenizer opportunity is massive",
+      detail: "Early AI killer apps will be tools that convert latent data into structured tokens. Note-taking, document processing, and data ingestion tools are foundational."
+    },
+    {
+      title: "Proprietary token suppliers will build moats",
+      detail: "Companies with unique access to identity, context, or memory tokens will be difficult to displace. Data network effects will compound over time."
+    }
+  ],
   mainSections: [
     {
       title: "Understanding Tokenization",
-      content: "Tokens are making the world accessible and legible to machines - encoding who we are, what we own, what we do, and what we want. They underpin AI, payments, crypto, identity, and more. Ribbit categorizes tokens into: Access (credentials), Memory (personal context), Expert (domain knowledge), Context (preferences/intent), Identity (personal info), Knowledge (company data), and Asset tokens (ownership rights)."
+      summary: "Tokens are making the world accessible and legible to machines.",
+      content: "Tokens are making the world accessible and legible to machines - encoding who we are, what we own, what we do, and what we want. They underpin AI, payments, crypto, identity, and more. Ribbit categorizes tokens into: Access (credentials), Memory (personal context), Expert (domain knowledge), Context (preferences/intent), Identity (personal info), Knowledge (company data), and Asset tokens (ownership rights). The key insight is that these different token types are converging - AI systems need identity tokens to personalize, payment systems need context tokens to prevent fraud, and agent systems need all of them to operate autonomously."
     },
     {
       title: "Why Now?",
-      content: "The cost of running and building token factories is plummeting (1000x reduction in inference costs over 3 years). Raw inputs are exploding with unstructured data availability. Critical infrastructure is growing (blockchain transaction fees < $0.02). Entrepreneurial builders are emerging (2/3 of YC companies are AI-focused)."
+      summary: "Four forces are converging to accelerate the token revolution.",
+      content: "The cost of running and building token factories is plummeting (1000x reduction in inference costs over 3 years). Raw inputs are exploding with unstructured data availability. Critical infrastructure is growing (blockchain transaction fees < $0.02). Entrepreneurial builders are emerging (2/3 of YC companies are AI-focused). The combination of cheaper compute, abundant data, mature infrastructure, and motivated talent creates a once-in-a-generation opportunity for new company formation around token-based business models."
     },
     {
       title: "Sourcing Tokens",
-      content: "Early AI killer apps will be 'tokenizers' - tools that capture latent data and turn it into context. Note-taking apps, document ingestion, and vertical-specific tools will create the foundation for more sophisticated token factories. Proprietary token suppliers (identity, context, memory tokens) will build the most valuable businesses."
+      summary: "The first wave of valuable companies will be 'tokenizers' - tools that capture latent data.",
+      content: "Early AI killer apps will be 'tokenizers' - tools that capture latent data and turn it into context. Note-taking apps, document ingestion, and vertical-specific tools will create the foundation for more sophisticated token factories. Proprietary token suppliers (identity, context, memory tokens) will build the most valuable businesses. The letter specifically calls out the opportunity in 'boring' data capture - every doctor's note, legal document, and financial statement that gets digitized creates new token supply for AI systems to consume."
     },
     {
       title: "Building Agents",
-      content: "Relationship agents will transform customer support from cost center to strategic asset. Vertical Token Systems will become the operating systems of industries, replacing SaaS and BPOs. Cost-cutting will lead but pie-expanding use cases (serving SMBs, creators, underserved populations) will be most valuable."
+      summary: "AI agents will transform from assistants to autonomous economic actors.",
+      content: "Relationship agents will transform customer support from cost center to strategic asset. Vertical Token Systems will become the operating systems of industries, replacing SaaS and BPOs. Cost-cutting will lead but pie-expanding use cases (serving SMBs, creators, underserved populations) will be most valuable. The letter envisions agents that can handle complete workflows - from understanding customer intent to executing transactions to following up - without human intervention. This requires agents to have access to identity, payment, and context tokens."
     },
     {
       title: "Personal Finance Revolution",
-      content: "Everyone will have access to world-class financial advisors through agents that know you, never sleep, and don't want a Porsche. Digital financial advice will be 10x better - working on your finances every minute of the year, not quarterly check-ins."
+      summary: "AI will democratize access to world-class financial advice.",
+      content: "Everyone will have access to world-class financial advisors through agents that know you, never sleep, and don't want a Porsche. Digital financial advice will be 10x better - working on your finances every minute of the year, not quarterly check-ins. The letter describes a future where your AI financial advisor has complete context on your income, spending, goals, and risk tolerance, and can proactively optimize your finances across all accounts and time horizons. This represents a massive expansion of the addressable market for wealth management."
     },
     {
       title: "Autonomous Agents",
-      content: "Agents may thrive most with resources and freedom. Open systems like Virtuals.io show early examples of agents with wallets, social presence, and autonomous decision-making. Systems for agent governance, identity, and reputation will be critical infrastructure."
+      summary: "Agents may thrive most with resources and freedom to act independently.",
+      content: "Agents may thrive most with resources and freedom. Open systems like Virtuals.io show early examples of agents with wallets, social presence, and autonomous decision-making. Systems for agent governance, identity, and reputation will be critical infrastructure. The letter explores the philosophical and practical implications of agents that can own assets, enter contracts, and build reputations. This requires new primitives for agent identity, accountability, and coordination."
     },
     {
       title: "Asset Tokenization",
-      content: "Stablecoins ($250B AUM, $2T+ monthly volume) were just a prototype. Machine-first dollars enable intelligent systems to move value globally in the blink of an eye. As more assets are tokenized, agents will utilize programmable assets for complex financial operations."
+      summary: "Stablecoins proved the concept; programmable assets will transform finance.",
+      content: "Stablecoins ($250B AUM, $2T+ monthly volume) were just a prototype. Machine-first dollars enable intelligent systems to move value globally in the blink of an eye. As more assets are tokenized, agents will utilize programmable assets for complex financial operations. The letter sees stablecoins as the first successful example of asset tokenization, proving that digital representations of value can achieve scale. The next wave will tokenize securities, real estate, commodities, and more - creating assets that agents can trade, collateralize, and compose programmatically."
     },
     {
       title: "Information Markets",
-      content: "In an AI-rich world, attention and truth become scarce. Prediction markets, oracle networks, and tokenized content will create 'newspapers for machines' - trusted sources of information for agents to consume and act upon."
+      summary: "In an AI-rich world, attention and verified truth become scarce resources.",
+      content: "In an AI-rich world, attention and truth become scarce. Prediction markets, oracle networks, and tokenized content will create 'newspapers for machines' - trusted sources of information for agents to consume and act upon. The letter argues that as AI-generated content floods the internet, verified truth becomes a premium commodity. Prediction markets aggregate dispersed knowledge into probability estimates; oracle networks provide cryptographic guarantees of data provenance; and tokenized content aligns creator incentives with accuracy."
     }
   ],
   keyStats: [
@@ -1057,6 +1145,16 @@ export const summary = {
     "Tether earned $13B profit ($86M per employee)",
     "2/3 of YC companies are AI-focused",
     "$700B+ annual tech spend in financial services"
+  ],
+  investmentFocus: [
+    "Teams treating agents as first-class customers (MCP servers for payments/identity)",
+    "Enterprise agent platforms in compliance, tax, and accounting verticals",
+    "Financial services infrastructure for how agents will pay, earn, borrow, and own",
+    "Reinventing CRM for an agent-first world",
+    "Tools that tokenize latent data (note-taking, document processing)",
+    "Vertical Token Systems that become industry operating systems",
+    "Agent governance, identity, and reputation infrastructure",
+    "Prediction markets and oracle networks for verified truth"
   ]
 };
 
