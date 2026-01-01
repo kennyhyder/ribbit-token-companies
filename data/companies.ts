@@ -1012,7 +1012,7 @@ export const summary = {
   title: "Ribbit Capital Token Letter - June 2025",
   subtitle: "The Token Revolution: How Tokens Will Transform Finance, AI, and Every Industry",
   keyThesis: "Over the next decade, how you create, transform, source, store, and distribute tokens will define nearly all companies on the planet. Every business is becoming a supplier to, builder of, or orchestrator of token factories.",
-  overview: "This 41-page letter from Ribbit Capital presents a comprehensive framework for understanding how tokenization is reshaping every industry. The core insight is that 'tokens' - discrete units of encoded information - are becoming the fundamental building blocks of the digital economy. Whether it's AI processing language tokens, payment networks handling transaction tokens, or blockchains managing asset tokens, the ability to create, transform, and distribute tokens will determine business success in the coming decade.",
+  overview: "A 41 page letter put out by Ribbit Capital presents a comprehensive framework for understanding how tokenization is reshaping every industry. The core insight is that 'tokens' - discrete units of encoded information - are becoming the fundamental building blocks of the digital economy. Whether it's AI processing language tokens, payment networks handling transaction tokens, or blockchains managing asset tokens, the ability to create, transform, and distribute tokens will determine business success in the coming decade.",
   tokenTypes: [
     {
       name: "Access Tokens",
@@ -1157,6 +1157,308 @@ export const summary = {
     "Prediction markets and oracle networks for verified truth"
   ]
 };
+
+// Kenny's Framework - Distribution Control & Cap-Ex Opportunities
+export const nicksFramework = {
+  title: "Kenny's Framework: Distribution Control in the Age of AI",
+  subtitle: "Insights from a conversation about PowerOutage.com and vertical domination",
+  coreThesis: "Whoever controls the distribution of tokens (data, relationships, information) in a vertical will own that vertical. Build the tokenizer, become the operating system.",
+
+  mentalModel: {
+    title: "Common Sense + Determinism Architecture",
+    description: "LLMs are 'common sense engines' while code is deterministic. Mixing these creates powerful automation that can run 24/7 for years.",
+    layers: [
+      { name: "Common Sense", tech: "Local LLMs (Qwen 80B)", function: "Pattern recognition, data enrichment, ambiguity handling" },
+      { name: "Determinism", tech: "Traditional code", function: "Reliable execution, data pipelines, business logic" },
+      { name: "Infrastructure", tech: "Mac Studios (128-512GB)", function: "Self-hosted compute at $4K-10K per unit, years of runtime" }
+    ]
+  },
+
+  capExInsight: {
+    title: "The Cap-Ex vs Op-Ex Arbitrage",
+    description: "The most powerful tactical insight: understand how your customers make money and structure around it.",
+    explanation: "Investor-owned utilities (IOUs) make profit by building their rate base (capital investments). Operating expenses are pass-through costs with no profit margin. By repackaging SaaS as on-premise infrastructure, you convert a cost center (Op-Ex) into a profit center (Cap-Ex) for the utility—and can bill 2-3x.",
+    keyQuote: "You only learn insights like this by controlling distribution in an industry."
+  },
+
+  threeYearPlaybook: {
+    title: "3-Year Distribution Capture Playbook",
+    years: [
+      { year: 1, action: "Build platform, give away distribution free", economics: "Invest in user/entity acquisition" },
+      { year: 2, action: "Small SaaS or get major sponsor", economics: "Break even or slight profit" },
+      { year: 3, action: "World has changed, you own the relationships", economics: "Monetize distribution, expand vertically" }
+    ],
+    example: "Get Sig Sauer to sponsor a firearms site, offer free listings to instructors, free class management—while capturing all the relationships and data."
+  },
+
+  criteria: {
+    title: "What to Target",
+    include: [
+      "Already unaggregated industries",
+      "Verticals big business won't touch",
+      "Real-time data-sensitive industries",
+      "Industries with cap-ex budget structures",
+      "Obscure data aggregators (ship movements, etc.)"
+    ],
+    avoid: [
+      "Heavily regulated (finance, healthcare) without resources",
+      "Anything a big tech company cares about",
+      "Static directories (live data has defensibility)",
+      "Consumer-focused without institutional buyers"
+    ]
+  },
+
+  keyQuotes: [
+    "SEO style cheap distribution is going to be dead in 3-5 years. Get distribution while you can.",
+    "Figure out how to control the relationships with the biggest wallets in the industry.",
+    "Self hosted non frontier models will be the workhorses and steam engines of this era.",
+    "Aggregate an entire industry. Build a platform. Get everyone on it. Control distribution."
+  ]
+};
+
+export interface CapExOpportunity {
+  title: string;
+  industry: string;
+  currentState: string;
+  tokenPlay: string;
+  capExAngle: string;
+  distributionPath: string;
+  whyBigBusinessWont: string;
+  potentialSponsors: string[];
+  synergies: string;
+  difficulty: 'Low' | 'Medium' | 'High';
+}
+
+export const capExOpportunities: CapExOpportunity[] = [
+  {
+    title: "Auto Glass Installation & Calibration Network",
+    industry: "Automotive Services",
+    currentState: "Safelite dominates but fragmented independents exist. ADAS calibration is exploding due to sensor-heavy vehicles. Most shops lack calibration equipment ($15K-50K per unit).",
+    tokenPlay: "Aggregate independent shops, standardize quoting, track ADAS calibration capabilities. Create the 'network of record' for insurance companies to route claims.",
+    capExAngle: "Calibration equipment is capital-intensive. Offer equipment financing/leasing bundled with network membership. Insurance companies may fund equipment rollout to ensure calibration compliance and reduce liability.",
+    distributionPath: "Partner with insurance carriers (they pay 70%+ of auto glass claims). Become the preferred network = control the relationship between insurers and shops.",
+    whyBigBusinessWont: "Safelite is vertically integrated but can't scale calibration fast enough. Independents are too fragmented for insurers to manage directly.",
+    potentialSponsors: ["State Farm", "Progressive", "Calibration equipment manufacturers (Autel, Hunter)"],
+    synergies: "ADAS data feeds into autonomous vehicle development. Calibration quality data is valuable for OEMs and insurers.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Generator & Backup Power Installation Network",
+    industry: "Energy / Home Services",
+    currentState: "Generac dominates hardware, installers are completely fragmented. No standardized quoting, wildly variable install quality.",
+    tokenPlay: "Aggregate installer network, standardize quoting, track every installation. Know where every backup power system is = know grid resilience gaps.",
+    capExAngle: "Municipalities and utilities can fund backup power programs as infrastructure investment (Cap-Ex). HOAs and commercial properties can capitalize generator systems.",
+    distributionPath: "Direct synergy with PowerOutage—outages drive generator demand. Cross-sell to utility relationships.",
+    whyBigBusinessWont: "Generac sells hardware, doesn't want to compete with installers. Installers are too small to aggregate themselves.",
+    potentialSponsors: ["Generac", "Kohler", "Briggs & Stratton", "Utility companies"],
+    synergies: "Combined with outage data = predictive demand modeling. Utility partnerships for grid resilience programs.",
+    difficulty: "Low"
+  },
+  {
+    title: "Cell Tower & Small Cell Deployment Tracking",
+    industry: "Telecommunications Infrastructure",
+    currentState: "Carriers have internal data, no public aggregation. Municipalities struggle with permit tracking. Investors flying blind on carrier capex.",
+    tokenPlay: "Track every deployment, permit, and carrier buildout in real-time. Aggregate permit data from thousands of municipalities.",
+    capExAngle: "Tower companies (American Tower, Crown Castle, SBA) and infrastructure funds make pure cap-ex investments. Data about deployment pipelines is worth millions for investment decisions.",
+    distributionPath: "Start with permit data (public records), layer in carrier intelligence. Sell to investors, real estate developers, municipalities.",
+    whyBigBusinessWont: "Carriers won't share competitive data. No one wants to do the grunt work of aggregating municipal permits.",
+    potentialSponsors: ["Tower REITs", "Infrastructure PE funds", "Equipment vendors (Ericsson, Nokia)"],
+    synergies: "Coverage data valuable for real estate (dead zones affect property values), fleet management, IoT deployments.",
+    difficulty: "High"
+  },
+  {
+    title: "EV Charging Infrastructure Network",
+    industry: "Energy / Transportation",
+    currentState: "ChargePoint, EVgo, Electrify America exist but coverage is spotty. Reliability is terrible (30%+ of chargers broken at any time). No aggregated reliability data.",
+    tokenPlay: "Aggregate real-time charger status, reliability scores, and wait times. Become the 'TripAdvisor for EV charging' that drivers actually trust.",
+    capExAngle: "Charging infrastructure is pure cap-ex for utilities, retail locations, and municipalities. Reliability data influences where billions in federal infrastructure money flows.",
+    distributionPath: "Partner with EV manufacturers for in-dash integration. Utilities need this data for grid planning.",
+    whyBigBusinessWont: "Charger networks won't share reliability data that makes them look bad. Automakers focused on hardware not software.",
+    potentialSponsors: ["Utilities", "DOE/state energy offices", "EV manufacturers", "Retail chains (want to attract EV drivers)"],
+    synergies: "Grid load data valuable for utilities. Location intelligence valuable for retail and real estate.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Private Well & Septic System Registry",
+    industry: "Environmental / Rural Infrastructure",
+    currentState: "43M Americans on private wells, 25% of US homes on septic. Zero centralized data. Counties barely track permits.",
+    tokenPlay: "Aggregate testing data, system locations, maintenance history. Create the 'Carfax for rural property infrastructure.'",
+    capExAngle: "Rural utilities and municipalities can fund testing programs as infrastructure (Cap-Ex). EPA grants available for water quality monitoring.",
+    distributionPath: "Partner with well drillers, septic pumpers, and rural real estate agents. Mandatory for property transactions in many states.",
+    whyBigBusinessWont: "Too fragmented, no sexy tech angle, literally involves tracking sewage.",
+    potentialSponsors: ["EPA", "State environmental agencies", "Rural housing lenders", "Title insurance companies"],
+    synergies: "Environmental data valuable for climate/insurance modeling. Real estate transaction data = lead gen for services.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Commercial Kitchen Equipment Network",
+    industry: "Food Service / Restaurant",
+    currentState: "Walk-in coolers, fryers, hoods all serviced by fragmented local techs. No standardized maintenance tracking. Equipment failure = restaurant closure.",
+    tokenPlay: "Aggregate service providers, track equipment lifecycles, enable predictive maintenance. IoT sensors on critical equipment.",
+    capExAngle: "Restaurant equipment is typically financed or leased (Cap-Ex treatment). Equipment finance companies need maintenance data for residual value modeling.",
+    distributionPath: "Partner with restaurant POS systems (Toast, Square) or food distributors (Sysco, US Foods) who touch every restaurant.",
+    whyBigBusinessWont: "Equipment manufacturers sell and forget. Too fragmented for tech companies to care.",
+    potentialSponsors: ["Equipment manufacturers (Hobart, True)", "Restaurant finance companies", "Food distributors"],
+    synergies: "Health department compliance data. Energy efficiency programs. Insurance (equipment failure claims).",
+    difficulty: "Medium"
+  },
+  {
+    title: "Municipal Fleet Electrification Tracking",
+    industry: "Government / Transportation",
+    currentState: "Every city, county, school district buying EVs with no coordination. Charging infrastructure decisions made in silos. Federal money flooding in.",
+    tokenPlay: "Track every municipal EV purchase, charging installation, and grant application. Create the intelligence layer for the $7.5B federal EV infrastructure program.",
+    capExAngle: "100% Cap-Ex play. Municipal vehicles are capital assets. Federal grants specifically fund infrastructure investment.",
+    distributionPath: "Partner with municipal associations (NLC, ICMA). Grant consultants need this data. Equipment vendors need market intelligence.",
+    whyBigBusinessWont: "Government sales cycles are painful. Data is scattered across thousands of municipalities.",
+    potentialSponsors: ["DOE", "Bus/truck OEMs (Proterra, Lightning eMotors)", "Charging networks", "Grant management platforms"],
+    synergies: "Grid planning data. Fleet management software upsell. Maintenance and parts distribution.",
+    difficulty: "High"
+  },
+  {
+    title: "Agricultural Equipment Connectivity Platform",
+    industry: "Agriculture",
+    currentState: "John Deere, CNH, AGCO have proprietary telematics. Farmers locked into ecosystems. Right-to-repair movement gaining steam.",
+    tokenPlay: "Open telematics aggregator that works across manufacturers. Farmer-controlled data with selective sharing to insurers, lenders, agronomists.",
+    capExAngle: "Farm equipment is 100% Cap-Ex, often financed. Lenders need equipment utilization data for underwriting. Crop insurance needs operational data.",
+    distributionPath: "Partner with ag lenders, crop insurance providers, or equipment dealers frustrated with OEM lock-in.",
+    whyBigBusinessWont: "OEMs actively fighting against interoperability. Data is their moat.",
+    potentialSponsors: ["Ag lenders (Rabo AgriFinance)", "Crop insurers", "Independent equipment dealers", "Farmer cooperatives"],
+    synergies: "Precision agriculture data. Carbon credit verification. Supply chain visibility for food companies.",
+    difficulty: "High"
+  },
+  {
+    title: "Storm Chaser & Severe Weather Response Network",
+    industry: "Weather / Emergency Services",
+    currentState: "Fragmented individuals with trucks and cameras. TV stations pay for footage ad-hoc. Emergency managers have no visibility.",
+    tokenPlay: "Aggregate storm chasers, provide real-time positioning, verification, and routing. Credentialed network with insurance and liability coverage.",
+    capExAngle: "Emergency management vehicles and equipment are Cap-Ex. TV stations capitalize weather technology. Insurance companies fund loss mitigation infrastructure.",
+    distributionPath: "Partner with TV networks (guaranteed footage), insurance carriers (early damage assessment), and emergency management agencies.",
+    whyBigBusinessWont: "Too fragmented, liability concerns, seasonal revenue.",
+    potentialSponsors: ["Insurance carriers (early claims data)", "TV networks", "Emergency management agencies"],
+    synergies: "Direct synergy with PowerOutage—severe weather causes outages. Damage assessment data valuable for claims processing.",
+    difficulty: "Low"
+  },
+  {
+    title: "Fire Sprinkler & Suppression System Registry",
+    industry: "Fire Safety / Commercial Real Estate",
+    currentState: "Required in most commercial buildings, inspected annually, zero aggregation. Inspectors are fragmented local contractors.",
+    tokenPlay: "Aggregate inspection data, system specifications, contractor performance. The 'building safety score' that insurers and owners need.",
+    capExAngle: "Fire suppression is Cap-Ex for buildings. Insurance premiums tied to system quality. Upgrade financing is a lending opportunity.",
+    distributionPath: "Partner with commercial insurance carriers who need inspection data. Property management software integration.",
+    whyBigBusinessWont: "Boring, fragmented inspectors, no tech glamour.",
+    potentialSponsors: ["Commercial property insurers", "Fire protection equipment manufacturers", "Property management platforms"],
+    synergies: "Building safety data aggregation. IoT monitoring upsell. Insurance underwriting automation.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Elevator & Vertical Transport Maintenance Network",
+    industry: "Commercial Real Estate / Infrastructure",
+    currentState: "4 major OEMs (Otis, Schindler, KONE, TK) control 80% of maintenance contracts. Independent maintainers exist but fragmented. No transparency on pricing or performance.",
+    tokenPlay: "Aggregate independent elevator techs, standardize service contracts, track uptime/performance. Create price transparency that breaks OEM lock-in.",
+    capExAngle: "Elevators are pure Cap-Ex with 25-40 year lifecycles. Modernization projects ($100K-500K per unit) are capital investments. Building owners capitalize maintenance contracts.",
+    distributionPath: "Partner with commercial real estate owners/managers who hate OEM pricing. Property management software integration.",
+    whyBigBusinessWont: "OEMs actively protect service revenue (80% margins). Too litigious for startups to challenge directly.",
+    potentialSponsors: ["Large REITs", "Property management platforms (Yardi, MRI)", "Independent parts suppliers"],
+    synergies: "Building systems data. Predictive maintenance across all building infrastructure. Insurance risk modeling.",
+    difficulty: "High"
+  },
+  {
+    title: "Solar & Battery Installation Network",
+    industry: "Energy / Home Services",
+    currentState: "Installers fragmented (thousands of local players). Sunrun/Tesla dominate financing but use subcontractors. No standardized quality tracking.",
+    tokenPlay: "Aggregate installer network with quality scores, standardize system design/quoting, track performance data. Create the 'network of record' for utilities and financiers.",
+    capExAngle: "Solar is 100% Cap-Ex. Federal ITC credits (30%) flow to capital investors. Utilities fund programs as grid infrastructure. Battery storage increasingly part of grid reliability.",
+    distributionPath: "Partner with solar lenders (Mosaic, Sunlight) who need installer quality data. Utilities running low-income solar programs need installer networks.",
+    whyBigBusinessWont: "Sunrun/Tesla focused on vertical integration, not aggregation. Too much installer fragmentation for fintech companies to manage.",
+    potentialSponsors: ["Solar lenders", "Utilities", "Battery manufacturers (Tesla, Enphase)", "Homebuilders"],
+    synergies: "Grid reliability data (with PowerOutage). Energy storage for outage resilience. EV charging integration.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Medical Equipment Service & Calibration Network",
+    industry: "Healthcare / Medical Devices",
+    currentState: "OEMs (GE, Siemens, Philips) control service on imaging equipment. Independent service organizations (ISOs) exist but fragmented. Right-to-repair legislation gaining traction.",
+    tokenPlay: "Aggregate ISOs, track equipment performance, standardize calibration protocols. Create the intelligence layer that breaks OEM service monopolies.",
+    capExAngle: "Imaging equipment ($500K-$3M per unit) is pure Cap-Ex for health systems. Service contracts capitalized over equipment life. Third-party service can save 30-50% vs OEM.",
+    distributionPath: "Partner with health system CFOs who want service cost reduction. Equipment finance companies need maintenance data.",
+    whyBigBusinessWont: "OEMs extremely litigious on service access. FDA compliance complexity scares off tech companies.",
+    potentialSponsors: ["Large health systems", "Medical equipment finance companies", "ISO trade associations"],
+    synergies: "Healthcare facility management data. Compliance tracking. Equipment lifecycle intelligence for capital planning.",
+    difficulty: "High"
+  },
+  {
+    title: "Commercial HVAC & Building Controls Network",
+    industry: "Commercial Real Estate / Energy",
+    currentState: "Johnson Controls, Trane, Carrier dominate but installers/servicers are fragmented. Building automation systems (BAS) are proprietary nightmares. No interoperability.",
+    tokenPlay: "Aggregate HVAC contractors, standardize BAS data extraction, create building energy intelligence. Enable third-party optimization without OEM lock-in.",
+    capExAngle: "Commercial HVAC is Cap-Ex ($50K-500K per rooftop unit). Building controls are capitalized assets. Energy efficiency upgrades qualify for utility incentives and cap-ex treatment.",
+    distributionPath: "Partner with utilities offering C&I energy efficiency programs. Building owners want BAS data without OEM dependence.",
+    whyBigBusinessWont: "OEMs protect BAS data as competitive moat. Too fragmented and building-specific for platform companies.",
+    potentialSponsors: ["Utilities (efficiency programs)", "Commercial property insurers", "ESG/sustainability software vendors"],
+    synergies: "Grid demand response integration. Carbon tracking for ESG compliance. Building safety systems integration.",
+    difficulty: "High"
+  },
+  {
+    title: "Fleet Telematics & Maintenance Network",
+    industry: "Transportation / Logistics",
+    currentState: "Samsara, Geotab, Verizon Connect provide telematics but don't own maintenance. Maintenance fragmented across independent shops. No integrated fleet lifecycle view.",
+    tokenPlay: "Aggregate independent truck/fleet maintenance shops, integrate with telematics data, enable predictive maintenance. Create the 'TrueValue for commercial fleets.'",
+    capExAngle: "Commercial vehicles are Cap-Ex assets depreciated over 5-7 years. Fleet maintenance can be structured as capital maintenance. Telematics hardware is cap-ex.",
+    distributionPath: "Partner with fleet finance companies (Element, ARI) who need maintenance cost data. Telematics companies want maintenance integration.",
+    whyBigBusinessWont: "Telematics companies focused on software margins, not shop networks. Dealers protect service revenue.",
+    potentialSponsors: ["Fleet management companies", "Commercial auto insurers", "Truck OEMs (for warranty data)"],
+    synergies: "Insurance telematics integration. Driver safety programs. Parts supply chain optimization.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Industrial Automation & Robotics Service Network",
+    industry: "Manufacturing / Industrial",
+    currentState: "Fanuc, ABB, KUKA robots require specialized service. Most manufacturers dependent on OEM or single integrators. Downtime costs $10K-100K+ per hour.",
+    tokenPlay: "Aggregate independent automation techs, create remote diagnostics network, standardize service contracts. Enable multi-vendor support without OEM dependence.",
+    capExAngle: "Robots and automation are 100% Cap-Ex ($50K-500K per unit). Service contracts capitalized. Spare parts inventory is working capital that could be shared.",
+    distributionPath: "Partner with manufacturers who want OEM alternatives. Equipment finance companies need utilization data.",
+    whyBigBusinessWont: "OEMs protect service revenue aggressively. Requires deep technical expertise that platform companies lack.",
+    potentialSponsors: ["Manufacturing trade associations", "Equipment finance companies", "System integrators wanting to scale"],
+    synergies: "Predictive maintenance across all plant equipment. Spare parts marketplace. Training/certification platform.",
+    difficulty: "High"
+  },
+  {
+    title: "Data Center Infrastructure Monitoring Network",
+    industry: "Technology / Infrastructure",
+    currentState: "Hyperscalers build internal tools. Colocation providers have fragmented monitoring. Edge data centers exploding with zero standardization.",
+    tokenPlay: "Aggregate edge/colo facility data (power, cooling, connectivity), create reliability scoring, enable capacity marketplace. PowerOutage for data centers.",
+    capExAngle: "Data centers are pure Cap-Ex infrastructure. Edge facilities ($1-10M each) being deployed by thousands of companies. Reliability data affects financing terms.",
+    distributionPath: "Partner with data center REITs, edge infrastructure developers. Enterprises need visibility into colo/edge reliability.",
+    whyBigBusinessWont: "Hyperscalers won't share data. Colo providers compete on opaque reliability claims.",
+    potentialSponsors: ["Data center REITs (Digital Realty, Equinix)", "Edge infrastructure investors", "Telecom carriers building edge"],
+    synergies: "Direct synergy with power outage data. Network connectivity monitoring. AI inference infrastructure intelligence.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Water Utility & Pipe Infrastructure Network",
+    industry: "Utilities / Infrastructure",
+    currentState: "3,000+ water utilities in US with aging infrastructure. No aggregated pipe condition data. Leak detection fragmented. Lead pipe replacement mandated but untracked.",
+    tokenPlay: "Aggregate leak detection, pipe condition assessments, and replacement tracking. Create the PowerOutage equivalent for water infrastructure.",
+    capExAngle: "Water infrastructure is 100% Cap-Ex for utilities. $625B infrastructure bill includes water funding. Lead pipe replacement ($2-10K per service line) is capital investment.",
+    distributionPath: "Partner with water utilities needing infrastructure intelligence. EPA and state regulators need compliance tracking.",
+    whyBigBusinessWont: "Water utilities fragmented and slow-moving. No sexy tech angle. Local politics complicate expansion.",
+    potentialSponsors: ["EPA", "State drinking water agencies", "Pipe manufacturers", "Infrastructure PE funds"],
+    synergies: "Combined with power outage data = complete utility infrastructure view. Real estate due diligence. Insurance risk modeling.",
+    difficulty: "Medium"
+  },
+  {
+    title: "Parking Structure & Garage Maintenance Network",
+    industry: "Commercial Real Estate / Infrastructure",
+    currentState: "Parking structures require specialized maintenance (concrete, waterproofing, lighting, gates). Zero aggregation of contractors or condition data.",
+    tokenPlay: "Aggregate specialized parking contractors, track structure conditions, enable capital planning. Create the inspection/maintenance record for parking assets.",
+    capExAngle: "Parking structures are Cap-Ex assets ($20K-50K per space to build). Major repairs ($1-5M) are capital investments. REITs capitalize maintenance.",
+    distributionPath: "Partner with parking operators (LAZ, SP+) and REITs. Municipalities own thousands of structures with deferred maintenance.",
+    whyBigBusinessWont: "Too boring. Contractors hyper-local. No one thinks about parking infrastructure until it fails.",
+    potentialSponsors: ["Parking operators", "Municipal bond insurers", "Commercial REITs"],
+    synergies: "EV charging infrastructure integration. Real estate due diligence. ADA compliance tracking.",
+    difficulty: "Low"
+  }
+];
 
 // Top 20 Opportunities based on page 38 criteria
 export const opportunities = [
