@@ -124,9 +124,7 @@ function OpportunityCard({ opportunity, index }: { opportunity: { title: string;
   )
 }
 
-function CapExOpportunityCard({ opportunity, index }: { opportunity: CapExOpportunity; index: number }) {
-  const [expanded, setExpanded] = useState(false)
-
+function CapExOpportunityCard({ opportunity, index, expanded, onToggle }: { opportunity: CapExOpportunity; index: number; expanded: boolean; onToggle: () => void }) {
   const difficultyColors = {
     'Low': 'bg-green-100 text-green-700',
     'Medium': 'bg-yellow-100 text-yellow-700',
@@ -134,14 +132,17 @@ function CapExOpportunityCard({ opportunity, index }: { opportunity: CapExOpport
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 card-hover">
+    <div id={`capex-${index + 1}`} className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 card-hover scroll-mt-24">
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-start gap-3">
           <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">
             {index + 1}
           </span>
           <div>
-            <h3 className="font-semibold text-gray-900 text-lg">{opportunity.title}</h3>
+            <h3 className="font-semibold text-gray-900 text-lg group cursor-pointer" onClick={onToggle}>
+              {opportunity.title}
+              <span className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity text-sm ml-2">#</span>
+            </h3>
             <div className="flex gap-2 mt-1">
               <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700">
                 {opportunity.industry}
@@ -168,7 +169,7 @@ function CapExOpportunityCard({ opportunity, index }: { opportunity: CapExOpport
         </div>
 
         <button
-          onClick={() => setExpanded(!expanded)}
+          onClick={onToggle}
           className="flex items-center text-sm text-amber-600 hover:text-amber-700 transition-colors"
         >
           {expanded ? (
@@ -225,6 +226,7 @@ function CapExOpportunityCard({ opportunity, index }: { opportunity: CapExOpport
 
 function FrameworkSection() {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['mentalModel']))
+  const [expandedCapEx, setExpandedCapEx] = useState<Set<number>>(new Set())
 
   const toggleSection = (section: string) => {
     const newExpanded = new Set(expandedSections)
@@ -241,6 +243,22 @@ function FrameworkSection() {
     }
   }
 
+  const toggleCapEx = (index: number) => {
+    const newExpanded = new Set(expandedCapEx)
+    if (newExpanded.has(index)) {
+      newExpanded.delete(index)
+      window.history.pushState(null, '', '#framework')
+    } else {
+      newExpanded.add(index)
+      window.history.pushState(null, '', `#framework&capex-${index + 1}`)
+      // Scroll to the element
+      setTimeout(() => {
+        document.getElementById(`capex-${index + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    }
+    setExpandedCapEx(newExpanded)
+  }
+
   // Handle section deep links on mount
   useEffect(() => {
     const hash = window.location.hash
@@ -250,6 +268,15 @@ function FrameworkSection() {
         setExpandedSections(prev => new Set([...Array.from(prev), section]))
       }
     })
+    // Handle capex-N deep links
+    const capexMatch = hash.match(/capex-(\d+)/)
+    if (capexMatch) {
+      const capexIndex = parseInt(capexMatch[1], 10) - 1
+      setExpandedCapEx(new Set([capexIndex]))
+      setTimeout(() => {
+        document.getElementById(`capex-${capexMatch[1]}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    }
   }, [])
 
   return (
@@ -455,7 +482,7 @@ function FrameworkSection() {
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
           {capExOpportunities.map((opportunity, index) => (
-            <CapExOpportunityCard key={opportunity.title} opportunity={opportunity} index={index} />
+            <CapExOpportunityCard key={opportunity.title} opportunity={opportunity} index={index} expanded={expandedCapEx.has(index)} onToggle={() => toggleCapEx(index)} />
           ))}
         </div>
       </section>
