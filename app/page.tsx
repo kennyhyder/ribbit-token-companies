@@ -777,8 +777,12 @@ export default function Home() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '')
-      if (hash === 'companies' || hash === 'opportunities' || hash === 'framework') {
-        setActiveSection(hash)
+      const baseHash = hash.split('&')[0]
+      if (baseHash === 'companies' || baseHash === 'opportunities' || baseHash === 'framework') {
+        setActiveSection(baseHash)
+      } else if (hash.includes('capex-')) {
+        // capex links should go to framework tab
+        setActiveSection('framework')
       }
     }
 
