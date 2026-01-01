@@ -788,15 +788,17 @@ export default function Home() {
       {/* Hero Section */}
       <header className="gradient-bg text-white">
         <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="flex items-center gap-4 mb-6">
-            <a href="https://hyder.me" target="_blank" rel="noopener noreferrer">
-              <img src="https://hyder.me/assets/imgs/logos/hyder-media-logo.png" alt="Hyder Media" className="h-12" />
+          <div className="flex items-center gap-6 mb-6">
+            <a href="https://hyder.me" target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
+              <img src="https://hyder.me/assets/imgs/logos/hyder-media-logo.png" alt="Hyder Media" className="h-20 md:h-24" />
             </a>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+                The Future of Tokens
+              </h1>
+              <a href="https://hyder.me/#contact" target="_blank" rel="noopener noreferrer" className="inline-block text-xl text-green-100 hover:text-white transition-colors underline">Let&apos;s Talk</a>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            The Future of Tokens
-          </h1>
-          <a href="https://hyder.me/#contact" target="_blank" rel="noopener noreferrer" className="inline-block text-xl text-green-100 mb-6 hover:text-white transition-colors underline">Let&apos;s Talk</a>
           <div className="flex flex-wrap gap-4 text-sm">
             <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-2">
               <span className="font-bold text-2xl">{totalCompanies}+</span>
