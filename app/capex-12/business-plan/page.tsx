@@ -2,11 +2,35 @@
 
 import { useState } from 'react'
 import {
-  ArrowLeft, Target, TrendingUp, DollarSign, Users, Shield, AlertTriangle,
-  CheckCircle, ExternalLink, ChevronDown, ChevronUp, Building2, Zap, BarChart3,
-  Clock, Wrench, FileText, Briefcase, Lightbulb, Globe, Award, PieChart, LineChart, Sun
+  ArrowLeft,
+  Target,
+  TrendingUp,
+  DollarSign,
+  Users,
+  Shield,
+  AlertTriangle,
+  CheckCircle,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  Building2,
+  Zap,
+  BarChart3,
+  Clock,
+  Wrench,
+  Sun,
+  FileText,
+  Briefcase,
+  Scale,
+  Lightbulb,
+  Globe,
+  Award,
+  PieChart,
+  LineChart,
+  Battery
 } from 'lucide-react'
 
+// Business Plan Data
 const businessPlan = {
   companyName: "SolarScore",
   tagline: "The Network of Record for Solar & Storage",
@@ -14,9 +38,9 @@ const businessPlan = {
   date: "January 2026",
 
   executiveSummary: {
-    problem: "Solar installer market is massively fragmented—top 3 installers hold only 21% share. Sunrun/Tesla use subcontractors with no quality visibility. Lenders and utilities flying blind on installer performance.",
+    problem: "Solar installer market is massively fragmented—top 3 installers hold only 21% share. Sunrun/Tesla use subcontractors with no quality visibility. Lenders funding $15B+ annually are flying blind on installer performance, leading to higher defaults and warranty claims.",
     solution: "SolarScore aggregates the fragmented installer network with quality scores, standardized quoting, and performance tracking—becoming the 'network of record' that lenders, utilities, and homeowners trust.",
-    market: "$7.5B residential solar + $2B residential storage (2025). Growing 14%+ CAGR. Post-ITC expiration creates flight to TPO models where installer quality matters even more.",
+    market: "$9.5B residential solar + storage market (2025). Growing 14%+ CAGR. Post-ITC expiration Dec 2025 creates flight to TPO models where installer quality matters even more.",
     ask: "$5M Seed Round to build installer network platform, establish lender partnerships, and capture first-mover advantage as the quality layer for distributed energy."
   },
 
@@ -25,25 +49,25 @@ const businessPlan = {
     points: [
       {
         title: "Massive Fragmentation",
-        detail: "Top 3 installers (Sunrun, Tesla, Freedom Forever) hold only 21% market share. Thousands of local installers with no standardized quality tracking.",
+        detail: "Top 3 installers (Sunrun 12.5%, Tesla 4.2%, Freedom Forever 4.0%) hold only 21% market share. Thousands of local installers with no standardized quality tracking.",
         stat: "21%",
         statLabel: "market share held by top 3 installers"
       },
       {
         title: "Subcontractor Chaos",
-        detail: "Even major players like Tesla rely heavily on subcontractors. Sunrun partners with third-party installers. No visibility into actual installation quality.",
+        detail: "Even major players like Tesla rely heavily on subcontractors. Sunrun partners with third-party installers. No visibility into actual installation quality or technician certification.",
         stat: "70%+",
         statLabel: "of installs done by subcontractors"
       },
       {
         title: "Lender Blindness",
-        detail: "Solar lenders (Mosaic, Sunlight, GoodLeap) fund $15B+ annually with minimal installer vetting. Default rates correlate with installer quality but data doesn't exist.",
+        detail: "Solar lenders (Mosaic, Sunlight, GoodLeap) fund $15B+ annually with minimal installer vetting. Default rates correlate with installer quality but comprehensive data doesn't exist.",
         stat: "$15B+",
         statLabel: "annual solar lending with poor installer data"
       },
       {
         title: "ITC Cliff Creates Urgency",
-        detail: "Residential 30% ITC expires Dec 31, 2025. TPO (lease/PPA) becomes only path to credits. Lenders need quality data more than ever.",
+        detail: "Residential 30% ITC expires Dec 31, 2025 for homeowners. TPO (lease/PPA) becomes only path to tax credits. Lenders need quality data more than ever to protect their assets.",
         stat: "Dec 2025",
         statLabel: "residential ITC expiration"
       }
@@ -51,7 +75,7 @@ const businessPlan = {
   },
 
   solution: {
-    title: "SolarScore: Quality Layer for Distributed Energy",
+    title: "SolarScore: The Quality Layer for Distributed Energy",
     tagline: "Aggregate. Score. Standardize. Trust.",
     pillars: [
       {
@@ -86,319 +110,479 @@ const businessPlan = {
     factors: [
       {
         title: "ITC Cliff Reshapes Market",
-        detail: "Dec 2025 ITC expiration for homeowners pushes market to TPO models. Third-party owners need installer quality data to protect their assets.",
+        detail: "Dec 2025 ITC expiration for homeowners pushes market to TPO models. Third-party owners (lenders, utilities) need installer quality data to protect their long-term assets.",
         icon: "Clock"
       },
       {
         title: "Storage Attachment Surging",
-        detail: "Battery attachment rates hitting 30%+ in key markets. Storage adds complexity—installers need certification, lenders need quality assurance.",
-        icon: "Zap"
+        detail: "Battery attachment rates hitting 30%+ in key markets (CA, TX, FL). Storage adds complexity—installers need certification, lenders need quality assurance for higher ticket installs.",
+        icon: "Battery"
       },
       {
         title: "Lender Consolidation",
-        detail: "Solar lending consolidating around Mosaic, Sunlight, GoodLeap. Fewer, larger players willing to pay for installer intelligence.",
+        detail: "Solar lending consolidating around Mosaic, Sunlight, GoodLeap. Fewer, larger players with budgets and willingness to pay for installer intelligence.",
         icon: "DollarSign"
       },
       {
         title: "Grid Reliability Focus",
-        detail: "Utilities investing in distributed energy as grid infrastructure. Need installer networks for low-income programs, virtual power plants.",
+        detail: "Utilities investing heavily in distributed energy as grid infrastructure. Need installer networks for low-income programs, virtual power plants, demand response.",
         icon: "Globe"
+      },
+      {
+        title: "AI/Data Timing",
+        detail: "Machine learning models can now predict installer quality from diverse data sources. First mover to aggregate data wins the network effect.",
+        icon: "TrendingUp"
       }
     ]
   },
 
   marketSize: {
+    title: "Market Opportunity",
     tam: {
       value: "$9.5B",
-      description: "Total addressable market: U.S. residential solar + storage installation market",
-      breakdown: [
-        { segment: "Residential Solar Installation", value: "$7.45B", growth: "14.4% CAGR" },
-        { segment: "Residential Battery Storage", value: "$2.0B", growth: "14.4% CAGR" },
-        { segment: "Commercial Distributed", value: "$4.2B", growth: "8.5% CAGR" }
-      ]
+      label: "Total Addressable Market",
+      description: "U.S. Residential Solar + Storage Installation Market (2025)",
+      source: "SEIA, Grand View Research"
     },
     sam: {
       value: "$1.4B",
-      description: "Serviceable addressable market: Platform fees, lender subscriptions, and data licensing",
-      breakdown: [
-        { segment: "Installer Network Fees (3% of installs)", value: "$280M", growth: "On $9.5B install volume" },
-        { segment: "Lender Data Subscriptions", value: "$120M", growth: "Major solar lenders" },
-        { segment: "Utility Program Management", value: "$85M", growth: "Low-income solar, VPP programs" },
-        { segment: "Quote/Lead Marketplace", value: "$920M", growth: "Lead gen and matching fees" }
-      ]
+      label: "Serviceable Addressable Market",
+      description: "Platform fees, lender subscriptions, data licensing, lead marketplace",
+      source: "Industry analysis"
     },
     som: {
       value: "$78M",
-      description: "Year 5 revenue target: 2,500 active installers, 8 lender partnerships, 50K installs through platform",
-      breakdown: [
-        { segment: "Installer SaaS Subscriptions", value: "$24M", growth: "2,500 installers @ $800/mo avg" },
-        { segment: "Lender Data Licensing", value: "$18M", growth: "8 lenders @ $225K/yr avg" },
-        { segment: "Transaction/Lead Fees", value: "$28M", growth: "50K installs @ $560 avg" },
-        { segment: "Utility Program Fees", value: "$8M", growth: "12 utility programs" }
+      label: "Serviceable Obtainable Market",
+      description: "Year 5 target: 2,500 installers, 8 lender partnerships, 50K installs",
+      source: "Conservative capture estimate"
+    },
+    additionalMarkets: [
+      { name: "Residential Solar Installation", value: "$7.45B", cagr: "14.4%" },
+      { name: "Residential Battery Storage", value: "$2.0B", cagr: "14.4%" },
+      { name: "Commercial Distributed Solar", value: "$4.2B", cagr: "8.5%" },
+      { name: "Solar Lending Market", value: "$15B+ annually", cagr: "12%" }
+    ],
+    keyMetrics: [
+      { label: "Avg residential install cost", value: "$25,000-$35,000" },
+      { label: "Battery attachment rate", value: "30%+ in key markets" },
+      { label: "Top 3 installer market share", value: "21%" },
+      { label: "ITC expiration impact", value: "Dec 2025" }
+    ]
+  },
+
+  competition: {
+    title: "Competitive Landscape",
+    players: [
+      {
+        name: "EnergySage",
+        type: "Consumer Marketplace",
+        marketShare: "~8% of leads",
+        strengths: ["Strong consumer brand", "Large quote volume", "Established marketplace"],
+        weaknesses: ["Lead-gen only model", "No quality scoring", "No lender relationships", "No post-install tracking"],
+        threat: "Medium - different positioning"
+      },
+      {
+        name: "Aurora Solar",
+        type: "Installer Software",
+        marketShare: "~40% of installer software",
+        strengths: ["Industry-standard design tool", "Large installer base", "Strong product"],
+        weaknesses: ["Software tool not network", "No quality data", "No lender integration", "Installer-focused only"],
+        threat: "Low - potential partner"
+      },
+      {
+        name: "Sunrun/Tesla",
+        type: "Vertically Integrated",
+        marketShare: "~17% combined",
+        strengths: ["Brand recognition", "Financing integration", "National scale"],
+        weaknesses: ["Compete with installers", "Limited choice", "High CAC", "Subcontractor quality issues"],
+        threat: "Low - different model"
+      },
+      {
+        name: "Solar Lenders",
+        type: "Finance Companies",
+        marketShare: "~65% of solar lending",
+        strengths: ["Capital access", "Installer relationships", "Transaction volume"],
+        weaknesses: ["Not core competency", "Fragmented data", "Regulatory limits"],
+        threat: "Partners not competitors"
+      }
+    ],
+    ourAdvantage: {
+      title: "SolarScore's Unfair Advantages",
+      points: [
+        "Network effects: More installers = better data = more lender adoption = more installer demand",
+        "First comprehensive quality layer for distributed solar becomes industry standard",
+        "Data moat: Aggregated performance data across thousands of installers is defensible",
+        "B2B positioning avoids EnergySage's B2C lead-gen competition",
+        "Lender relationships create enterprise anchor revenue"
       ]
     }
   },
 
-  competition: {
-    overview: "No direct competitor has built a comprehensive installer quality network. Market has point solutions for leads, monitoring, and software but no unified quality layer.",
-    competitors: [
+  product: {
+    title: "Product Roadmap",
+    phases: [
       {
-        name: "EnergySage",
-        description: "Consumer marketplace connecting homeowners to solar quotes. Lead generation model, not installer quality network.",
-        strengths: ["Strong consumer brand", "Large quote volume", "Installer marketplace"],
-        weaknesses: ["Lead-gen only", "No quality scoring", "No lender relationships", "No post-install tracking"],
-        marketShare: "~8% of residential leads"
+        phase: "Phase 1: Foundation",
+        timeline: "Months 1-6",
+        deliverables: [
+          "Installer profile platform (web + mobile)",
+          "Quality scoring algorithm v1 (certification, reviews, claims data)",
+          "Standardized quote format and comparison tools",
+          "Lender API for installer quality lookup",
+          "Homeowner matching interface"
+        ],
+        milestone: "500 installers onboarded, 2 lender pilots signed"
       },
       {
-        name: "Aurora Solar",
-        description: "Design and proposal software for solar installers. Tool for installers, not quality layer for lenders/utilities.",
-        strengths: ["Industry-standard design tool", "Large installer base", "Strong product"],
-        weaknesses: ["Software tool, not network", "No quality data", "No lender integration", "Installer-focused only"],
-        marketShare: "~40% of installer software"
+        phase: "Phase 2: Scale",
+        timeline: "Months 7-12",
+        deliverables: [
+          "Performance monitoring integrations (Enphase, SolarEdge, Tesla)",
+          "Advanced quality scoring with ML predictions",
+          "Utility program management module",
+          "Mobile app for installers (leads, jobs, scores)",
+          "Lender risk analytics dashboard"
+        ],
+        milestone: "1,500 installers, 5 lender partnerships, $5M ARR"
       },
       {
-        name: "Sunrun/Tesla Direct",
-        description: "Vertically integrated installer-financiers. Compete with local installers, don't aggregate them.",
-        strengths: ["Brand recognition", "Financing integration", "National scale"],
-        weaknesses: ["Compete with installers", "Limited installer choice", "High customer acquisition cost", "Subcontractor quality issues"],
-        marketShare: "~17% combined"
-      },
-      {
-        name: "Solar Lenders (Mosaic, GoodLeap)",
-        description: "Finance solar installations. Need installer quality data but build minimal in-house.",
-        strengths: ["Capital access", "Installer relationships", "Transaction volume"],
-        weaknesses: ["Not core competency", "Fragmented data", "Would likely partner/buy", "Regulatory focus limits scope"],
-        marketShare: "~65% of solar lending"
+        phase: "Phase 3: Dominate",
+        timeline: "Year 2-3",
+        deliverables: [
+          "National coverage (5,000+ installers)",
+          "Real-time quality monitoring and alerts",
+          "Warranty prediction and pricing models",
+          "Commercial solar expansion",
+          "Insurance product integrations"
+        ],
+        milestone: "$25M+ ARR, market leader in installer intelligence"
       }
-    ],
-    moat: "Network effects: More installers in network = better data = more lender adoption = more installer demand. First comprehensive quality layer becomes industry standard."
+    ]
   },
 
   businessModel: {
-    overview: "Four-sided platform connecting installers, lenders, utilities, and homeowners around quality and trust.",
+    title: "Business Model",
     revenueStreams: [
       {
         name: "Installer SaaS",
         description: "Monthly subscription for installers to access network, receive qualified leads, and build quality scores",
         pricing: "$299-$1,499/month based on volume",
-        margin: "80%",
-        details: [
-          "Quality score profile and badge",
-          "Lead access based on score tier",
-          "Quote standardization tools",
-          "Performance dashboard",
-          "Certification management"
-        ]
+        margin: "80%+",
+        year1Revenue: "$2.4M",
+        year3Revenue: "$24M"
       },
       {
         name: "Lender Data Licensing",
         description: "API access to installer quality scores, performance data, and risk analytics for underwriting",
         pricing: "$150K-$500K annual contracts",
-        margin: "90%",
-        details: [
-          "Real-time quality scores",
-          "Historical performance data",
-          "Risk scoring models",
-          "Portfolio analytics",
-          "Due diligence reports"
-        ]
+        margin: "90%+",
+        year1Revenue: "$600K",
+        year3Revenue: "$18M"
       },
       {
         name: "Transaction Fees",
-        description: "Per-install fees for deals closed through platform matching",
+        description: "Per-install fees for deals closed through platform matching and quality guarantee program",
         pricing: "$300-$800 per closed install",
-        margin: "85%",
-        details: [
-          "Homeowner lead matching",
-          "Quote comparison tools",
-          "Contract standardization",
-          "Installation verification",
-          "Quality guarantee program"
-        ]
+        margin: "85%+",
+        year1Revenue: "$400K",
+        year3Revenue: "$12M"
       },
       {
         name: "Utility Program Management",
-        description: "White-label installer networks for utility solar programs",
+        description: "White-label installer networks for utility low-income solar, VPP, and grid services programs",
         pricing: "$50K-$200K per program + per-install fees",
-        margin: "70%",
-        details: [
-          "Low-income solar programs",
-          "Virtual power plant recruitment",
-          "Grid services coordination",
-          "Incentive management",
-          "Quality assurance"
-        ]
+        margin: "70%+",
+        year1Revenue: "$200K",
+        year3Revenue: "$8M"
       }
     ],
     unitEconomics: {
-      ltv: "$14,400",
-      cac: "$1,200",
-      ltvCacRatio: "12:1",
-      paybackPeriod: "5 months",
-      grossMargin: "82%",
-      details: [
-        "Average installer subscription: 2.4 years ($800/mo avg)",
-        "Expansion revenue from volume growth and lead fees",
-        "CAC: $800 digital + $400 sales/onboarding",
-        "High retention due to quality score equity"
+      title: "Unit Economics Per Installer",
+      metrics: [
+        { label: "Customer Acquisition Cost (CAC)", value: "$1,200", note: "Digital + sales + onboarding" },
+        { label: "Average Revenue Per Installer (ARPI)", value: "$800/month", note: "Blended across tiers" },
+        { label: "Gross Margin", value: "82%", note: "After platform costs" },
+        { label: "Lifetime Value (LTV)", value: "$14,400", note: "Assuming 18-month retention" },
+        { label: "LTV:CAC Ratio", value: "12:1", note: "Excellent unit economics" },
+        { label: "Payback Period", value: "5 months", note: "Fast capital efficiency" }
       ]
     }
   },
 
   financials: {
+    title: "Financial Projections",
     scenarios: {
-      withFinancing: {
-        name: "With Cap-Ex Financing Partnerships",
-        description: "Deep lender integration creates data moat and recurring revenue",
-        projections: [
-          { year: "Y1", revenue: "$2.8M", customers: "450 installers", highlights: "Platform launch, 2 lender pilots" },
-          { year: "Y2", revenue: "$12M", customers: "1,100 installers", highlights: "5 lender partnerships, utility pilots" },
-          { year: "Y3", revenue: "$32M", customers: "1,800 installers", highlights: "Market leader in lender data" },
-          { year: "Y4", revenue: "$58M", customers: "2,300 installers", highlights: "Utility program expansion" },
-          { year: "Y5", revenue: "$98M", customers: "2,800 installers", highlights: "Category dominance, M&A interest" }
+      withLenderPartnerships: {
+        name: "With Lender Partnerships (Recommended)",
+        description: "Deep lender integration creates data moat and enterprise anchor revenue",
+        years: [
+          { year: 1, revenue: "$3.6M", customers: "500 installers", arr: "$3.6M", burn: "$3.4M", runway: "18 months" },
+          { year: 2, revenue: "$14M", customers: "1,500 installers", arr: "$14M", burn: "$1.5M", runway: "Profitable Q4" },
+          { year: 3, revenue: "$42M", customers: "2,500 installers", arr: "$42M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$72M", customers: "3,500 installers", arr: "$72M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$98M", customers: "4,500 installers", arr: "$98M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$5M Seed",
         keyAssumptions: [
-          "3 major lenders sign in Year 2",
-          "Data licensing drives 40% of revenue",
+          "3 major lender partnerships signed by end of Year 2",
+          "Data licensing drives 35% of revenue by Year 3",
           "Installer network reaches 25% of quality installers",
-          "Utility programs add recurring base"
+          "Utility programs add recurring base revenue",
+          "Battery storage attachment accelerates ARPI growth"
         ]
       },
-      withoutFinancing: {
-        name: "Without Cap-Ex Financing Angle",
-        description: "Consumer marketplace focus with installer subscriptions and leads",
-        projections: [
-          { year: "Y1", revenue: "$1.6M", customers: "320 installers", highlights: "Marketplace launch, SEO focus" },
-          { year: "Y2", revenue: "$6.2M", customers: "750 installers", highlights: "Lead gen scaling, quality scoring" },
-          { year: "Y3", revenue: "$16M", customers: "1,200 installers", highlights: "Regional expansion" },
-          { year: "Y4", revenue: "$32M", customers: "1,700 installers", highlights: "First lender partnerships" },
-          { year: "Y5", revenue: "$58M", customers: "2,200 installers", highlights: "Sustainable growth, profitable" }
+      withoutLenderPartnerships: {
+        name: "Without Lender Partnerships (Conservative)",
+        description: "Consumer marketplace focus with installer subscriptions and transaction fees",
+        years: [
+          { year: 1, revenue: "$1.8M", customers: "350 installers", arr: "$1.8M", burn: "$2.2M", runway: "27 months" },
+          { year: 2, revenue: "$6.5M", customers: "900 installers", arr: "$6.5M", burn: "$1.2M", runway: "Profitable Q2 Y3" },
+          { year: 3, revenue: "$18M", customers: "1,600 installers", arr: "$18M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$35M", customers: "2,200 installers", arr: "$35M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$58M", customers: "3,000 installers", arr: "$58M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$3.5M Seed",
         keyAssumptions: [
-          "Consumer lead gen primary driver",
-          "Slower lender adoption without direct sales",
+          "Consumer lead gen primary revenue driver",
+          "Slower lender adoption without enterprise sales",
           "More capital-efficient growth path",
-          "EnergySage competitive pressure"
+          "Competitive pressure from EnergySage",
+          "Lower enterprise revenue but sustainable growth"
         ]
       }
     },
-    useOfFunds: [
-      { category: "Engineering & Product", percentage: 40, amount: "$2.0M", details: "Platform build, installer tools, monitoring integrations" },
-      { category: "Sales & Partnerships", percentage: 30, amount: "$1.5M", details: "Lender BD, utility partnerships, installer onboarding" },
-      { category: "Data & Analytics", percentage: 15, amount: "$750K", details: "Quality scoring models, performance analytics" },
-      { category: "Marketing", percentage: 10, amount: "$500K", details: "Installer acquisition, industry positioning" },
-      { category: "Operations", percentage: 5, amount: "$250K", details: "Legal, compliance, G&A" }
+    useOfFunds: {
+      title: "Use of $5M Seed Funds",
+      breakdown: [
+        { category: "Engineering & Product", amount: "$2.0M", percentage: 40, detail: "Platform build, installer tools, monitoring integrations, ML scoring" },
+        { category: "Sales & Partnerships", amount: "$1.5M", percentage: 30, detail: "Lender BD, utility partnerships, enterprise sales team" },
+        { category: "Data & Analytics", amount: "$750K", percentage: 15, detail: "Quality scoring models, performance analytics, data infrastructure" },
+        { category: "Marketing & Growth", amount: "$500K", percentage: 10, detail: "Installer acquisition, industry positioning, content" },
+        { category: "G&A & Buffer", amount: "$250K", percentage: 5, detail: "Legal, compliance, office, contingency" }
+      ]
+    }
+  },
+
+  goToMarket: {
+    title: "Go-to-Market Strategy",
+    phases: [
+      {
+        phase: "Land",
+        timeline: "Months 1-6",
+        strategy: "Quality Installer Acquisition",
+        tactics: [
+          "Target top 500 installers in CA, TX, FL (highest volume markets)",
+          "Lead with value: free quality profile, leads, quote tools",
+          "Partner with distributors (CED Greentech, BayWa) for reach",
+          "Quality-first messaging attracts best installers who want differentiation"
+        ],
+        metrics: ["500 installers onboarded", "85% activation rate", "NPS > 50"]
+      },
+      {
+        phase: "Expand",
+        timeline: "Months 7-12",
+        strategy: "Lender Partnership",
+        tactics: [
+          "Approach Mosaic, GoodLeap, Sunlight with pilot proposals",
+          "Demonstrate ROI: reduced defaults, faster underwriting",
+          "Offer exclusive data access in exchange for installer referrals",
+          "Build case studies showing quality score correlation to outcomes"
+        ],
+        metrics: ["5 lender partnerships", "100K installer lookups/month", "Measurable default reduction"]
+      },
+      {
+        phase: "Dominate",
+        timeline: "Year 2+",
+        strategy: "Industry Standard",
+        tactics: [
+          "Leverage lender requirements to drive installer adoption",
+          "Expand to utility programs and commercial solar",
+          "Launch quality certification program (SolarScore Certified)",
+          "Build insurance and warranty products on data"
+        ],
+        metrics: ["5,000+ installers", "8+ lender partnerships", "Industry standard positioning"]
+      }
+    ],
+    channels: [
+      { name: "Distributor Partnerships", description: "CED, BayWa, Soligent referrals to installers", cost: "Low", effectiveness: "High" },
+      { name: "Lender Referrals", description: "Lenders require/recommend SolarScore to installers", cost: "Low", effectiveness: "Very High" },
+      { name: "Direct Sales", description: "Field sales team targeting high-volume installers", cost: "High", effectiveness: "High" },
+      { name: "Industry Events", description: "Intersolar, RE+, state solar conferences", cost: "Medium", effectiveness: "Medium" },
+      { name: "Digital Marketing", description: "SEO, content, targeted ads to installer owners", cost: "Medium", effectiveness: "Medium" }
     ]
   },
 
-  risks: [
-    {
-      risk: "Lender Adoption Speed",
-      severity: "High",
-      mitigation: "Start with lender pilot programs before full contracts. Prove ROI on default reduction. Target CFO-level sponsors."
-    },
-    {
-      risk: "Installer Network Building",
-      severity: "High",
-      mitigation: "Lead with value (leads, tools) before scoring. Partner with distributor networks for reach. Quality installers want differentiation."
-    },
-    {
-      risk: "Market Cyclicality",
-      severity: "Medium",
-      mitigation: "ITC expiration actually helps—TPO growth continues. Diversify across residential, commercial, utility segments."
-    },
-    {
-      risk: "EnergySage Competition",
-      severity: "Medium",
-      mitigation: "Different positioning: B2B quality layer vs B2C lead gen. Lender data not in EnergySage's DNA. Potential acquirer."
-    },
-    {
-      risk: "Data Quality/Accuracy",
-      severity: "Medium",
-      mitigation: "Multiple data sources: installer-reported, monitoring APIs, lender outcomes, customer reviews. Statistical validation."
-    },
-    {
-      risk: "Policy Uncertainty",
-      severity: "Low",
-      mitigation: "Solar fundamentals strong regardless of ITC. Storage growth accelerating. Grid reliability driving utility investment."
-    }
-  ],
-
-  milestones: [
-    { quarter: "Q1 2026", milestone: "Close seed round, hire core team", status: "target" },
-    { quarter: "Q2 2026", milestone: "Launch MVP with 200 installers in 3 states", status: "target" },
-    { quarter: "Q3 2026", milestone: "First lender pilot (Mosaic or GoodLeap)", status: "target" },
-    { quarter: "Q4 2026", milestone: "500 installers, quality scoring live, $2M ARR", status: "target" },
-    { quarter: "Q1 2027", milestone: "Second lender partnership signed", status: "target" },
-    { quarter: "Q2 2027", milestone: "1,000 installers, first utility program", status: "target" },
-    { quarter: "Q3 2027", milestone: "Performance monitoring integration complete", status: "target" },
-    { quarter: "Q4 2027", milestone: "Series A at $80-100M valuation", status: "target" }
-  ],
-
   team: {
-    hiring: [
-      { role: "CTO", priority: "Critical", timeline: "Immediate", description: "Platform architecture, data systems, integrations" },
-      { role: "VP Sales", priority: "Critical", timeline: "Q2 2026", description: "Lender and utility partnerships, enterprise sales" },
-      { role: "Head of Data Science", priority: "High", timeline: "Q2 2026", description: "Quality scoring models, performance analytics" },
-      { role: "VP Installer Success", priority: "High", timeline: "Q3 2026", description: "Installer onboarding, network growth, retention" }
+    title: "Team Requirements",
+    currentNeeds: [
+      {
+        role: "CEO / Founder",
+        skills: "Solar industry experience, fundraising, B2B sales leadership",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "CTO",
+        skills: "Platform architecture, data systems, ML/AI, integrations",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "VP Sales",
+        skills: "Enterprise sales, lender/utility relationships, solar industry network",
+        status: "Seeking",
+        priority: "High"
+      },
+      {
+        role: "Head of Data Science",
+        skills: "ML models, quality scoring algorithms, performance analytics",
+        status: "Seeking",
+        priority: "High"
+      }
+    ],
+    advisorNeeds: [
+      "Former solar lender executive (Mosaic, GoodLeap, Sunlight)",
+      "Solar industry veteran with installer network relationships",
+      "Utility program manager with distributed energy experience",
+      "Fintech/data marketplace expert"
+    ],
+    orgPlan: {
+      year1: "15 FTEs: 6 engineering, 4 sales, 3 data/analytics, 2 G&A",
+      year2: "35 FTEs: 12 engineering, 12 sales, 6 data, 5 G&A",
+      year3: "75 FTEs: 20 engineering, 30 sales, 15 data/ops, 10 G&A"
+    }
+  },
+
+  risks: {
+    title: "Risks & Mitigations",
+    risks: [
+      {
+        risk: "Lender Adoption Speed",
+        severity: "High",
+        likelihood: "Medium",
+        description: "Solar lenders slow to adopt new data sources due to regulatory concerns or internal inertia",
+        mitigation: "Start with pilot programs before full contracts. Prove ROI on default reduction with data. Target CFO/CRO-level sponsors. Offer flexible integration (API or manual reports)."
+      },
+      {
+        risk: "Installer Network Building",
+        severity: "High",
+        likelihood: "Medium",
+        description: "Difficulty onboarding quality installers who may be skeptical of another platform or scoring system",
+        mitigation: "Lead with value (leads, tools) before scoring. Partner with distributors for trusted introductions. Quality installers want differentiation from low-quality competitors."
+      },
+      {
+        risk: "EnergySage Competition",
+        severity: "Medium",
+        likelihood: "Medium",
+        description: "EnergySage expands into quality scoring and lender relationships, leveraging existing installer base",
+        mitigation: "Different positioning: B2B quality layer vs B2C lead gen. Lender data not in EnergySage's DNA. Build relationships before they pivot. Potential acquirer."
+      },
+      {
+        risk: "Data Quality/Accuracy",
+        severity: "Medium",
+        likelihood: "Low",
+        description: "Quality scores inaccurate or challenged by installers, damaging credibility",
+        mitigation: "Multiple data sources: installer-reported, monitoring APIs, lender outcomes, customer reviews. Statistical validation and appeal process."
+      },
+      {
+        risk: "Market Cyclicality",
+        severity: "Medium",
+        likelihood: "Low",
+        description: "Solar market slowdown due to interest rates, policy changes, or economic downturn",
+        mitigation: "ITC expiration actually helps—TPO growth continues. Diversify across residential, commercial, utility. Quality layer more valuable in tight market."
+      },
+      {
+        risk: "Policy/ITC Uncertainty",
+        severity: "Low",
+        likelihood: "Low",
+        description: "Federal policy changes extend or modify ITC, changing market dynamics",
+        mitigation: "Solar fundamentals strong regardless of ITC. Storage growth accelerating. Grid reliability driving utility investment. Quality layer valuable in any scenario."
+      }
+    ]
+  },
+
+  milestones: {
+    title: "Key Milestones",
+    items: [
+      { timeline: "Month 3", milestone: "Platform MVP live, first 100 installer profiles", status: "planned" },
+      { timeline: "Month 6", milestone: "500 installers, quality scoring v1, 2 lender pilots", status: "planned" },
+      { timeline: "Month 9", milestone: "First lender production contract signed, monitoring integrations live", status: "planned" },
+      { timeline: "Month 12", milestone: "$3.6M ARR, 5 lender partnerships, Series A ready", status: "planned" },
+      { timeline: "Month 18", milestone: "1,500 installers, first utility program, $8M ARR", status: "planned" },
+      { timeline: "Month 24", milestone: "2,500 installers, industry standard positioning, profitable", status: "planned" },
+      { timeline: "Year 3", milestone: "$42M ARR, market leader, insurance/warranty products", status: "planned" }
     ]
   },
 
   ask: {
-    amount: "$5M",
-    round: "Seed",
-    timeline: "Q1 2026",
-    terms: "Priced round, standard seed terms",
-    use: "Build installer network platform, establish lender partnerships, prove quality scoring ROI",
-    targetInvestors: [
-      "Climate tech VCs (Congruent, Energy Impact Partners)",
-      "Fintech investors (solar lending adjacent)",
-      "Marketplace/platform specialists",
-      "Strategic angels from solar/energy industry"
-    ]
+    title: "The Ask",
+    amount: "$5,000,000",
+    round: "Seed Round",
+    terms: "SAFE or Priced Round at $20M post-money valuation",
+    useOfFunds: [
+      "Build world-class engineering team and installer platform",
+      "Establish lender partnerships with major solar financiers",
+      "Aggregate first 500 quality installers in core markets",
+      "Prove quality scoring ROI and path to Series A"
+    ],
+    timeline: "18-month runway to Series A milestones",
+    seriesA: {
+      timing: "Month 12-15",
+      metrics: "$5-8M ARR, 1,500+ installers, 5+ lender partnerships",
+      raise: "$15-25M at $75-100M valuation"
+    }
   },
 
   sources: [
-    { name: "SEIA Solar Market Insight", url: "https://seia.org/research-resources/solar-market-insight-report-q4-2025/" },
-    { name: "Grand View Research - Residential Solar", url: "https://www.grandviewresearch.com/industry-analysis/us-residential-solar-pv-market-report" },
-    { name: "Fortune Business Insights - Battery Storage", url: "https://www.fortunebusinessinsights.com/u-s-residential-lithium-ion-battery-energy-storage-system-market-107571" },
-    { name: "Wood Mackenzie - Installer Rankings", url: "https://www.woodmac.com/news/opinion/us-distributed-solar-leaderboard/" },
-    { name: "SEIA - Investment Tax Credit", url: "https://seia.org/solar-investment-tax-credit/" },
-    { name: "EnergySage - Federal Tax Credit", url: "https://www.energysage.com/solar/solar-tax-credit-explained/" }
+    { name: "SEIA Solar Market Insight Q4 2025", url: "https://seia.org/research-resources/solar-market-insight-report-q4-2025/", detail: "Residential solar market data, installer rankings" },
+    { name: "Grand View Research - Residential Solar", url: "https://www.grandviewresearch.com/industry-analysis/us-residential-solar-pv-market-report", detail: "$7.45B market (2025), 14.4% CAGR" },
+    { name: "Fortune Business Insights - Battery Storage", url: "https://www.fortunebusinessinsights.com/u-s-residential-lithium-ion-battery-energy-storage-system-market-107571", detail: "$2B storage market, attachment rates" },
+    { name: "Wood Mackenzie - Installer Rankings", url: "https://www.woodmac.com/news/opinion/us-distributed-solar-leaderboard/", detail: "Sunrun 12.5%, Tesla 4.2%, market share data" },
+    { name: "SEIA - Investment Tax Credit", url: "https://seia.org/solar-investment-tax-credit/", detail: "ITC expiration Dec 2025, TPO implications" },
+    { name: "EnergySage - Federal Tax Credit", url: "https://www.energysage.com/solar/solar-tax-credit-explained/", detail: "Residential vs commercial ITC rules" },
+    { name: "Solar Lending Market Analysis", url: "https://www.greentechmedia.com/articles/read/the-state-of-residential-solar-financing", detail: "$15B+ annual lending, major players" },
+    { name: "Sequoia Pitch Deck Template", url: "https://sequoiacap.com/article/writing-a-business-plan/", detail: "Pitch deck framework and best practices" }
   ]
 }
 
-function ExpandableSection({ title, children, defaultOpen = false }: {
-  title: React.ReactNode
-  children: React.ReactNode
-  defaultOpen?: boolean
-}) {
-  const [isOpen, setIsOpen] = useState(defaultOpen)
-
+// Helper Components
+function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle?: string }) {
   return (
-    <div className="border border-gray-700 rounded-lg overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-gray-800 flex items-center justify-between hover:bg-gray-750 transition-colors"
-      >
-        <div className="font-semibold text-lg text-white">{title}</div>
-        {isOpen ? <ChevronUp className="text-gray-400" /> : <ChevronDown className="text-gray-400" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-900">
-          {children}
+    <div className="mb-6">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+          <Icon className="w-5 h-5 text-orange-600" />
         </div>
-      )}
+        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+      </div>
+      {subtitle && <p className="text-gray-600 ml-13">{subtitle}</p>}
     </div>
   )
 }
 
-function StatCard({ value, label, icon: Icon }: { value: string; label: string; icon: any }) {
+function StatCard({ value, label, sublabel }: { value: string; label: string; sublabel?: string }) {
   return (
-    <div className="bg-gray-800 rounded-lg p-4 text-center">
-      <Icon className="w-6 h-6 text-orange-400 mx-auto mb-2" />
-      <div className="text-2xl font-bold text-white">{value}</div>
-      <div className="text-sm text-gray-400">{label}</div>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+      <div className="text-3xl font-bold text-orange-600">{value}</div>
+      <div className="text-sm font-medium text-gray-900 mt-1">{label}</div>
+      {sublabel && <div className="text-xs text-gray-500 mt-1">{sublabel}</div>}
+    </div>
+  )
+}
+
+function ExpandableSection({ title, children, defaultOpen = false }: { title: React.ReactNode; children: React.ReactNode; defaultOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+      >
+        <div className="font-medium text-gray-900">{title}</div>
+        {isOpen ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+      </button>
+      {isOpen && <div className="p-4 border-t border-gray-200">{children}</div>}
     </div>
   )
 }
@@ -407,551 +591,805 @@ export default function BusinessPlanPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'detailed' | 'financials'>('overview')
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-start gap-4">
-              <a href="/tokens/#framework" className="text-gray-400 hover:text-white transition-colors mt-1">
-                <ArrowLeft className="w-5 h-5" />
-              </a>
-              <div>
-                <h1 className="text-2xl font-bold text-orange-400">{businessPlan.companyName}</h1>
-                <p className="text-gray-400 text-sm">{businessPlan.tagline}</p>
+      <header className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <a
+            href="/tokens/#framework"
+            className="inline-flex items-center gap-2 text-orange-100 hover:text-white transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Cap-Ex Opportunities
+          </a>
+
+          <div className="flex items-start justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Sun className="w-6 h-6" />
+                </div>
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold">{businessPlan.companyName}</h1>
+                  <p className="text-orange-100">{businessPlan.tagline}</p>
+                </div>
               </div>
             </div>
-            <div className="text-right text-sm text-gray-500">
-              <div>{businessPlan.version}</div>
-              <div>{businessPlan.date}</div>
+            <div className="text-right">
+              <div className="text-sm text-orange-200">{businessPlan.version}</div>
+              <div className="text-sm text-orange-200">{businessPlan.date}</div>
+            </div>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.ask.amount}</div>
+              <div className="text-sm text-orange-100">Seed Round</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.marketSize.tam.value}</div>
+              <div className="text-sm text-orange-100">TAM (2025)</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">14.4%</div>
+              <div className="text-sm text-orange-100">Market CAGR</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">12:1</div>
+              <div className="text-sm text-orange-100">LTV:CAC</div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Tab Navigation */}
-      <nav className="bg-gray-900 border-b border-gray-800 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex gap-1">
-            {[
-              { id: 'overview', label: 'Overview' },
-              { id: 'detailed', label: 'Detailed Plan' },
-              { id: 'financials', label: 'Financials' }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-3 text-sm font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? 'text-orange-400 border-b-2 border-orange-400'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-2 py-3">
+            <button
+              onClick={() => setActiveTab('overview')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'overview' ? 'bg-orange-100 text-orange-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <FileText className="w-4 h-4 inline mr-2" />
+              Executive Summary
+            </button>
+            <button
+              onClick={() => setActiveTab('detailed')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'detailed' ? 'bg-orange-100 text-orange-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <Briefcase className="w-4 h-4 inline mr-2" />
+              Full Plan
+            </button>
+            <button
+              onClick={() => setActiveTab('financials')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'financials' ? 'bg-orange-100 text-orange-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <LineChart className="w-4 h-4 inline mr-2" />
+              Financials
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 py-8">
-        {/* Overview Tab */}
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {activeTab === 'overview' && (
           <div className="space-y-8">
             {/* Executive Summary */}
-            <section className="bg-gradient-to-r from-orange-900/50 to-yellow-900/50 rounded-xl p-8 border border-orange-800">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Target className="text-orange-400" />
-                Executive Summary
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">The Problem</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.problem}</p>
-                </div>
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">Our Solution</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.solution}</p>
-                </div>
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">Market Opportunity</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.market}</p>
-                </div>
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">The Ask</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.ask}</p>
-                </div>
-              </div>
-            </section>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={FileText} title="Executive Summary" />
 
-            {/* Key Stats */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6">Key Metrics</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <StatCard value="$9.5B" label="TAM" icon={Globe} />
-                <StatCard value="21%" label="Top 3 Market Share" icon={Users} />
-                <StatCard value="12:1" label="LTV:CAC Ratio" icon={TrendingUp} />
-                <StatCard value="$5M" label="Seed Ask" icon={DollarSign} />
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+                    <h4 className="font-semibold text-red-800 mb-2">The Problem</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.problem}</p>
+                  </div>
+
+                  <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                    <h4 className="font-semibold text-green-800 mb-2">Our Solution</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.solution}</p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+                    <h4 className="font-semibold text-orange-800 mb-2">Market Opportunity</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.market}</p>
+                  </div>
+
+                  <div className="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                    <h4 className="font-semibold text-yellow-800 mb-2">The Ask</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.ask}</p>
+                  </div>
+                </div>
               </div>
             </section>
 
             {/* Problem */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <AlertTriangle className="text-red-400" />
-                {businessPlan.problem.title}
-              </h2>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={AlertTriangle} title={businessPlan.problem.title} />
+
               <div className="grid md:grid-cols-2 gap-4">
                 {businessPlan.problem.points.map((point, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-semibold text-white">{point.title}</h3>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-red-400">{point.stat}</div>
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600">{point.stat}</div>
                         <div className="text-xs text-gray-500">{point.statLabel}</div>
                       </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{point.title}</h4>
+                        <p className="text-sm text-gray-600 mt-1">{point.detail}</p>
+                      </div>
                     </div>
-                    <p className="text-gray-400 text-sm">{point.detail}</p>
                   </div>
                 ))}
               </div>
             </section>
 
             {/* Solution */}
-            <section>
-              <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                <Lightbulb className="text-orange-400" />
-                {businessPlan.solution.title}
-              </h2>
-              <p className="text-gray-400 mb-6">{businessPlan.solution.tagline}</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {businessPlan.solution.pillars.map((pillar, i) => {
-                  const IconComponent = pillar.icon === 'Sun' ? Sun :
-                    pillar.icon === 'BarChart3' ? BarChart3 :
-                    pillar.icon === 'FileText' ? FileText :
-                    pillar.icon === 'Zap' ? Zap : Sun
-                  return (
-                    <div key={i} className="bg-gray-800 rounded-lg p-5">
-                      <IconComponent className="w-8 h-8 text-orange-400 mb-3" />
-                      <h3 className="font-semibold text-white mb-2">{pillar.title}</h3>
-                      <p className="text-gray-400 text-sm mb-3">{pillar.description}</p>
-                      <ul className="space-y-1">
-                        {pillar.features.map((feature, j) => (
-                          <li key={j} className="text-xs text-gray-500 flex items-center gap-1">
-                            <CheckCircle className="w-3 h-3 text-orange-400" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Lightbulb} title={businessPlan.solution.title} subtitle={businessPlan.solution.tagline} />
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {businessPlan.solution.pillars.map((pillar, i) => (
+                  <div key={i} className="p-4 bg-orange-50 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-2">{pillar.title}</h4>
+                    <p className="text-sm text-gray-600 mb-3">{pillar.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {pillar.features.map((feature, j) => (
+                        <span key={j} className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">
+                          {feature}
+                        </span>
+                      ))}
                     </div>
-                  )
-                })}
+                  </div>
+                ))}
               </div>
             </section>
 
-            {/* The Ask */}
-            <section className="bg-gradient-to-r from-orange-900/30 to-yellow-900/30 rounded-xl p-8 border border-orange-800">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <DollarSign className="text-orange-400" />
-                The Ask
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-orange-400">{businessPlan.ask.amount}</div>
-                  <div className="text-gray-400">{businessPlan.ask.round} Round</div>
+            {/* Why Now */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Clock} title={businessPlan.whyNow.title} />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.whyNow.factors.map((factor, i) => (
+                  <div key={i} className="p-4 bg-amber-50 rounded-lg border-l-4 border-amber-400">
+                    <h4 className="font-semibold text-gray-900 mb-2">{factor.title}</h4>
+                    <p className="text-sm text-gray-600">{factor.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Market Size */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={PieChart} title={businessPlan.marketSize.title} />
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.tam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.tam.label}</div>
+                  <div className="text-sm text-orange-100 mt-1">{businessPlan.marketSize.tam.description}</div>
                 </div>
-                <div className="md:col-span-2">
-                  <p className="text-gray-300 mb-4">{businessPlan.ask.use}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {businessPlan.ask.targetInvestors.map((investor, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">
-                        {investor}
-                      </span>
+                <div className="p-4 bg-gradient-to-br from-yellow-500 to-yellow-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.sam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.sam.label}</div>
+                  <div className="text-sm text-yellow-100 mt-1">{businessPlan.marketSize.sam.description}</div>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.som.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.som.label}</div>
+                  <div className="text-sm text-amber-100 mt-1">{businessPlan.marketSize.som.description}</div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Adjacent Markets</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.additionalMarkets.map((market, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{market.name}</span>
+                        <span className="text-sm font-medium text-gray-900">{market.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Key Metrics</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.keyMetrics.map((metric, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{metric.label}</span>
+                        <span className="text-sm font-medium text-gray-900">{metric.value}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
             </section>
+
+            {/* The Ask */}
+            <section className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-xl shadow-sm p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl font-bold mb-2">{businessPlan.ask.title}</h2>
+                <div className="text-5xl font-bold mb-2">{businessPlan.ask.amount}</div>
+                <div className="text-xl text-orange-100">{businessPlan.ask.round}</div>
+                <div className="text-orange-200 mt-2">{businessPlan.ask.terms}</div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Use of Funds</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.ask.useOfFunds.map((use, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                        <span>{use}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Series A Target</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="text-orange-200">Timing:</span> {businessPlan.ask.seriesA.timing}</p>
+                    <p><span className="text-orange-200">Metrics:</span> {businessPlan.ask.seriesA.metrics}</p>
+                    <p><span className="text-orange-200">Raise:</span> {businessPlan.ask.seriesA.raise}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         )}
 
-        {/* Detailed Plan Tab */}
         {activeTab === 'detailed' && (
-          <div className="space-y-4">
-            {/* Why Now */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Clock className="text-orange-400" /> Why Now?</div>}
-              defaultOpen={true}
-            >
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.whyNow.factors.map((factor, i) => {
-                  const IconComponent = factor.icon === 'Clock' ? Clock :
-                    factor.icon === 'Zap' ? Zap :
-                    factor.icon === 'DollarSign' ? DollarSign :
-                    factor.icon === 'Globe' ? Globe : Clock
-                  return (
-                    <div key={i} className="bg-gray-800 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <IconComponent className="w-5 h-5 text-orange-400" />
-                        <h3 className="font-semibold text-white">{factor.title}</h3>
-                      </div>
-                      <p className="text-gray-400 text-sm">{factor.detail}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </ExpandableSection>
-
-            {/* Market Size */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><PieChart className="text-orange-400" /> Market Size</div>}
-            >
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { key: 'tam', label: 'TAM', data: businessPlan.marketSize.tam },
-                  { key: 'sam', label: 'SAM', data: businessPlan.marketSize.sam },
-                  { key: 'som', label: 'SOM (Y5)', data: businessPlan.marketSize.som }
-                ].map(({ key, label, data }) => (
-                  <div key={key} className="bg-gray-800 rounded-lg p-5">
-                    <div className="text-center mb-4">
-                      <div className="text-3xl font-bold text-orange-400">{data.value}</div>
-                      <div className="text-sm text-gray-400">{label}</div>
-                    </div>
-                    <p className="text-sm text-gray-400 mb-3">{data.description}</p>
-                    <div className="space-y-2">
-                      {data.breakdown.map((item, i) => (
-                        <div key={i} className="flex justify-between text-sm">
-                          <span className="text-gray-400">{item.segment}</span>
-                          <span className="text-white font-medium">{item.value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
-
+          <div className="space-y-8">
             {/* Competition */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Users className="text-orange-400" /> Competitive Landscape</div>}
-            >
-              <p className="text-gray-400 mb-4">{businessPlan.competition.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-4">
-                {businessPlan.competition.competitors.map((comp, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <h3 className="font-semibold text-white mb-2">{comp.name}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{comp.description}</p>
-                    <div className="grid grid-cols-2 gap-4 text-xs">
-                      <div>
-                        <div className="text-green-400 font-medium mb-1">Strengths</div>
-                        <ul className="text-gray-400 space-y-1">
-                          {comp.strengths.map((s, j) => <li key={j}>+ {s}</li>)}
-                        </ul>
-                      </div>
-                      <div>
-                        <div className="text-red-400 font-medium mb-1">Weaknesses</div>
-                        <ul className="text-gray-400 space-y-1">
-                          {comp.weaknesses.map((w, j) => <li key={j}>- {w}</li>)}
-                        </ul>
-                      </div>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.competition.title} />
+
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Competitor</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Market Share</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Strengths</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Weaknesses</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Threat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {businessPlan.competition.players.map((player, i) => (
+                      <tr key={i} className="border-b border-gray-100">
+                        <td className="py-3 px-2">
+                          <div className="font-medium text-gray-900">{player.name}</div>
+                          <div className="text-xs text-gray-500">{player.type}</div>
+                        </td>
+                        <td className="py-3 px-2 text-sm">{player.marketShare}</td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.strengths.slice(0, 2).map((s, j) => (
+                              <li key={j}>+ {s}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.weaknesses.slice(0, 2).map((w, j) => (
+                              <li key={j}>- {w}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            player.threat.includes('Medium') ? 'bg-yellow-100 text-yellow-700' :
+                            player.threat.includes('Low') ? 'bg-green-100 text-green-700' :
+                            'bg-orange-100 text-orange-700'
+                          }`}>
+                            {player.threat}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+                <h4 className="font-semibold text-orange-800 mb-2">{businessPlan.competition.ourAdvantage.title}</h4>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {businessPlan.competition.ourAdvantage.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Product Roadmap */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Wrench} title={businessPlan.product.title} />
+
+              <div className="space-y-6">
+                {businessPlan.product.phases.map((phase, i) => (
+                  <div key={i} className="border-l-4 border-orange-400 pl-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs font-medium">
+                        {phase.timeline}
+                      </span>
+                      <h4 className="font-semibold text-gray-900">{phase.phase}</h4>
+                    </div>
+                    <ul className="grid md:grid-cols-2 gap-2 mb-3">
+                      {phase.deliverables.map((deliverable, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
+                          {deliverable}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="p-2 bg-green-50 rounded text-sm">
+                      <span className="font-medium text-green-800">Milestone:</span>{' '}
+                      <span className="text-gray-700">{phase.milestone}</span>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="bg-orange-900/30 rounded-lg p-4 border border-orange-800">
-                <h3 className="font-semibold text-orange-400 mb-2">Our Moat</h3>
-                <p className="text-gray-300">{businessPlan.competition.moat}</p>
-              </div>
-            </ExpandableSection>
+            </section>
 
             {/* Business Model */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Briefcase className="text-orange-400" /> Business Model</div>}
-            >
-              <p className="text-gray-400 mb-4">{businessPlan.businessModel.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.businessModel.title} />
+
+              <div className="grid gap-4 mb-6">
                 {businessPlan.businessModel.revenueStreams.map((stream, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{stream.name}</h3>
-                      <span className="text-orange-400 font-medium">{stream.pricing}</span>
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{stream.name}</h4>
+                        <p className="text-sm text-gray-600">{stream.description}</p>
+                      </div>
+                      <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs font-medium">
+                        {stream.margin} margin
+                      </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-3">{stream.description}</p>
-                    <div className="text-xs text-gray-500 mb-2">Gross Margin: {stream.margin}</div>
-                    <ul className="text-xs text-gray-400 space-y-1">
-                      {stream.details.map((d, j) => (
-                        <li key={j} className="flex items-center gap-1">
-                          <CheckCircle className="w-3 h-3 text-orange-400" />
-                          {d}
+                    <div className="grid grid-cols-3 gap-4 mt-3 text-sm">
+                      <div>
+                        <span className="text-gray-500">Pricing:</span>
+                        <span className="ml-2 font-medium">{stream.pricing}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 1:</span>
+                        <span className="ml-2 font-medium">{stream.year1Revenue}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 3:</span>
+                        <span className="ml-2 font-medium">{stream.year3Revenue}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-4 bg-orange-50 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-3">{businessPlan.businessModel.unitEconomics.title}</h4>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl font-bold text-orange-600">{metric.value}</div>
+                      <div className="text-sm font-medium text-gray-900">{metric.label}</div>
+                      <div className="text-xs text-gray-500">{metric.note}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Go-to-Market */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.goToMarket.title} />
+
+              <div className="space-y-6">
+                {businessPlan.goToMarket.phases.map((phase, i) => (
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{phase.phase}: {phase.strategy}</h4>
+                        <span className="text-sm text-gray-500">{phase.timeline}</span>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Tactics</h5>
+                        <ul className="space-y-1">
+                          {phase.tactics.map((tactic, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                              <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
+                              {tactic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Success Metrics</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {phase.metrics.map((metric, j) => (
+                            <span key={j} className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
+                              {metric}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6">
+                <h4 className="font-medium text-gray-900 mb-3">Distribution Channels</h4>
+                <div className="grid md:grid-cols-3 gap-3">
+                  {businessPlan.goToMarket.channels.map((channel, i) => (
+                    <div key={i} className="p-3 border border-gray-200 rounded-lg">
+                      <h5 className="font-medium text-gray-900 text-sm">{channel.name}</h5>
+                      <p className="text-xs text-gray-600 mt-1">{channel.description}</p>
+                      <div className="flex gap-2 mt-2">
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.cost === 'Low' ? 'bg-green-100 text-green-700' :
+                          channel.cost === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-red-100 text-red-700'
+                        }`}>
+                          {channel.cost} cost
+                        </span>
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.effectiveness.includes('High') ? 'bg-green-100 text-green-700' :
+                          'bg-yellow-100 text-yellow-700'
+                        }`}>
+                          {channel.effectiveness}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Team */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.team.title} />
+
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                {businessPlan.team.currentNeeds.map((need, i) => (
+                  <div key={i} className="p-4 border border-gray-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">{need.role}</h4>
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        need.priority === 'Critical' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
+                      }`}>
+                        {need.priority}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-600">{need.skills}</p>
+                    <span className="inline-block mt-2 px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">
+                      {need.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Advisory Board Needs</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.team.advisorNeeds.map((advisor, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                        <Award className="w-4 h-4 text-orange-500" />
+                        {advisor}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Organization Plan</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Year 1:</span> {businessPlan.team.orgPlan.year1}</p>
+                    <p><span className="font-medium">Year 2:</span> {businessPlan.team.orgPlan.year2}</p>
+                    <p><span className="font-medium">Year 3:</span> {businessPlan.team.orgPlan.year3}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Risks */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Shield} title={businessPlan.risks.title} />
+
+              <div className="space-y-4">
+                {businessPlan.risks.risks.map((risk, i) => (
+                  <ExpandableSection key={i} title={
+                    <div className="flex items-center gap-3">
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        risk.severity === 'High' ? 'bg-red-100 text-red-700' :
+                        risk.severity === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                        'bg-green-100 text-green-700'
+                      }`}>
+                        {risk.severity}
+                      </span>
+                      <span>{risk.risk}</span>
+                    </div>
+                  }>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Likelihood:</span>
+                        <span className="ml-2 text-sm text-gray-600">{risk.likelihood}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Description:</span>
+                        <p className="text-sm text-gray-600 mt-1">{risk.description}</p>
+                      </div>
+                      <div className="p-3 bg-green-50 rounded">
+                        <span className="text-sm font-medium text-green-800">Mitigation:</span>
+                        <p className="text-sm text-gray-700 mt-1">{risk.mitigation}</p>
+                      </div>
+                    </div>
+                  </ExpandableSection>
+                ))}
+              </div>
+            </section>
+
+            {/* Milestones */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.milestones.title} />
+
+              <div className="relative">
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-orange-200" />
+                <div className="space-y-4">
+                  {businessPlan.milestones.items.map((item, i) => (
+                    <div key={i} className="relative pl-10">
+                      <div className="absolute left-2 w-4 h-4 rounded-full bg-orange-500 border-2 border-white" />
+                      <div className="p-3 bg-gray-50 rounded-lg">
+                        <span className="text-sm font-medium text-orange-600">{item.timeline}</span>
+                        <p className="text-gray-700 mt-1">{item.milestone}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        )}
+
+        {activeTab === 'financials' && (
+          <div className="space-y-8">
+            {/* Financial Projections */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={LineChart} title="Financial Projections" />
+
+              <div className="space-y-8">
+                {/* Scenario 1: With Lender Partnerships */}
+                <div className="p-4 bg-orange-50 rounded-lg border-2 border-orange-200">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-2 py-0.5 bg-orange-600 text-white rounded text-xs font-medium">RECOMMENDED</span>
+                    <h4 className="font-semibold text-gray-900">{businessPlan.financials.scenarios.withLenderPartnerships.name}</h4>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withLenderPartnerships.description}</p>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-orange-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Installers</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">ARR</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {businessPlan.financials.scenarios.withLenderPartnerships.years.map((year, i) => (
+                          <tr key={i} className="border-b border-orange-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.customers}</td>
+                            <td className="py-2 px-3 text-right">{year.arr}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withLenderPartnerships.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-orange-500">•</span>
+                          {assumption}
                         </li>
                       ))}
                     </ul>
                   </div>
-                ))}
-              </div>
 
-              {/* Unit Economics */}
-              <div className="bg-gray-800 rounded-lg p-6">
-                <h3 className="font-semibold text-white mb-4">Unit Economics</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.ltv}</div>
-                    <div className="text-xs text-gray-400">LTV</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.cac}</div>
-                    <div className="text-xs text-gray-400">CAC</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.ltvCacRatio}</div>
-                    <div className="text-xs text-gray-400">LTV:CAC</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.paybackPeriod}</div>
-                    <div className="text-xs text-gray-400">Payback</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.grossMargin}</div>
-                    <div className="text-xs text-gray-400">Gross Margin</div>
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-orange-600">
+                      Funding Required: {businessPlan.financials.scenarios.withLenderPartnerships.fundingRequired}
+                    </span>
                   </div>
                 </div>
-                <ul className="text-sm text-gray-400 space-y-1">
-                  {businessPlan.businessModel.unitEconomics.details.map((d, i) => (
-                    <li key={i}>• {d}</li>
-                  ))}
-                </ul>
-              </div>
-            </ExpandableSection>
 
-            {/* Risks */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Shield className="text-orange-400" /> Risks & Mitigations</div>}
-            >
-              <div className="space-y-3">
-                {businessPlan.risks.map((risk, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-white">{risk.risk}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${
-                        risk.severity === 'High' ? 'bg-red-900/50 text-red-400' :
-                        risk.severity === 'Medium' ? 'bg-yellow-900/50 text-yellow-400' :
-                        'bg-green-900/50 text-green-400'
-                      }`}>
-                        {risk.severity}
-                      </span>
-                    </div>
-                    <p className="text-gray-400 text-sm"><strong className="text-gray-300">Mitigation:</strong> {risk.mitigation}</p>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
+                {/* Scenario 2: Without Lender Partnerships */}
+                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <h4 className="font-semibold text-gray-900 mb-2">{businessPlan.financials.scenarios.withoutLenderPartnerships.name}</h4>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withoutLenderPartnerships.description}</p>
 
-            {/* Milestones */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Award className="text-orange-400" /> Milestones & Timeline</div>}
-            >
-              <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-700" />
-                <div className="space-y-4">
-                  {businessPlan.milestones.map((m, i) => (
-                    <div key={i} className="relative pl-10">
-                      <div className="absolute left-2 w-4 h-4 rounded-full bg-orange-400" />
-                      <div className="bg-gray-800 rounded-lg p-4">
-                        <div className="flex justify-between items-center">
-                          <span className="text-orange-400 font-medium">{m.quarter}</span>
-                        </div>
-                        <p className="text-gray-300">{m.milestone}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ExpandableSection>
-
-            {/* Team */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Users className="text-orange-400" /> Team & Hiring</div>}
-            >
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.team.hiring.map((hire, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{hire.role}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${
-                        hire.priority === 'Critical' ? 'bg-red-900/50 text-red-400' : 'bg-yellow-900/50 text-yellow-400'
-                      }`}>
-                        {hire.priority}
-                      </span>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-1">{hire.description}</p>
-                    <p className="text-xs text-gray-500">Timeline: {hire.timeline}</p>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
-          </div>
-        )}
-
-        {/* Financials Tab */}
-        {activeTab === 'financials' && (
-          <div className="space-y-8">
-            {/* Scenario Comparison */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <LineChart className="text-orange-400" />
-                Financial Projections
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* With Financing */}
-                <div className="bg-gray-800 rounded-xl p-6 border-2 border-orange-600">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Zap className="text-orange-400" />
-                    <h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withFinancing.name}</h3>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-4">{businessPlan.financials.scenarios.withFinancing.description}</p>
-
-                  <div className="overflow-x-auto mb-4">
-                    <table className="w-full text-sm">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
                       <thead>
-                        <tr className="border-b border-gray-700">
-                          <th className="text-left py-2 text-gray-400">Year</th>
-                          <th className="text-right py-2 text-gray-400">Revenue</th>
-                          <th className="text-right py-2 text-gray-400">Installers</th>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Installers</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">ARR</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {businessPlan.financials.scenarios.withFinancing.projections.map((proj, i) => (
-                          <tr key={i} className="border-b border-gray-700/50">
-                            <td className="py-2 text-white">{proj.year}</td>
-                            <td className="py-2 text-right text-orange-400 font-medium">{proj.revenue}</td>
-                            <td className="py-2 text-right text-gray-300">{proj.customers}</td>
+                        {businessPlan.financials.scenarios.withoutLenderPartnerships.years.map((year, i) => (
+                          <tr key={i} className="border-b border-gray-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.customers}</td>
+                            <td className="py-2 px-3 text-right">{year.arr}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
 
-                  <div className="text-xs text-gray-400">
-                    <div className="font-medium mb-1">Key Assumptions:</div>
-                    <ul className="space-y-1">
-                      {businessPlan.financials.scenarios.withFinancing.keyAssumptions.map((a, i) => (
-                        <li key={i}>• {a}</li>
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withoutLenderPartnerships.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-gray-500">•</span>
+                          {assumption}
+                        </li>
                       ))}
                     </ul>
                   </div>
-                </div>
 
-                {/* Without Financing */}
-                <div className="bg-gray-800 rounded-xl p-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Building2 className="text-gray-400" />
-                    <h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withoutFinancing.name}</h3>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-4">{businessPlan.financials.scenarios.withoutFinancing.description}</p>
-
-                  <div className="overflow-x-auto mb-4">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-gray-700">
-                          <th className="text-left py-2 text-gray-400">Year</th>
-                          <th className="text-right py-2 text-gray-400">Revenue</th>
-                          <th className="text-right py-2 text-gray-400">Installers</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {businessPlan.financials.scenarios.withoutFinancing.projections.map((proj, i) => (
-                          <tr key={i} className="border-b border-gray-700/50">
-                            <td className="py-2 text-white">{proj.year}</td>
-                            <td className="py-2 text-right text-orange-400 font-medium">{proj.revenue}</td>
-                            <td className="py-2 text-right text-gray-300">{proj.customers}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className="text-xs text-gray-400">
-                    <div className="font-medium mb-1">Key Assumptions:</div>
-                    <ul className="space-y-1">
-                      {businessPlan.financials.scenarios.withoutFinancing.keyAssumptions.map((a, i) => (
-                        <li key={i}>• {a}</li>
-                      ))}
-                    </ul>
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-gray-600">
+                      Funding Required: {businessPlan.financials.scenarios.withoutLenderPartnerships.fundingRequired}
+                    </span>
                   </div>
                 </div>
               </div>
             </section>
 
             {/* Use of Funds */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <PieChart className="text-orange-400" />
-                Use of Funds
-              </h2>
-              <div className="bg-gray-800 rounded-xl p-6">
-                <div className="grid md:grid-cols-5 gap-4 mb-6">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (
-                    <div key={i} className="text-center">
-                      <div className="text-2xl font-bold text-orange-400">{fund.percentage}%</div>
-                      <div className="text-sm font-medium text-white">{fund.category}</div>
-                      <div className="text-xs text-gray-400">{fund.amount}</div>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.financials.useOfFunds.title} />
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-16 text-right">
+                        <span className="text-lg font-bold text-orange-600">{item.percentage}%</span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="h-6 bg-gray-200 rounded overflow-hidden">
+                          <div
+                            className="h-full bg-orange-500 rounded"
+                            style={{ width: `${item.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="w-32">
+                        <div className="font-medium text-gray-900">{item.amount}</div>
+                        <div className="text-xs text-gray-500">{item.category}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
+
                 <div className="space-y-3">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className="w-32 text-sm text-gray-400">{fund.category}</div>
-                      <div className="flex-1 bg-gray-700 rounded-full h-4">
-                        <div
-                          className="bg-orange-500 h-4 rounded-full"
-                          style={{ width: `${fund.percentage}%` }}
-                        />
-                      </div>
-                      <div className="w-24 text-sm text-right text-white">{fund.amount}</div>
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="p-3 bg-gray-50 rounded">
+                      <h4 className="font-medium text-gray-900 text-sm">{item.category}</h4>
+                      <p className="text-xs text-gray-600 mt-1">{item.detail}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            {/* Sources */}
-            <section>
-              <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <FileText className="text-orange-400" />
-                Sources
-              </h2>
-              <div className="bg-gray-800 rounded-lg p-4">
-                <ul className="space-y-2">
-                  {businessPlan.sources.map((source, i) => (
-                    <li key={i}>
-                      <a
-                        href={source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-orange-400 hover:text-orange-300 flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        {source.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+            {/* Unit Economics Detail */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={BarChart3} title="Unit Economics" />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                  <div key={i} className="p-4 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg text-center">
+                    <div className="text-3xl font-bold text-orange-600">{metric.value}</div>
+                    <div className="text-sm font-medium text-gray-900 mt-1">{metric.label}</div>
+                    <div className="text-xs text-gray-500 mt-1">{metric.note}</div>
+                  </div>
+                ))}
               </div>
             </section>
           </div>
         )}
-      </main>
+
+        {/* Sources */}
+        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
+          <SectionHeader icon={ExternalLink} title="Sources & References" />
+
+          <div className="grid md:grid-cols-2 gap-3">
+            {businessPlan.sources.map((source, i) => (
+              <a
+                key={i}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-medium text-gray-900 text-sm group-hover:text-orange-600 transition-colors">
+                      {source.name}
+                    </h4>
+                    <p className="text-xs text-gray-500 mt-1">{source.detail}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-orange-600 transition-colors flex-shrink-0" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 mt-12">
-        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">
-          <p>{businessPlan.companyName} Business Plan • {businessPlan.version} • {businessPlan.date}</p>
-          <p className="mt-2">Part of the <a href="/tokens/#framework" className="text-orange-400 hover:text-orange-300">Ribbit Token Cap-Ex Framework</a></p>
+      <footer className="bg-gray-900 text-white py-8 mt-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h3 className="text-xl font-bold mb-2">{businessPlan.companyName}</h3>
+          <p className="text-gray-400">{businessPlan.tagline}</p>
+          <p className="text-gray-500 text-sm mt-4">
+            {businessPlan.version} | {businessPlan.date}
+          </p>
+          <div className="mt-6">
+            <a
+              href="https://hyder.me/#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
+            >
+              <Briefcase className="w-5 h-5" />
+              Contact for Investment Inquiries
+            </a>
+          </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }
