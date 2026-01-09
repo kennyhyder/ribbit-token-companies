@@ -131,8 +131,8 @@ function CapExOpportunityCard({ opportunity, index, expanded, onToggle }: { oppo
     'High': 'bg-red-100 text-red-700'
   }
 
-  // Check if this opportunity has a business plan (capex 1-5 and 12 have business plans)
-  const businessPlanIndices = [0, 1, 2, 3, 4, 11] // capex 1-5 and 12
+  // Check if this opportunity has a business plan (capex 1-19 all have business plans)
+  const businessPlanIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] // capex 1-19
   const hasBusinessPlan = businessPlanIndices.includes(index)
 
   return (
