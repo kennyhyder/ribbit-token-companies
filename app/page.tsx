@@ -131,6 +131,9 @@ function CapExOpportunityCard({ opportunity, index, expanded, onToggle }: { oppo
     'High': 'bg-red-100 text-red-700'
   }
 
+  // Check if this is the first opportunity (Auto Glass) which has a business plan
+  const hasBusinessPlan = index === 0
+
   return (
     <div id={`capex-${index + 1}`} className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 card-hover scroll-mt-24">
       <div className="flex items-start justify-between mb-3">
@@ -143,13 +146,22 @@ function CapExOpportunityCard({ opportunity, index, expanded, onToggle }: { oppo
               {opportunity.title}
               <span className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity text-sm ml-2">#</span>
             </h3>
-            <div className="flex gap-2 mt-1">
+            <div className="flex flex-wrap gap-2 mt-1">
               <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700">
                 {opportunity.industry}
               </span>
               <span className={`px-2 py-0.5 rounded text-xs font-medium ${difficultyColors[opportunity.difficulty]}`}>
                 {opportunity.difficulty} Difficulty
               </span>
+              {hasBusinessPlan && (
+                <a
+                  href="/business-plan"
+                  className="px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700 hover:bg-green-200 transition-colors flex items-center gap-1"
+                >
+                  <FileText className="w-3 h-3" />
+                  View Full Business Plan
+                </a>
+              )}
             </div>
           </div>
         </div>
