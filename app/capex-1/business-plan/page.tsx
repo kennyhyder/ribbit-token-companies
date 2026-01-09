@@ -594,11 +594,11 @@ export default function BusinessPlanPage() {
       <header className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <a
-            href="/"
+            href="/tokens/#framework"
             className="inline-flex items-center gap-2 text-blue-100 hover:text-white transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Token Companies
+            Back to Cap-Ex Opportunities
           </a>
 
           <div className="flex items-start justify-between">
