@@ -2,12 +2,36 @@
 
 import { useState } from 'react'
 import {
-  ArrowLeft, Target, TrendingUp, DollarSign, Users, Shield, AlertTriangle,
-  CheckCircle, ExternalLink, ChevronDown, ChevronUp, Building2, Zap, BarChart3,
-  Clock, Wrench, FileText, Briefcase, Lightbulb, Globe, Award, PieChart, LineChart, Activity,
-  Droplets, Gauge, Search, Database
+  ArrowLeft,
+  Target,
+  TrendingUp,
+  DollarSign,
+  Users,
+  Shield,
+  AlertTriangle,
+  CheckCircle,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  Building2,
+  Zap,
+  BarChart3,
+  Clock,
+  Wrench,
+  FileText,
+  Briefcase,
+  Lightbulb,
+  Globe,
+  Award,
+  PieChart,
+  LineChart,
+  Droplets,
+  Gauge,
+  Search,
+  Database
 } from 'lucide-react'
 
+// Business Plan Data
 const businessPlan = {
   companyName: "AquaTrack",
   tagline: "The PowerOutage.us for Water Infrastructure",
@@ -17,7 +41,7 @@ const businessPlan = {
   executiveSummary: {
     problem: "3,000+ water utilities in the US operate aging infrastructure with no aggregated data. Leak detection is fragmented, pipe condition assessments are siloed, and lead pipe replacement mandates lack tracking mechanisms. Utilities can't benchmark or optimize their capital spending.",
     solution: "AquaTrack aggregates leak detection, pipe condition assessments, and replacement tracking into a unified platform. We create the 'PowerOutage.us' equivalent for water infrastructure, giving utilities, regulators, and contractors a single source of truth.",
-    market: "$150B water infrastructure market with $25B in water technology. The $625B Infrastructure Bill includes significant water funding. Lead pipe replacement alone represents $2-10K per service line in capital investment.",
+    market: "$120B water infrastructure market with $18B in smart water management technology. The Bipartisan Infrastructure Law includes $55B for water. Lead pipe replacement alone represents $45-90B in capital investment for 9M+ service lines.",
     ask: "$4.5M Seed Round to build the data aggregation platform, establish utility partnerships, and create the infrastructure intelligence layer that becomes essential to the water sector."
   },
 
@@ -32,20 +56,20 @@ const businessPlan = {
       },
       {
         title: "Fragmented Leak Detection",
-        detail: "Water loss averages 16% nationally, costing $7B+ annually. Leak detection is reactive and uncoordinated. No standardized data format or sharing between utilities.",
-        stat: "16%",
+        detail: "Water loss averages 19.5% nationally, costing $6.4B+ annually. Leak detection is reactive and uncoordinated. No standardized data format or sharing between utilities.",
+        stat: "19.5%",
         statLabel: "average water loss rate"
       },
       {
         title: "Lead Pipe Mandate Without Tracking",
-        detail: "EPA mandates lead service line replacement. Utilities must inventory and replace lines within 10 years. No centralized tracking system exists. Compliance verification fragmented.",
-        stat: "9.2M",
+        detail: "EPA mandates lead service line replacement within 10 years. Utilities must inventory and replace 9M+ lines. No centralized tracking system exists. Compliance verification fragmented.",
+        stat: "9M+",
         statLabel: "lead service lines to replace"
       },
       {
         title: "Capital Blind Spots",
-        detail: "Utilities spend $125B+ annually on infrastructure but lack benchmarking data. No visibility into peer performance. Procurement fragmented across thousands of systems.",
-        stat: "$125B+",
+        detail: "Utilities spend $120B+ annually on infrastructure but lack benchmarking data. No visibility into peer performance. Procurement fragmented across thousands of systems.",
+        stat: "$120B+",
         statLabel: "annual water infrastructure spend"
       }
     ]
@@ -86,178 +110,220 @@ const businessPlan = {
     title: "The Perfect Storm",
     factors: [
       {
-        title: "$625B Infrastructure Bill",
-        detail: "Bipartisan Infrastructure Law includes $55B for water infrastructure. Utilities flush with capital need data to prioritize spending effectively.",
+        title: "$55B Infrastructure Bill",
+        detail: "Bipartisan Infrastructure Law includes $55B for water infrastructure, with $15B specifically for lead service line replacement. Utilities flush with capital need data to prioritize spending effectively.",
         icon: "DollarSign"
       },
       {
         title: "EPA Lead Pipe Mandate",
-        detail: "New EPA rule requires utilities to inventory and replace lead service lines within 10 years. Creates urgent need for tracking and compliance systems.",
+        detail: "October 2024 EPA rule requires utilities to inventory and replace all lead service lines within 10 years. Creates urgent need for tracking and compliance systems across 9M+ service lines.",
         icon: "AlertTriangle"
       },
       {
         title: "Smart Meter & Sensor Proliferation",
-        detail: "AMI smart meters and leak sensors generating data that utilities can't analyze. Need aggregation and intelligence layer.",
+        detail: "AMI smart meters and acoustic leak sensors generating data that utilities can't analyze. Acoustic sensors now account for 25%+ of deployments, with hybrid systems at 35%.",
         icon: "Activity"
       },
       {
         title: "Climate Change Stress",
-        detail: "Extreme weather stressing aging infrastructure. Utilities need predictive capabilities to prevent catastrophic failures.",
+        detail: "Extreme weather stressing aging infrastructure. Water main breaks occur every 2 minutes nationally. Utilities need predictive capabilities to prevent catastrophic failures.",
         icon: "TrendingUp"
+      },
+      {
+        title: "Non-Revenue Water Crisis",
+        detail: "US utilities lose 2.7 trillion gallons annually—19.5% of treated water never reaches customers. This costs $6.4B in uncaptured revenue, driving urgent demand for leak detection analytics.",
+        icon: "Droplets"
       }
     ]
   },
 
   marketSize: {
+    title: "Market Opportunity",
     tam: {
-      value: "$150B",
-      description: "Total addressable market: US water infrastructure including capital projects, operations, and technology",
-      breakdown: [
-        { segment: "Water Infrastructure Capital", value: "$80B", growth: "6.2% CAGR" },
-        { segment: "Water Utility Operations", value: "$45B", growth: "4.1% CAGR" },
-        { segment: "Water Technology", value: "$25B", growth: "8.5% CAGR" }
-      ]
+      value: "$120B",
+      label: "Total Addressable Market",
+      description: "US Water Infrastructure & Management Market 2024",
+      source: "PS Market Research"
     },
     sam: {
-      value: "$4.2B",
-      description: "Serviceable addressable market: Water infrastructure data and analytics across US utilities",
-      breakdown: [
-        { segment: "Utility Data Platforms", value: "$1.5B", growth: "~3,000 utilities" },
-        { segment: "Leak Detection Analytics", value: "$1.2B", growth: "Loss prevention" },
-        { segment: "Asset Management Software", value: "$900M", growth: "Capital planning" },
-        { segment: "Compliance & Reporting", value: "$600M", growth: "Regulatory mandates" }
-      ]
+      value: "$18.3B",
+      label: "Serviceable Addressable Market",
+      description: "Smart Water Management Technology (2024)",
+      source: "Grand View Research"
     },
     som: {
-      value: "$85M",
-      description: "Year 5 revenue target: 400 utility partnerships, regulatory integrations, contractor network",
-      breakdown: [
-        { segment: "Utility SaaS Subscriptions", value: "$42M", growth: "400 utilities @ $105K/yr avg" },
-        { segment: "Regulatory Data Licensing", value: "$18M", growth: "EPA + 50 state agencies" },
-        { segment: "Contractor Data Access", value: "$15M", growth: "2,000 contractors @ $7.5K/yr" },
-        { segment: "Infrastructure Fund Analytics", value: "$10M", growth: "Private capital seeking deployment" }
+      value: "$95M",
+      label: "Serviceable Obtainable Market",
+      description: "Year 5 revenue target with 450 utility partnerships",
+      source: "Conservative capture estimate"
+    },
+    additionalMarkets: [
+      { name: "Smart Water Management (Global)", value: "$18.3B (2024)", cagr: "12.7%" },
+      { name: "Water Leak Detection Systems", value: "$2.4B (2024)", cagr: "7.3%" },
+      { name: "Digital Water Solutions", value: "$53B (2024)", cagr: "30.8%" },
+      { name: "US Water Infrastructure", value: "$120B (2024)", cagr: "5.3%" }
+    ],
+    keyMetrics: [
+      { label: "Lead pipe replacement cost", value: "$2K-$10K per line" },
+      { label: "Non-revenue water loss nationally", value: "19.5%" },
+      { label: "Annual water loss cost to utilities", value: "$6.4B" },
+      { label: "Federal infrastructure funding", value: "$55B over 5 years" }
+    ]
+  },
+
+  competition: {
+    title: "Competitive Landscape",
+    players: [
+      {
+        name: "Xylem (Sensus)",
+        type: "Hardware Leader",
+        marketShare: "~25% smart water tech",
+        strengths: ["Massive installed base", "Hardware + software integration", "Brand recognition", "Global presence"],
+        weaknesses: ["Data siloed per customer", "Legacy technology debt", "No cross-utility analytics", "Slow innovation"],
+        threat: "Partner not competitor"
+      },
+      {
+        name: "Veolia",
+        type: "Utility Operator",
+        marketShare: "~15% private water ops",
+        strengths: ["Operational expertise", "Global scale", "Utility relationships", "Full-service model"],
+        weaknesses: ["Operator not technology company", "No data aggregation play", "Conflict of interest", "Limited SaaS"],
+        threat: "Low"
+      },
+      {
+        name: "Mueller Water Products",
+        type: "Infrastructure Products",
+        marketShare: "~20% water products",
+        strengths: ["Infrastructure product leadership", "Utility relationships", "Distribution network", "Quality reputation"],
+        weaknesses: ["Hardware-focused mindset", "No data strategy", "Limited software capability", "No analytics"],
+        threat: "Low"
+      },
+      {
+        name: "Esri (ArcGIS)",
+        type: "GIS Platform",
+        marketShare: "~60% utility GIS",
+        strengths: ["GIS market leader", "Utility penetration", "Visualization tools", "Integration ecosystem"],
+        weaknesses: ["Generic platform not water-specific", "No cross-utility data", "High implementation costs", "Limited analytics"],
+        threat: "Partner not competitor"
+      }
+    ],
+    ourAdvantage: {
+      title: "AquaTrack's Unfair Advantages",
+      points: [
+        "Network effect: More utilities contributing data = better benchmarking = more accurate predictions = more utility adoption",
+        "Data moat: Only aggregated view of water infrastructure intelligence across US utilities",
+        "Regulatory timing: EPA lead pipe mandate creates urgent 10-year compliance window starting 2024",
+        "Cap-Ex alignment: Infrastructure funds and municipal bonds can finance as infrastructure investment",
+        "No channel conflict: We help utilities and contractors succeed, not compete with equipment vendors"
       ]
     }
   },
 
-  competition: {
-    overview: "The market is served by equipment manufacturers with proprietary data silos and legacy utility software lacking modern analytics. No platform aggregates cross-utility infrastructure data to create industry-wide intelligence.",
-    competitors: [
+  product: {
+    title: "Product Roadmap",
+    phases: [
       {
-        name: "Xylem (Sensus)",
-        description: "Global water technology leader. Smart meters and analytics for individual utilities. Strong installed base but siloed data per customer.",
-        strengths: ["Massive installed base", "Hardware + software integration", "Brand recognition", "Global presence"],
-        weaknesses: ["Data siloed per customer", "Legacy technology debt", "No cross-utility analytics", "Slow innovation"],
-        marketShare: "~25% of smart water tech"
+        phase: "Phase 1: Foundation",
+        timeline: "Months 1-6",
+        deliverables: [
+          "Multi-utility data ingestion platform",
+          "Standardized pipe condition schema",
+          "Lead service line inventory tracking",
+          "Basic leak analytics dashboard",
+          "Utility onboarding and integration tools"
+        ],
+        milestone: "15 pilot utilities, 50,000 assets tracked, $800K ARR"
       },
       {
-        name: "Veolia",
-        description: "World's largest water utility operator. Deep operational expertise but focused on operations, not infrastructure intelligence.",
-        strengths: ["Operational expertise", "Global scale", "Utility relationships", "Full-service model"],
-        weaknesses: ["Operator not technology company", "No data aggregation play", "Conflict of interest", "Limited SaaS"],
-        marketShare: "~15% of private water operations"
+        phase: "Phase 2: Intelligence",
+        timeline: "Months 7-12",
+        deliverables: [
+          "Peer benchmarking analytics",
+          "Leak pattern recognition and prediction",
+          "EPA compliance reporting module",
+          "Regulatory data portal for state agencies",
+          "Contractor bid management integration"
+        ],
+        milestone: "50 utilities, EPA pilot partnership, $3M ARR"
       },
       {
-        name: "Mueller Water Products",
-        description: "Leading pipe and valve manufacturer. Infrastructure products with some smart technology but no platform play.",
-        strengths: ["Infrastructure product leadership", "Utility relationships", "Distribution network", "Quality reputation"],
-        weaknesses: ["Hardware-focused mindset", "No data strategy", "Limited software capability", "No analytics"],
-        marketShare: "~20% of water infrastructure products"
-      },
-      {
-        name: "Esri (ArcGIS Utility Network)",
-        description: "GIS platform widely used by utilities. Strong mapping but not purpose-built for water infrastructure analytics.",
-        strengths: ["GIS market leader", "Utility penetration", "Visualization tools", "Integration ecosystem"],
-        weaknesses: ["Generic platform not water-specific", "No cross-utility data", "High implementation costs", "Limited analytics"],
-        marketShare: "~60% of utility GIS"
+        phase: "Phase 3: Scale",
+        timeline: "Year 2-3",
+        deliverables: [
+          "National utility coverage (400+ utilities)",
+          "Real-time infrastructure health API",
+          "Infrastructure fund analytics products",
+          "Predictive maintenance platform",
+          "International market expansion"
+        ],
+        milestone: "$32M ARR, 5+ state agency partnerships, market leader"
       }
-    ],
-    moat: "Network effects: More utilities contributing data = better benchmarking + more accurate predictions = more utility adoption = more valuable platform. First mover in aggregated water infrastructure intelligence becomes the industry standard."
+    ]
   },
 
   businessModel: {
-    overview: "Multi-sided platform connecting water utilities, regulators, contractors, and infrastructure investors around data transparency, compliance, and capital efficiency.",
+    title: "Business Model",
     revenueStreams: [
       {
         name: "Utility SaaS Subscriptions",
         description: "Annual subscription for utilities to access platform, contribute data, and receive benchmarking analytics",
         pricing: "$50K-$300K/year based on population served",
         margin: "85%",
-        details: [
-          "Data ingestion and standardization",
-          "Leak detection analytics",
-          "Condition assessment tools",
-          "Peer benchmarking reports",
-          "Capital planning support"
-        ]
+        year1Revenue: "$1.8M",
+        year3Revenue: "$20M"
       },
       {
         name: "Regulatory Data Licensing",
         description: "API access to aggregated compliance data for EPA, state agencies, and municipal oversight bodies",
         pricing: "$200K-$1M annual contracts",
         margin: "92%",
-        details: [
-          "Lead pipe inventory aggregation",
-          "Replacement progress tracking",
-          "Compliance verification tools",
-          "Reporting automation",
-          "Audit trail documentation"
-        ]
+        year1Revenue: "$400K",
+        year3Revenue: "$6M"
       },
       {
         name: "Contractor Data Access",
         description: "Subscription for pipe replacement contractors to access project opportunities and compliance requirements",
         pricing: "$5K-$15K/year per contractor",
         margin: "88%",
-        details: [
-          "Project opportunity alerts",
-          "Bid preparation data",
-          "Compliance requirement access",
-          "Utility contact database",
-          "Progress tracking integration"
-        ]
+        year1Revenue: "$300K",
+        year3Revenue: "$3M"
       },
       {
         name: "Infrastructure Fund Analytics",
         description: "Premium analytics for private equity, infrastructure funds, and municipal bond analysts evaluating water investments",
         pricing: "$100K-$500K annual subscriptions",
         margin: "90%",
-        details: [
-          "Asset condition scoring",
-          "Capital needs forecasting",
-          "Risk assessment data",
-          "Utility benchmarking",
-          "Investment due diligence"
-        ]
+        year1Revenue: "$300K",
+        year3Revenue: "$3M"
       }
     ],
     unitEconomics: {
-      ltv: "$420,000",
-      cac: "$42,000",
-      ltvCacRatio: "10:1",
-      paybackPeriod: "11 months",
-      grossMargin: "87%",
-      details: [
-        "Average utility contract: 5 years @ $84K/year",
-        "Expansion revenue from additional modules and data products",
-        "CAC: $28K sales + $14K implementation/onboarding",
-        "High retention due to data integration and switching costs"
+      title: "Unit Economics Per Utility",
+      metrics: [
+        { label: "Customer Acquisition Cost (CAC)", value: "$42,000", note: "Sales + implementation/onboarding" },
+        { label: "Average Contract Value (ACV)", value: "$105,000/yr", note: "Blended across utility sizes" },
+        { label: "Gross Margin", value: "87%", note: "After data ops and support" },
+        { label: "Lifetime Value (LTV)", value: "$420,000", note: "Assuming 5-year retention" },
+        { label: "LTV:CAC Ratio", value: "10:1", note: "Strong unit economics" },
+        { label: "Payback Period", value: "11 months", note: "Fast capital efficiency" }
       ]
     }
   },
 
   financials: {
+    title: "Financial Projections",
     scenarios: {
-      withFinancing: {
+      withCapEx: {
         name: "With Cap-Ex Financing Partnerships",
         description: "Deep integration with infrastructure funds and equipment finance creates capital deployment intelligence layer",
-        projections: [
-          { year: "Y1", revenue: "$2.8M", customers: "45 utilities", highlights: "Platform launch, EPA pilot partnership" },
-          { year: "Y2", revenue: "$12M", customers: "120 utilities", highlights: "5 state agency partnerships, contractor network" },
-          { year: "Y3", revenue: "$32M", customers: "220 utilities", highlights: "Infrastructure fund clients, national coverage" },
-          { year: "Y4", revenue: "$58M", customers: "320 utilities", highlights: "Predictive analytics launch, M&A interest" },
-          { year: "Y5", revenue: "$95M", customers: "450 utilities", highlights: "Market leadership, international expansion" }
+        years: [
+          { year: 1, revenue: "$2.8M", utilities: 45, arr: "$2.8M", burn: "$1.7M", runway: "18 months" },
+          { year: 2, revenue: "$12M", utilities: 120, arr: "$12M", burn: "$0", runway: "Profitable" },
+          { year: 3, revenue: "$32M", utilities: 220, arr: "$32M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$58M", utilities: 320, arr: "$58M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$95M", utilities: 450, arr: "$95M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$4.5M Seed",
         keyAssumptions: [
           "EPA partnership drives initial regulatory adoption",
           "Infrastructure funds account for 15% of revenue by Y3",
@@ -265,16 +331,17 @@ const businessPlan = {
           "Data network effects accelerate growth in Y3+"
         ]
       },
-      withoutFinancing: {
+      withoutCapEx: {
         name: "Without Cap-Ex Financing Angle",
         description: "Pure utility SaaS focus with organic regulatory adoption",
-        projections: [
-          { year: "Y1", revenue: "$1.8M", customers: "30 utilities", highlights: "Platform MVP, regional focus" },
-          { year: "Y2", revenue: "$6.5M", customers: "75 utilities", highlights: "Compliance module, multi-state" },
-          { year: "Y3", revenue: "$18M", customers: "140 utilities", highlights: "Benchmarking network" },
-          { year: "Y4", revenue: "$35M", customers: "220 utilities", highlights: "Regulatory traction" },
-          { year: "Y5", revenue: "$58M", customers: "300 utilities", highlights: "Sustainable growth, profitable" }
+        years: [
+          { year: 1, revenue: "$1.8M", utilities: 30, arr: "$1.8M", burn: "$2.2M", runway: "24 months" },
+          { year: 2, revenue: "$6.5M", utilities: 75, arr: "$6.5M", burn: "$500K", runway: "18 months" },
+          { year: 3, revenue: "$18M", utilities: 140, arr: "$18M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$35M", utilities: 220, arr: "$35M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$58M", utilities: 300, arr: "$58M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$3.5M Seed",
         keyAssumptions: [
           "Utility sales cycles drive growth rate",
           "Slower regulatory adoption without capital partner credibility",
@@ -283,123 +350,239 @@ const businessPlan = {
         ]
       }
     },
-    useOfFunds: [
-      { category: "Engineering & Product", percentage: 42, amount: "$1.89M", details: "Data platform build, analytics engine, integrations" },
-      { category: "Sales & Partnerships", percentage: 28, amount: "$1.26M", details: "Utility sales, regulatory BD, contractor partnerships" },
-      { category: "Data Operations", percentage: 15, amount: "$675K", details: "Data ingestion, standardization, quality assurance" },
-      { category: "Marketing", percentage: 10, amount: "$450K", details: "Industry positioning, conferences, content marketing" },
-      { category: "G&A", percentage: 5, amount: "$225K", details: "Legal, compliance, administration" }
+    useOfFunds: {
+      title: "Use of $4.5M Seed Funds",
+      breakdown: [
+        { category: "Engineering & Product", amount: "$1.89M", percentage: 42, detail: "Data platform build, analytics engine, utility integrations" },
+        { category: "Sales & Partnerships", amount: "$1.26M", percentage: 28, detail: "Utility sales, regulatory BD, contractor partnerships" },
+        { category: "Data Operations", amount: "$675K", percentage: 15, detail: "Data ingestion, standardization, quality assurance" },
+        { category: "Marketing", amount: "$450K", percentage: 10, detail: "Industry positioning, conferences, content marketing" },
+        { category: "G&A & Buffer", amount: "$225K", percentage: 5, detail: "Legal, compliance, administration" }
+      ]
+    }
+  },
+
+  goToMarket: {
+    title: "Go-to-Market Strategy",
+    phases: [
+      {
+        phase: "Land",
+        timeline: "Months 1-6",
+        strategy: "Regulatory-Driven Entry",
+        tactics: [
+          "Target utilities with urgent lead pipe compliance needs (older Northeast & Midwest systems)",
+          "Partner with EPA Office of Water for pilot data sharing agreement",
+          "Offer free lead inventory tracking to build initial utility network",
+          "Focus on progressive utilities with smart meter deployments"
+        ],
+        metrics: ["15 pilot utilities", "EPA data partnership", "50K assets tracked"]
+      },
+      {
+        phase: "Expand",
+        timeline: "Months 7-12",
+        strategy: "State Agency Partnerships",
+        tactics: [
+          "Approach state drinking water agencies with compliance oversight tools",
+          "Build contractor network for lead pipe replacement ecosystem",
+          "Launch peer benchmarking to drive utility FOMO",
+          "Integrate with major smart meter platforms (Sensus, Itron, Badger)"
+        ],
+        metrics: ["50 utilities", "3 state agency pilots", "95% data accuracy"]
+      },
+      {
+        phase: "Dominate",
+        timeline: "Year 2+",
+        strategy: "Network Effect Acceleration",
+        tactics: [
+          "Leverage utility network for infrastructure fund analytics",
+          "Expand to leak detection and condition assessment modules",
+          "Launch API for third-party integrations",
+          "Build national coverage map as marketing asset"
+        ],
+        metrics: ["400+ utilities", "National coverage", "API ecosystem"]
+      }
+    ],
+    channels: [
+      { name: "Regulatory Partnerships", description: "EPA and state agency co-marketing for compliance tools", cost: "Low", effectiveness: "Very High" },
+      { name: "Direct Sales", description: "Field sales team targeting large and medium utilities", cost: "High", effectiveness: "High" },
+      { name: "Industry Associations", description: "AWWA, AMWA conferences and thought leadership", cost: "Medium", effectiveness: "High" },
+      { name: "Equipment Vendor Referrals", description: "Partnerships with Xylem, Itron, Mueller for lead routing", cost: "Low", effectiveness: "Medium" },
+      { name: "Content Marketing", description: "Compliance guides, benchmarking reports, webinars", cost: "Medium", effectiveness: "Medium" }
     ]
   },
 
-  risks: [
-    {
-      risk: "Utility Data Sharing Reluctance",
-      severity: "High",
-      mitigation: "Start with non-sensitive aggregated data. Offer clear value exchange (benchmarking) for data contribution. Build trust through regulatory partnerships."
-    },
-    {
-      risk: "Long Utility Sales Cycles",
-      severity: "High",
-      mitigation: "Partner with industry associations for credibility. Target progressive utilities as early adopters. Offer free tier for data contribution to build network."
-    },
-    {
-      risk: "Regulatory Dependency",
-      severity: "Medium",
-      mitigation: "Diversify revenue across utilities, contractors, and investors. Build utility value independent of compliance mandates. Multiple regulatory relationships."
-    },
-    {
-      risk: "Data Quality & Standardization",
-      severity: "Medium",
-      mitigation: "Invest heavily in data ingestion and normalization. Build flexible schema for varied data formats. Quality scoring and validation systems."
-    },
-    {
-      risk: "Incumbent Competition",
-      severity: "Medium",
-      mitigation: "Move fast to establish network effects. Focus on aggregation layer vs. point solutions. Partner with (not compete against) sensor/meter vendors."
-    },
-    {
-      risk: "Cybersecurity & Critical Infrastructure",
-      severity: "High",
-      mitigation: "SOC 2 Type II from day one. No operational control access, data-only platform. Partner with DHS/CISA for security validation."
-    }
-  ],
-
-  milestones: [
-    { quarter: "Q1 2026", milestone: "Close seed round, hire core engineering team", status: "target" },
-    { quarter: "Q2 2026", milestone: "Launch MVP with 15 pilot utilities across 3 states", status: "target" },
-    { quarter: "Q3 2026", milestone: "EPA data sharing pilot agreement", status: "target" },
-    { quarter: "Q4 2026", milestone: "50 utilities, lead pipe tracking module, $3M ARR", status: "target" },
-    { quarter: "Q1 2027", milestone: "First state agency regulatory partnership", status: "target" },
-    { quarter: "Q2 2027", milestone: "Contractor network launch, 100 utilities", status: "target" },
-    { quarter: "Q3 2027", milestone: "Infrastructure fund analytics product", status: "target" },
-    { quarter: "Q4 2027", milestone: "Series A at $80-100M valuation", status: "target" }
-  ],
-
   team: {
-    hiring: [
-      { role: "CTO", priority: "Critical", timeline: "Immediate", description: "Data platform architecture, utility integrations, analytics systems" },
-      { role: "VP Sales", priority: "Critical", timeline: "Q1 2026", description: "Utility sales, regulatory relationships, enterprise deals" },
-      { role: "Head of Data", priority: "Critical", timeline: "Q2 2026", description: "Data standardization, quality systems, analytics development" },
-      { role: "VP Partnerships", priority: "High", timeline: "Q2 2026", description: "Regulatory BD, contractor network, industry associations" }
+    title: "Team Requirements",
+    currentNeeds: [
+      {
+        role: "CEO / Founder",
+        skills: "Water industry experience, fundraising, regulatory relationships, platform vision",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "CTO",
+        skills: "Data platform architecture, utility integrations, analytics systems, mapping",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "VP Sales",
+        skills: "Utility industry experience, B2B enterprise sales, regulatory BD",
+        status: "Seeking",
+        priority: "High"
+      },
+      {
+        role: "Head of Data",
+        skills: "Data standardization, quality systems, analytics development, ML/AI",
+        status: "Seeking",
+        priority: "High"
+      }
+    ],
+    advisorNeeds: [
+      "Former EPA Office of Water executive",
+      "Large municipal water utility director",
+      "Water infrastructure fund partner",
+      "Utility SaaS founder (ServiceTitan, Urbint alumni)"
+    ],
+    orgPlan: {
+      year1: "15 FTEs: 6 engineering, 4 sales, 3 data ops, 2 G&A",
+      year2: "35 FTEs: 12 engineering, 12 sales, 6 data ops, 5 G&A",
+      year3: "80 FTEs: 25 engineering, 30 sales, 15 data ops, 10 G&A"
+    }
+  },
+
+  risks: {
+    title: "Risks & Mitigations",
+    risks: [
+      {
+        risk: "Utility Data Sharing Reluctance",
+        severity: "High",
+        likelihood: "Medium",
+        description: "Water utilities may resist sharing infrastructure data due to security concerns, competitive worries, or bureaucratic inertia. Public utilities face unique political pressures.",
+        mitigation: "Start with non-sensitive aggregated data. Offer clear value exchange (benchmarking) for data contribution. Build trust through EPA partnership validation. Anonymize data for peer comparisons."
+      },
+      {
+        risk: "Long Utility Sales Cycles",
+        severity: "High",
+        likelihood: "High",
+        description: "Municipal procurement can take 12-24 months. Budget cycles, board approvals, and RFP processes create significant delays. Risk of running out of runway before revenue.",
+        mitigation: "EPA compliance urgency shortens cycles. Offer free tier for data contribution to build network. Target progressive utilities first. Build recurring SaaS while larger deals develop."
+      },
+      {
+        risk: "Regulatory Priority Shift",
+        severity: "Medium",
+        likelihood: "Low",
+        description: "EPA lead pipe mandate could be delayed, modified, or defunded by future administrations. Reduces urgency for compliance tools.",
+        mitigation: "Diversify revenue across utilities, contractors, and investors. Build utility value independent of compliance mandates. Lead pipe inventory is one module, not entire platform."
+      },
+      {
+        risk: "Data Quality & Standardization",
+        severity: "Medium",
+        likelihood: "Medium",
+        description: "Utility data formats vary wildly. GIS systems, asset management tools, and reporting standards differ across 3,000+ utilities. Data cleaning may be resource-intensive.",
+        mitigation: "Invest heavily in data ingestion and normalization. Build flexible schema for varied data formats. Quality scoring and validation systems. Automate data transformation where possible."
+      },
+      {
+        risk: "Incumbent Competition",
+        severity: "Medium",
+        likelihood: "Medium",
+        description: "Xylem, Veolia, or Esri could build competing aggregation platform. Incumbents have existing utility relationships and resources.",
+        mitigation: "Move fast to establish network effects. Focus on aggregation layer vs. point solutions. Partner with (not compete against) equipment vendors. Data moat grows with each utility."
+      },
+      {
+        risk: "Cybersecurity & Critical Infrastructure",
+        severity: "High",
+        likelihood: "Low",
+        description: "Water infrastructure is critical national infrastructure. Security incidents could cause regulatory scrutiny, customer churn, or worse.",
+        mitigation: "SOC 2 Type II from day one. No operational control access—data-only platform. Partner with DHS/CISA for security validation. Cyber insurance and incident response planning."
+      }
+    ]
+  },
+
+  milestones: {
+    title: "Key Milestones",
+    items: [
+      { timeline: "Q1 2026", milestone: "Close seed round, hire core engineering and sales team", status: "planned" },
+      { timeline: "Q2 2026", milestone: "Launch MVP with 15 pilot utilities across 3 states", status: "planned" },
+      { timeline: "Q3 2026", milestone: "EPA data sharing pilot agreement, compliance module live", status: "planned" },
+      { timeline: "Q4 2026", milestone: "50 utilities, lead pipe tracking GA, $3M ARR", status: "planned" },
+      { timeline: "Q1 2027", milestone: "First state agency regulatory partnership", status: "planned" },
+      { timeline: "Q2 2027", milestone: "Contractor network launch, 100 utilities, peer benchmarking", status: "planned" },
+      { timeline: "Q3 2027", milestone: "Infrastructure fund analytics product, $8M ARR", status: "planned" },
+      { timeline: "Q4 2027", milestone: "Series A at $80-100M valuation, 150+ utilities", status: "planned" }
     ]
   },
 
   ask: {
-    amount: "$4.5M",
-    round: "Seed",
-    timeline: "Q1 2026",
-    terms: "Priced round, standard seed terms",
-    use: "Build data aggregation platform, establish utility partnerships, develop regulatory relationships, create infrastructure intelligence layer",
-    targetInvestors: [
-      "Climate tech and water-focused investors",
-      "Infrastructure and govtech VCs",
-      "Strategic water technology companies",
-      "Impact investors focused on critical infrastructure"
-    ]
+    title: "The Ask",
+    amount: "$4,500,000",
+    round: "Seed Round",
+    terms: "Priced round, standard seed terms at $18M post-money valuation",
+    useOfFunds: [
+      "Build data aggregation platform and analytics engine",
+      "Establish 50+ utility partnerships across multiple states",
+      "Develop EPA regulatory relationship and compliance tools",
+      "Create infrastructure intelligence layer for capital deployment"
+    ],
+    timeline: "18-month runway to Series A milestones",
+    seriesA: {
+      timing: "Q4 2027",
+      metrics: "$8-12M ARR, 150+ utilities, 3+ state agency partnerships",
+      raise: "$15-25M at $80-100M valuation"
+    }
   },
 
   sources: [
-    { name: "EPA - Drinking Water Infrastructure Needs Survey", url: "https://www.epa.gov/ground-water-and-drinking-water/drinking-water-infrastructure-needs-survey" },
-    { name: "American Water Works Association - State of the Water Industry", url: "https://www.awwa.org/resources-tools/water-knowledge/state-of-the-water-industry" },
-    { name: "American Society of Civil Engineers - Infrastructure Report Card", url: "https://infrastructurereportcard.org/cat-item/drinking-water-infrastructure/" },
-    { name: "Bluefield Research - US Water Market Outlook", url: "https://www.bluefieldresearch.com/research/us-water-market-outlook" },
-    { name: "White House - Bipartisan Infrastructure Law Water Investments", url: "https://www.whitehouse.gov/briefing-room/statements-releases/2022/02/water/" },
-    { name: "EPA - Lead and Copper Rule Revisions", url: "https://www.epa.gov/ground-water-and-drinking-water/lead-and-copper-rule" }
+    { name: "Grand View Research - Smart Water Management Market", url: "https://www.grandviewresearch.com/industry-analysis/smart-water-management-swm-market", detail: "$18.3B in 2024, 12.7% CAGR to 2033" },
+    { name: "PS Market Research - US Water Infrastructure", url: "https://www.psmarketresearch.com/market-analysis/us-water-infrastructure-management-market", detail: "$120.2B in 2024, 5.3% CAGR to 2032" },
+    { name: "EPA - Lead and Copper Rule Improvements", url: "https://www.epa.gov/newsreleases/biden-harris-administration-issues-final-rule-requiring-replacement-lead-pipes-within", detail: "October 2024 mandate for 10-year replacement" },
+    { name: "Bluefield Research - Non-Revenue Water", url: "https://www.bluefieldresearch.com/ns/water-losses-cost-u-s-utilities-us6-4-billion-annually/", detail: "19.5% loss rate, $6.4B annual cost" },
+    { name: "Research and Markets - Water Leak Detection", url: "https://www.researchandmarkets.com/reports/6110435/water-leak-detection-systems-global-strategic", detail: "$2.4B in 2024, 7.3% CAGR to 2030" },
+    { name: "BCC Research - Smart Water Management", url: "https://www.bccresearch.com/pressroom/mst/global-smart-water-management-market-projected-to-reach-$437-billion", detail: "$43.7B projected by 2030, 13% CAGR" },
+    { name: "ASCE Infrastructure Report Card - Drinking Water", url: "https://infrastructurereportcard.org/cat-item/drinking-water-infrastructure/", detail: "Infrastructure grade and investment needs" },
+    { name: "White House - Bipartisan Infrastructure Law", url: "https://www.whitehouse.gov/briefing-room/statements-releases/2022/02/water/", detail: "$55B for water infrastructure over 5 years" }
   ]
 }
 
-function ExpandableSection({ title, children, defaultOpen = false }: {
-  title: React.ReactNode
-  children: React.ReactNode
-  defaultOpen?: boolean
-}) {
-  const [isOpen, setIsOpen] = useState(defaultOpen)
-
+// Helper Components
+function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle?: string }) {
   return (
-    <div className="border border-zinc-600 rounded-lg overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-zinc-800 flex items-center justify-between hover:bg-zinc-750 transition-colors"
-      >
-        <div className="font-semibold text-lg text-white">{title}</div>
-        {isOpen ? <ChevronUp className="text-zinc-400" /> : <ChevronDown className="text-zinc-400" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-zinc-900">
-          {children}
+    <div className="mb-6">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center">
+          <Icon className="w-5 h-5 text-cyan-600" />
         </div>
-      )}
+        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+      </div>
+      {subtitle && <p className="text-gray-600 ml-13">{subtitle}</p>}
     </div>
   )
 }
 
-function StatCard({ value, label, icon: Icon }: { value: string; label: string; icon: any }) {
+function StatCard({ value, label, sublabel }: { value: string; label: string; sublabel?: string }) {
   return (
-    <div className="bg-zinc-800 rounded-lg p-4 text-center">
-      <Icon className="w-6 h-6 text-sky-400 mx-auto mb-2" />
-      <div className="text-2xl font-bold text-white">{value}</div>
-      <div className="text-sm text-zinc-400">{label}</div>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+      <div className="text-3xl font-bold text-cyan-600">{value}</div>
+      <div className="text-sm font-medium text-gray-900 mt-1">{label}</div>
+      {sublabel && <div className="text-xs text-gray-500 mt-1">{sublabel}</div>}
+    </div>
+  )
+}
+
+function ExpandableSection({ title, children, defaultOpen = false }: { title: React.ReactNode; children: React.ReactNode; defaultOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+      >
+        <div className="font-medium text-gray-900">{title}</div>
+        {isOpen ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+      </button>
+      {isOpen && <div className="p-4 border-t border-gray-200">{children}</div>}
     </div>
   )
 }
@@ -408,551 +591,813 @@ export default function BusinessPlanPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'detailed' | 'financials'>('overview')
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <main className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-zinc-900 border-b border-zinc-700">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-start gap-4">
-              <a href="/tokens/#framework" className="text-zinc-400 hover:text-white transition-colors mt-1">
-                <ArrowLeft className="w-5 h-5" />
-              </a>
-              <div>
-                <h1 className="text-2xl font-bold text-sky-300">{businessPlan.companyName}</h1>
-                <p className="text-zinc-400 text-sm">{businessPlan.tagline}</p>
+      <header className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <a
+            href="/tokens/#framework"
+            className="inline-flex items-center gap-2 text-cyan-100 hover:text-white transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Cap-Ex Opportunities
+          </a>
+
+          <div className="flex items-start justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Droplets className="w-6 h-6" />
+                </div>
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold">{businessPlan.companyName}</h1>
+                  <p className="text-cyan-100">{businessPlan.tagline}</p>
+                </div>
               </div>
             </div>
-            <div className="text-right text-sm text-zinc-500">
-              <div>{businessPlan.version}</div>
-              <div>{businessPlan.date}</div>
+            <div className="text-right">
+              <div className="text-sm text-cyan-200">{businessPlan.version}</div>
+              <div className="text-sm text-cyan-200">{businessPlan.date}</div>
+            </div>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.ask.amount}</div>
+              <div className="text-sm text-cyan-100">Seed Round</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.marketSize.sam.value}</div>
+              <div className="text-sm text-cyan-100">Smart Water Market (2024)</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">12.7%</div>
+              <div className="text-sm text-cyan-100">Market CAGR</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">10:1</div>
+              <div className="text-sm text-cyan-100">LTV:CAC</div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Tab Navigation */}
-      <nav className="bg-zinc-900 border-b border-zinc-700 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex gap-1">
-            {[
-              { id: 'overview', label: 'Overview' },
-              { id: 'detailed', label: 'Detailed Plan' },
-              { id: 'financials', label: 'Financials' }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-3 text-sm font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? 'text-sky-300 border-b-2 border-sky-400'
-                    : 'text-zinc-400 hover:text-white'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-2 py-3">
+            <button
+              onClick={() => setActiveTab('overview')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'overview' ? 'bg-cyan-100 text-cyan-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <FileText className="w-4 h-4 inline mr-2" />
+              Executive Summary
+            </button>
+            <button
+              onClick={() => setActiveTab('detailed')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'detailed' ? 'bg-cyan-100 text-cyan-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <Briefcase className="w-4 h-4 inline mr-2" />
+              Full Plan
+            </button>
+            <button
+              onClick={() => setActiveTab('financials')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'financials' ? 'bg-cyan-100 text-cyan-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <LineChart className="w-4 h-4 inline mr-2" />
+              Financials
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 py-8">
-        {/* Overview Tab */}
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {activeTab === 'overview' && (
           <div className="space-y-8">
             {/* Executive Summary */}
-            <section className="bg-gradient-to-r from-zinc-800/50 to-sky-900/30 rounded-xl p-8 border border-zinc-600">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Target className="text-sky-400" />
-                Executive Summary
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sky-300 font-semibold mb-2">The Problem</h3>
-                  <p className="text-zinc-300">{businessPlan.executiveSummary.problem}</p>
-                </div>
-                <div>
-                  <h3 className="text-sky-300 font-semibold mb-2">Our Solution</h3>
-                  <p className="text-zinc-300">{businessPlan.executiveSummary.solution}</p>
-                </div>
-                <div>
-                  <h3 className="text-sky-300 font-semibold mb-2">Market Opportunity</h3>
-                  <p className="text-zinc-300">{businessPlan.executiveSummary.market}</p>
-                </div>
-                <div>
-                  <h3 className="text-sky-300 font-semibold mb-2">The Ask</h3>
-                  <p className="text-zinc-300">{businessPlan.executiveSummary.ask}</p>
-                </div>
-              </div>
-            </section>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={FileText} title="Executive Summary" />
 
-            {/* Key Stats */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6">Key Metrics</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <StatCard value="$150B" label="TAM" icon={Globe} />
-                <StatCard value="9.2M" label="Lead Pipes to Replace" icon={Wrench} />
-                <StatCard value="10:1" label="LTV:CAC Ratio" icon={BarChart3} />
-                <StatCard value="$4.5M" label="Seed Ask" icon={DollarSign} />
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+                    <h4 className="font-semibold text-red-800 mb-2">The Problem</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.problem}</p>
+                  </div>
+
+                  <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                    <h4 className="font-semibold text-green-800 mb-2">Our Solution</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.solution}</p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <h4 className="font-semibold text-blue-800 mb-2">Market Opportunity</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.market}</p>
+                  </div>
+
+                  <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                    <h4 className="font-semibold text-purple-800 mb-2">The Ask</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.ask}</p>
+                  </div>
+                </div>
               </div>
             </section>
 
             {/* Problem */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <AlertTriangle className="text-red-400" />
-                {businessPlan.problem.title}
-              </h2>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={AlertTriangle} title={businessPlan.problem.title} />
+
               <div className="grid md:grid-cols-2 gap-4">
                 {businessPlan.problem.points.map((point, i) => (
-                  <div key={i} className="bg-zinc-800 rounded-lg p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-semibold text-white">{point.title}</h3>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-red-400">{point.stat}</div>
-                        <div className="text-xs text-zinc-500">{point.statLabel}</div>
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600">{point.stat}</div>
+                        <div className="text-xs text-gray-500">{point.statLabel}</div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{point.title}</h4>
+                        <p className="text-sm text-gray-600 mt-1">{point.detail}</p>
                       </div>
                     </div>
-                    <p className="text-zinc-400 text-sm">{point.detail}</p>
                   </div>
                 ))}
               </div>
             </section>
 
             {/* Solution */}
-            <section>
-              <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                <Lightbulb className="text-sky-400" />
-                {businessPlan.solution.title}
-              </h2>
-              <p className="text-zinc-400 mb-6">{businessPlan.solution.tagline}</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {businessPlan.solution.pillars.map((pillar, i) => {
-                  const IconComponent = pillar.icon === 'Database' ? Database :
-                    pillar.icon === 'Search' ? Search :
-                    pillar.icon === 'Gauge' ? Gauge :
-                    pillar.icon === 'Droplets' ? Droplets : Database
-                  return (
-                    <div key={i} className="bg-zinc-800 rounded-lg p-5">
-                      <IconComponent className="w-8 h-8 text-sky-400 mb-3" />
-                      <h3 className="font-semibold text-white mb-2">{pillar.title}</h3>
-                      <p className="text-zinc-400 text-sm mb-3">{pillar.description}</p>
-                      <ul className="space-y-1">
-                        {pillar.features.map((feature, j) => (
-                          <li key={j} className="text-xs text-zinc-500 flex items-center gap-1">
-                            <CheckCircle className="w-3 h-3 text-sky-400" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Lightbulb} title={businessPlan.solution.title} subtitle={businessPlan.solution.tagline} />
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {businessPlan.solution.pillars.map((pillar, i) => (
+                  <div key={i} className="p-4 bg-cyan-50 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-2">{pillar.title}</h4>
+                    <p className="text-sm text-gray-600 mb-3">{pillar.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {pillar.features.map((feature, j) => (
+                        <span key={j} className="px-2 py-0.5 bg-cyan-100 text-cyan-700 rounded text-xs">
+                          {feature}
+                        </span>
+                      ))}
                     </div>
-                  )
-                })}
+                  </div>
+                ))}
               </div>
             </section>
 
-            {/* The Ask */}
-            <section className="bg-gradient-to-r from-zinc-800/30 to-sky-900/20 rounded-xl p-8 border border-zinc-600">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <DollarSign className="text-sky-400" />
-                The Ask
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-sky-300">{businessPlan.ask.amount}</div>
-                  <div className="text-zinc-400">{businessPlan.ask.round} Round</div>
+            {/* Why Now */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Clock} title={businessPlan.whyNow.title} />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.whyNow.factors.map((factor, i) => (
+                  <div key={i} className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <h4 className="font-semibold text-gray-900 mb-2">{factor.title}</h4>
+                    <p className="text-sm text-gray-600">{factor.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Market Size */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={PieChart} title={businessPlan.marketSize.title} />
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 bg-gradient-to-br from-cyan-500 to-blue-500 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.tam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.tam.label}</div>
+                  <div className="text-sm text-cyan-100 mt-1">{businessPlan.marketSize.tam.description}</div>
                 </div>
-                <div className="md:col-span-2">
-                  <p className="text-zinc-300 mb-4">{businessPlan.ask.use}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {businessPlan.ask.targetInvestors.map((investor, i) => (
-                      <span key={i} className="px-3 py-1 bg-zinc-800 rounded-full text-sm text-zinc-300">
-                        {investor}
-                      </span>
+                <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.sam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.sam.label}</div>
+                  <div className="text-sm text-green-100 mt-1">{businessPlan.marketSize.sam.description}</div>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.som.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.som.label}</div>
+                  <div className="text-sm text-purple-100 mt-1">{businessPlan.marketSize.som.description}</div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Adjacent Markets</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.additionalMarkets.map((market, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{market.name}</span>
+                        <span className="text-sm font-medium text-gray-900">{market.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Key Metrics</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.keyMetrics.map((metric, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{metric.label}</span>
+                        <span className="text-sm font-medium text-gray-900">{metric.value}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
             </section>
+
+            {/* The Ask */}
+            <section className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-xl shadow-sm p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl font-bold mb-2">{businessPlan.ask.title}</h2>
+                <div className="text-5xl font-bold mb-2">{businessPlan.ask.amount}</div>
+                <div className="text-xl text-cyan-100">{businessPlan.ask.round}</div>
+                <div className="text-cyan-200 mt-2">{businessPlan.ask.terms}</div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Use of Funds</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.ask.useOfFunds.map((use, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                        <span>{use}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Series A Target</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="text-cyan-200">Timing:</span> {businessPlan.ask.seriesA.timing}</p>
+                    <p><span className="text-cyan-200">Metrics:</span> {businessPlan.ask.seriesA.metrics}</p>
+                    <p><span className="text-cyan-200">Raise:</span> {businessPlan.ask.seriesA.raise}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         )}
 
-        {/* Detailed Plan Tab */}
         {activeTab === 'detailed' && (
-          <div className="space-y-4">
-            {/* Why Now */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Clock className="text-sky-400" /> Why Now?</div>}
-              defaultOpen={true}
-            >
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.whyNow.factors.map((factor, i) => {
-                  const IconComponent = factor.icon === 'DollarSign' ? DollarSign :
-                    factor.icon === 'AlertTriangle' ? AlertTriangle :
-                    factor.icon === 'Activity' ? Activity :
-                    factor.icon === 'TrendingUp' ? TrendingUp : Clock
-                  return (
-                    <div key={i} className="bg-zinc-800 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <IconComponent className="w-5 h-5 text-sky-400" />
-                        <h3 className="font-semibold text-white">{factor.title}</h3>
-                      </div>
-                      <p className="text-zinc-400 text-sm">{factor.detail}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </ExpandableSection>
-
-            {/* Market Size */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><PieChart className="text-sky-400" /> Market Size</div>}
-            >
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { key: 'tam', label: 'TAM', data: businessPlan.marketSize.tam },
-                  { key: 'sam', label: 'SAM', data: businessPlan.marketSize.sam },
-                  { key: 'som', label: 'SOM (Y5)', data: businessPlan.marketSize.som }
-                ].map(({ key, label, data }) => (
-                  <div key={key} className="bg-zinc-800 rounded-lg p-5">
-                    <div className="text-center mb-4">
-                      <div className="text-3xl font-bold text-sky-300">{data.value}</div>
-                      <div className="text-sm text-zinc-400">{label}</div>
-                    </div>
-                    <p className="text-sm text-zinc-400 mb-3">{data.description}</p>
-                    <div className="space-y-2">
-                      {data.breakdown.map((item, i) => (
-                        <div key={i} className="flex justify-between text-sm">
-                          <span className="text-zinc-400">{item.segment}</span>
-                          <span className="text-white font-medium">{item.value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
-
+          <div className="space-y-8">
             {/* Competition */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Users className="text-sky-400" /> Competitive Landscape</div>}
-            >
-              <p className="text-zinc-400 mb-4">{businessPlan.competition.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-4">
-                {businessPlan.competition.competitors.map((comp, i) => (
-                  <div key={i} className="bg-zinc-800 rounded-lg p-4">
-                    <h3 className="font-semibold text-white mb-2">{comp.name}</h3>
-                    <p className="text-zinc-400 text-sm mb-3">{comp.description}</p>
-                    <div className="grid grid-cols-2 gap-4 text-xs">
-                      <div>
-                        <div className="text-green-400 font-medium mb-1">Strengths</div>
-                        <ul className="text-zinc-400 space-y-1">
-                          {comp.strengths.map((s, j) => <li key={j}>+ {s}</li>)}
-                        </ul>
-                      </div>
-                      <div>
-                        <div className="text-red-400 font-medium mb-1">Weaknesses</div>
-                        <ul className="text-zinc-400 space-y-1">
-                          {comp.weaknesses.map((w, j) => <li key={j}>- {w}</li>)}
-                        </ul>
-                      </div>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.competition.title} />
+
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Competitor</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Market Share</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Strengths</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Weaknesses</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Threat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {businessPlan.competition.players.map((player, i) => (
+                      <tr key={i} className="border-b border-gray-100">
+                        <td className="py-3 px-2">
+                          <div className="font-medium text-gray-900">{player.name}</div>
+                          <div className="text-xs text-gray-500">{player.type}</div>
+                        </td>
+                        <td className="py-3 px-2 text-sm">{player.marketShare}</td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.strengths.slice(0, 2).map((s, j) => (
+                              <li key={j}>+ {s}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.weaknesses.slice(0, 2).map((w, j) => (
+                              <li key={j}>- {w}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            player.threat === 'Partner not competitor' ? 'bg-blue-100 text-blue-700' :
+                            player.threat === 'Low' ? 'bg-green-100 text-green-700' :
+                            'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            {player.threat}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 p-4 bg-cyan-50 rounded-lg">
+                <h4 className="font-semibold text-cyan-800 mb-2">{businessPlan.competition.ourAdvantage.title}</h4>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {businessPlan.competition.ourAdvantage.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckCircle className="w-4 h-4 text-cyan-600 mt-0.5 flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Product Roadmap */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Wrench} title={businessPlan.product.title} />
+
+              <div className="space-y-6">
+                {businessPlan.product.phases.map((phase, i) => (
+                  <div key={i} className="border-l-4 border-cyan-400 pl-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-2 py-0.5 bg-cyan-100 text-cyan-700 rounded text-xs font-medium">
+                        {phase.timeline}
+                      </span>
+                      <h4 className="font-semibold text-gray-900">{phase.phase}</h4>
+                    </div>
+                    <ul className="grid md:grid-cols-2 gap-2 mb-3">
+                      {phase.deliverables.map((deliverable, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                          {deliverable}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="p-2 bg-green-50 rounded text-sm">
+                      <span className="font-medium text-green-800">Milestone:</span>{' '}
+                      <span className="text-gray-700">{phase.milestone}</span>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="bg-sky-900/30 rounded-lg p-4 border border-sky-700">
-                <h3 className="font-semibold text-sky-300 mb-2">Our Moat</h3>
-                <p className="text-zinc-300">{businessPlan.competition.moat}</p>
-              </div>
-            </ExpandableSection>
+            </section>
 
             {/* Business Model */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Briefcase className="text-sky-400" /> Business Model</div>}
-            >
-              <p className="text-zinc-400 mb-4">{businessPlan.businessModel.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.businessModel.title} />
+
+              <div className="grid gap-4 mb-6">
                 {businessPlan.businessModel.revenueStreams.map((stream, i) => (
-                  <div key={i} className="bg-zinc-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{stream.name}</h3>
-                      <span className="text-sky-300 font-medium">{stream.pricing}</span>
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{stream.name}</h4>
+                        <p className="text-sm text-gray-600">{stream.description}</p>
+                      </div>
+                      <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs font-medium">
+                        {stream.margin}% margin
+                      </span>
                     </div>
-                    <p className="text-zinc-400 text-sm mb-3">{stream.description}</p>
-                    <div className="text-xs text-zinc-500 mb-2">Gross Margin: {stream.margin}</div>
-                    <ul className="text-xs text-zinc-400 space-y-1">
-                      {stream.details.map((d, j) => (
-                        <li key={j} className="flex items-center gap-1">
-                          <CheckCircle className="w-3 h-3 text-sky-400" />
-                          {d}
+                    <div className="grid grid-cols-3 gap-4 mt-3 text-sm">
+                      <div>
+                        <span className="text-gray-500">Pricing:</span>
+                        <span className="ml-2 font-medium">{stream.pricing}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 1:</span>
+                        <span className="ml-2 font-medium">{stream.year1Revenue}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 3:</span>
+                        <span className="ml-2 font-medium">{stream.year3Revenue}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-4 bg-cyan-50 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-3">{businessPlan.businessModel.unitEconomics.title}</h4>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl font-bold text-cyan-600">{metric.value}</div>
+                      <div className="text-sm font-medium text-gray-900">{metric.label}</div>
+                      <div className="text-xs text-gray-500">{metric.note}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Go-to-Market */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.goToMarket.title} />
+
+              <div className="space-y-6">
+                {businessPlan.goToMarket.phases.map((phase, i) => (
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{phase.phase}: {phase.strategy}</h4>
+                        <span className="text-sm text-gray-500">{phase.timeline}</span>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Tactics</h5>
+                        <ul className="space-y-1">
+                          {phase.tactics.map((tactic, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                              {tactic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Success Metrics</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {phase.metrics.map((metric, j) => (
+                            <span key={j} className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
+                              {metric}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6">
+                <h4 className="font-medium text-gray-900 mb-3">Distribution Channels</h4>
+                <div className="grid md:grid-cols-3 gap-3">
+                  {businessPlan.goToMarket.channels.map((channel, i) => (
+                    <div key={i} className="p-3 border border-gray-200 rounded-lg">
+                      <h5 className="font-medium text-gray-900 text-sm">{channel.name}</h5>
+                      <p className="text-xs text-gray-600 mt-1">{channel.description}</p>
+                      <div className="flex gap-2 mt-2">
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.cost === 'Low' ? 'bg-green-100 text-green-700' :
+                          channel.cost === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-red-100 text-red-700'
+                        }`}>
+                          {channel.cost} cost
+                        </span>
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.effectiveness.includes('High') ? 'bg-green-100 text-green-700' :
+                          'bg-yellow-100 text-yellow-700'
+                        }`}>
+                          {channel.effectiveness}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Team */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.team.title} />
+
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                {businessPlan.team.currentNeeds.map((need, i) => (
+                  <div key={i} className="p-4 border border-gray-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">{need.role}</h4>
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        need.priority === 'Critical' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
+                      }`}>
+                        {need.priority}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-600">{need.skills}</p>
+                    <span className="inline-block mt-2 px-2 py-0.5 bg-cyan-100 text-cyan-700 rounded text-xs">
+                      {need.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Advisory Board Needs</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.team.advisorNeeds.map((advisor, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                        <Award className="w-4 h-4 text-cyan-500" />
+                        {advisor}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Organization Plan</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium text-gray-700">Year 1:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year1}</span></p>
+                    <p><span className="font-medium text-gray-700">Year 2:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year2}</span></p>
+                    <p><span className="font-medium text-gray-700">Year 3:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year3}</span></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Risks */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Shield} title={businessPlan.risks.title} />
+
+              <div className="space-y-4">
+                {businessPlan.risks.risks.map((risk, i) => (
+                  <ExpandableSection key={i} title={
+                    <div className="flex items-center gap-3">
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        risk.severity === 'High' ? 'bg-red-100 text-red-700' :
+                        risk.severity === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                        'bg-green-100 text-green-700'
+                      }`}>
+                        {risk.severity}
+                      </span>
+                      <span>{risk.risk}</span>
+                    </div>
+                  }>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Likelihood:</span>
+                        <span className="ml-2 text-sm text-gray-600">{risk.likelihood}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Description:</span>
+                        <p className="text-sm text-gray-600 mt-1">{risk.description}</p>
+                      </div>
+                      <div className="p-3 bg-green-50 rounded">
+                        <span className="text-sm font-medium text-green-800">Mitigation:</span>
+                        <p className="text-sm text-gray-700 mt-1">{risk.mitigation}</p>
+                      </div>
+                    </div>
+                  </ExpandableSection>
+                ))}
+              </div>
+            </section>
+
+            {/* Milestones */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.milestones.title} />
+
+              <div className="relative">
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-cyan-200" />
+                <div className="space-y-4">
+                  {businessPlan.milestones.items.map((item, i) => (
+                    <div key={i} className="relative pl-10">
+                      <div className="absolute left-2 w-4 h-4 rounded-full bg-cyan-500 border-2 border-white" />
+                      <div className="p-3 bg-gray-50 rounded-lg">
+                        <span className="text-sm font-medium text-cyan-600">{item.timeline}</span>
+                        <p className="text-gray-700 mt-1">{item.milestone}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        )}
+
+        {activeTab === 'financials' && (
+          <div className="space-y-8">
+            {/* Financial Projections */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={LineChart} title="Financial Projections" />
+
+              <div className="space-y-8">
+                {/* Scenario 1: With Cap-Ex */}
+                <div className="p-4 bg-cyan-50 rounded-lg border-2 border-cyan-200">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-2 py-0.5 bg-cyan-600 text-white rounded text-xs font-medium">RECOMMENDED</span>
+                    <h4 className="font-semibold text-gray-900">{businessPlan.financials.scenarios.withCapEx.name}</h4>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withCapEx.description}</p>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-cyan-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Utilities</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">ARR</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Runway</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {businessPlan.financials.scenarios.withCapEx.years.map((year, i) => (
+                          <tr key={i} className="border-b border-cyan-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.utilities}</td>
+                            <td className="py-2 px-3 text-right">{year.arr}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                            <td className={`py-2 px-3 text-right ${year.runway === 'Profitable' ? 'text-green-600' : 'text-gray-600'}`}>
+                              {year.runway}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withCapEx.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-cyan-500">*</span>
+                          {assumption}
                         </li>
                       ))}
                     </ul>
                   </div>
-                ))}
-              </div>
 
-              {/* Unit Economics */}
-              <div className="bg-zinc-800 rounded-lg p-6">
-                <h3 className="font-semibold text-white mb-4">Unit Economics</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-sky-300">{businessPlan.businessModel.unitEconomics.ltv}</div>
-                    <div className="text-xs text-zinc-400">LTV</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-sky-300">{businessPlan.businessModel.unitEconomics.cac}</div>
-                    <div className="text-xs text-zinc-400">CAC</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-sky-300">{businessPlan.businessModel.unitEconomics.ltvCacRatio}</div>
-                    <div className="text-xs text-zinc-400">LTV:CAC</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-sky-300">{businessPlan.businessModel.unitEconomics.paybackPeriod}</div>
-                    <div className="text-xs text-zinc-400">Payback</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-sky-300">{businessPlan.businessModel.unitEconomics.grossMargin}</div>
-                    <div className="text-xs text-zinc-400">Gross Margin</div>
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-cyan-600">
+                      Funding Required: {businessPlan.financials.scenarios.withCapEx.fundingRequired}
+                    </span>
                   </div>
                 </div>
-                <ul className="text-sm text-zinc-400 space-y-1">
-                  {businessPlan.businessModel.unitEconomics.details.map((d, i) => (
-                    <li key={i}>* {d}</li>
-                  ))}
-                </ul>
-              </div>
-            </ExpandableSection>
 
-            {/* Risks */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Shield className="text-sky-400" /> Risks & Mitigations</div>}
-            >
-              <div className="space-y-3">
-                {businessPlan.risks.map((risk, i) => (
-                  <div key={i} className="bg-zinc-800 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-white">{risk.risk}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${
-                        risk.severity === 'High' ? 'bg-red-900/50 text-red-400' :
-                        risk.severity === 'Medium' ? 'bg-yellow-900/50 text-yellow-400' :
-                        'bg-green-900/50 text-green-400'
-                      }`}>
-                        {risk.severity}
-                      </span>
-                    </div>
-                    <p className="text-zinc-400 text-sm"><strong className="text-zinc-300">Mitigation:</strong> {risk.mitigation}</p>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
+                {/* Scenario 2: Without Cap-Ex */}
+                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <h4 className="font-semibold text-gray-900 mb-2">{businessPlan.financials.scenarios.withoutCapEx.name}</h4>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withoutCapEx.description}</p>
 
-            {/* Milestones */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Award className="text-sky-400" /> Milestones & Timeline</div>}
-            >
-              <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-zinc-700" />
-                <div className="space-y-4">
-                  {businessPlan.milestones.map((m, i) => (
-                    <div key={i} className="relative pl-10">
-                      <div className="absolute left-2 w-4 h-4 rounded-full bg-sky-400" />
-                      <div className="bg-zinc-800 rounded-lg p-4">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sky-300 font-medium">{m.quarter}</span>
-                        </div>
-                        <p className="text-zinc-300">{m.milestone}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ExpandableSection>
-
-            {/* Team */}
-            <ExpandableSection
-              title={<div className="flex items-center gap-2"><Users className="text-sky-400" /> Team & Hiring</div>}
-            >
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.team.hiring.map((hire, i) => (
-                  <div key={i} className="bg-zinc-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{hire.role}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${
-                        hire.priority === 'Critical' ? 'bg-red-900/50 text-red-400' : 'bg-yellow-900/50 text-yellow-400'
-                      }`}>
-                        {hire.priority}
-                      </span>
-                    </div>
-                    <p className="text-zinc-400 text-sm mb-1">{hire.description}</p>
-                    <p className="text-xs text-zinc-500">Timeline: {hire.timeline}</p>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
-          </div>
-        )}
-
-        {/* Financials Tab */}
-        {activeTab === 'financials' && (
-          <div className="space-y-8">
-            {/* Scenario Comparison */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <LineChart className="text-sky-400" />
-                Financial Projections
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* With Financing */}
-                <div className="bg-zinc-800 rounded-xl p-6 border-2 border-sky-500">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Zap className="text-sky-300" />
-                    <h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withFinancing.name}</h3>
-                  </div>
-                  <p className="text-zinc-400 text-sm mb-4">{businessPlan.financials.scenarios.withFinancing.description}</p>
-
-                  <div className="overflow-x-auto mb-4">
-                    <table className="w-full text-sm">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
                       <thead>
-                        <tr className="border-b border-zinc-700">
-                          <th className="text-left py-2 text-zinc-400">Year</th>
-                          <th className="text-right py-2 text-zinc-400">Revenue</th>
-                          <th className="text-right py-2 text-zinc-400">Utilities</th>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Utilities</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">ARR</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Runway</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {businessPlan.financials.scenarios.withFinancing.projections.map((proj, i) => (
-                          <tr key={i} className="border-b border-zinc-700/50">
-                            <td className="py-2 text-white">{proj.year}</td>
-                            <td className="py-2 text-right text-sky-300 font-medium">{proj.revenue}</td>
-                            <td className="py-2 text-right text-zinc-300">{proj.customers}</td>
+                        {businessPlan.financials.scenarios.withoutCapEx.years.map((year, i) => (
+                          <tr key={i} className="border-b border-gray-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.utilities}</td>
+                            <td className="py-2 px-3 text-right">{year.arr}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                            <td className={`py-2 px-3 text-right ${year.runway === 'Profitable' ? 'text-green-600' : 'text-gray-600'}`}>
+                              {year.runway}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
 
-                  <div className="text-xs text-zinc-400">
-                    <div className="font-medium mb-1">Key Assumptions:</div>
-                    <ul className="space-y-1">
-                      {businessPlan.financials.scenarios.withFinancing.keyAssumptions.map((a, i) => (
-                        <li key={i}>* {a}</li>
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withoutCapEx.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-gray-500">*</span>
+                          {assumption}
+                        </li>
                       ))}
                     </ul>
                   </div>
-                </div>
 
-                {/* Without Financing */}
-                <div className="bg-zinc-800 rounded-xl p-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Building2 className="text-zinc-400" />
-                    <h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withoutFinancing.name}</h3>
-                  </div>
-                  <p className="text-zinc-400 text-sm mb-4">{businessPlan.financials.scenarios.withoutFinancing.description}</p>
-
-                  <div className="overflow-x-auto mb-4">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-zinc-700">
-                          <th className="text-left py-2 text-zinc-400">Year</th>
-                          <th className="text-right py-2 text-zinc-400">Revenue</th>
-                          <th className="text-right py-2 text-zinc-400">Utilities</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {businessPlan.financials.scenarios.withoutFinancing.projections.map((proj, i) => (
-                          <tr key={i} className="border-b border-zinc-700/50">
-                            <td className="py-2 text-white">{proj.year}</td>
-                            <td className="py-2 text-right text-sky-300 font-medium">{proj.revenue}</td>
-                            <td className="py-2 text-right text-zinc-300">{proj.customers}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className="text-xs text-zinc-400">
-                    <div className="font-medium mb-1">Key Assumptions:</div>
-                    <ul className="space-y-1">
-                      {businessPlan.financials.scenarios.withoutFinancing.keyAssumptions.map((a, i) => (
-                        <li key={i}>* {a}</li>
-                      ))}
-                    </ul>
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-gray-600">
+                      Funding Required: {businessPlan.financials.scenarios.withoutCapEx.fundingRequired}
+                    </span>
                   </div>
                 </div>
               </div>
             </section>
 
             {/* Use of Funds */}
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <PieChart className="text-sky-400" />
-                Use of Funds
-              </h2>
-              <div className="bg-zinc-800 rounded-xl p-6">
-                <div className="grid md:grid-cols-5 gap-4 mb-6">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (
-                    <div key={i} className="text-center">
-                      <div className="text-2xl font-bold text-sky-300">{fund.percentage}%</div>
-                      <div className="text-sm font-medium text-white">{fund.category}</div>
-                      <div className="text-xs text-zinc-400">{fund.amount}</div>
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.financials.useOfFunds.title} />
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-16 text-right">
+                        <span className="text-lg font-bold text-cyan-600">{item.percentage}%</span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="h-6 bg-gray-200 rounded overflow-hidden">
+                          <div
+                            className="h-full bg-cyan-500 rounded"
+                            style={{ width: `${item.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="w-32">
+                        <div className="font-medium text-gray-900">{item.amount}</div>
+                        <div className="text-xs text-gray-500">{item.category}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
+
                 <div className="space-y-3">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className="w-32 text-sm text-zinc-400">{fund.category}</div>
-                      <div className="flex-1 bg-zinc-700 rounded-full h-4">
-                        <div
-                          className="bg-sky-500 h-4 rounded-full"
-                          style={{ width: `${fund.percentage}%` }}
-                        />
-                      </div>
-                      <div className="w-24 text-sm text-right text-white">{fund.amount}</div>
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="p-3 bg-gray-50 rounded">
+                      <h4 className="font-medium text-gray-900 text-sm">{item.category}</h4>
+                      <p className="text-xs text-gray-600 mt-1">{item.detail}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            {/* Sources */}
-            <section>
-              <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <FileText className="text-sky-400" />
-                Sources
-              </h2>
-              <div className="bg-zinc-800 rounded-lg p-4">
-                <ul className="space-y-2">
-                  {businessPlan.sources.map((source, i) => (
-                    <li key={i}>
-                      <a
-                        href={source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sky-400 hover:text-sky-300 flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        {source.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+            {/* Unit Economics Detail */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={BarChart3} title="Unit Economics" />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                  <div key={i} className="p-4 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg text-center">
+                    <div className="text-3xl font-bold text-cyan-600">{metric.value}</div>
+                    <div className="text-sm font-medium text-gray-900 mt-1">{metric.label}</div>
+                    <div className="text-xs text-gray-500 mt-1">{metric.note}</div>
+                  </div>
+                ))}
               </div>
             </section>
           </div>
         )}
-      </main>
+
+        {/* Sources */}
+        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
+          <SectionHeader icon={ExternalLink} title="Sources & References" />
+
+          <div className="grid md:grid-cols-2 gap-3">
+            {businessPlan.sources.map((source, i) => (
+              <a
+                key={i}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-medium text-gray-900 text-sm group-hover:text-cyan-600 transition-colors">
+                      {source.name}
+                    </h4>
+                    <p className="text-xs text-gray-500 mt-1">{source.detail}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-cyan-600 transition-colors flex-shrink-0" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* Footer */}
-      <footer className="bg-zinc-900 border-t border-zinc-700 mt-12">
-        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-zinc-500 text-sm">
-          <p>{businessPlan.companyName} Business Plan * {businessPlan.version} * {businessPlan.date}</p>
-          <p className="mt-2">Part of the <a href="/tokens/#framework" className="text-sky-400 hover:text-sky-300">Ribbit Token Cap-Ex Framework</a></p>
+      <footer className="bg-gray-900 text-white py-8 mt-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h3 className="text-xl font-bold mb-2">{businessPlan.companyName}</h3>
+          <p className="text-gray-400">{businessPlan.tagline}</p>
+          <p className="text-gray-500 text-sm mt-4">
+            {businessPlan.version} | {businessPlan.date}
+          </p>
+          <div className="mt-6">
+            <a
+              href="https://hyder.me/#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700 transition-colors"
+            >
+              <Briefcase className="w-5 h-5" />
+              Contact for Investment Inquiries
+            </a>
+          </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }

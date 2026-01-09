@@ -2,12 +2,36 @@
 
 import { useState } from 'react'
 import {
-  ArrowLeft, Target, TrendingUp, DollarSign, Users, Shield, AlertTriangle,
-  CheckCircle, ExternalLink, ChevronDown, ChevronUp, Building2, Zap, BarChart3,
-  Clock, Wrench, FileText, Briefcase, Lightbulb, Globe, Award, PieChart, LineChart,
-  Flame, Droplets, Building, ClipboardCheck
+  ArrowLeft,
+  Target,
+  TrendingUp,
+  DollarSign,
+  Users,
+  Shield,
+  AlertTriangle,
+  CheckCircle,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  Building2,
+  Zap,
+  BarChart3,
+  Clock,
+  Wrench,
+  FileText,
+  Briefcase,
+  Lightbulb,
+  Globe,
+  Award,
+  PieChart,
+  LineChart,
+  Flame,
+  Droplets,
+  Building,
+  ClipboardCheck
 } from 'lucide-react'
 
+// Business Plan Data
 const businessPlan = {
   companyName: "FireShield",
   tagline: "The Credentialed Registry for Fire Suppression Systems",
@@ -15,9 +39,9 @@ const businessPlan = {
   date: "January 2026",
 
   executiveSummary: {
-    problem: "Fire sprinkler and suppression systems are required in most commercial buildings and inspected annually, yet there is zero data aggregation. Inspectors are fragmented local contractors with no standardized reporting. Building owners, insurers, and regulators have no visibility into system quality across portfolios.",
+    problem: "Fire sprinkler and suppression systems are required in most commercial buildings and inspected annually, yet there is zero data aggregation. 19,800+ contractors perform inspections with paper forms or proprietary systems. Building owners, insurers, and regulators have no visibility into system quality across portfolios.",
     solution: "FireShield aggregates inspection data, system specifications, and contractor performance into a unified registry. We create the 'building safety score' that insurers need for underwriting, property managers need for compliance, and contractors need for competitive differentiation.",
-    market: "$20B fire protection equipment market with $4B+ in annual commercial fire insurance premiums. Property managers need compliance automation, insurers need risk data, and contractors need digital tools to compete.",
+    market: "$26B U.S. fire protection system market growing at 3.6% CAGR. $27.6B in annual fire insurance premiums. Property managers need compliance automation, insurers need risk data, and contractors need digital tools to compete.",
     ask: "$4M Seed Round to build the registry platform, onboard inspection contractors, and establish partnerships with commercial insurance carriers and property management software providers."
   },
 
@@ -26,8 +50,8 @@ const businessPlan = {
     points: [
       {
         title: "Fragmented Inspection Industry",
-        detail: "Thousands of local contractors perform annual inspections with paper forms or proprietary systems. No data sharing, no standardization, no way to compare contractor quality.",
-        stat: "15K+",
+        detail: "Nearly 20,000 contractors perform annual inspections with paper forms or proprietary systems. No data sharing, no standardization, no way to compare contractor quality.",
+        stat: "19.8K",
         statLabel: "fire protection contractors in US"
       },
       {
@@ -39,14 +63,14 @@ const businessPlan = {
       {
         title: "Insurance Underwriting Blindspot",
         detail: "Commercial insurers set premiums with minimal insight into actual fire suppression system quality. Better data could reduce claims and reward safe buildings.",
-        stat: "$4B+",
-        statLabel: "annual commercial fire insurance premiums"
+        stat: "$27.6B",
+        statLabel: "annual US fire insurance premiums"
       },
       {
-        title: "Upgrade Financing Gap",
-        detail: "Building owners defer critical fire system upgrades due to capital constraints. No mechanism connects upgrade financing to insurance savings.",
-        stat: "30%",
-        statLabel: "of systems have deferred maintenance"
+        title: "Maintenance Gaps Cause Failures",
+        detail: "NFPA data shows 14% of sprinkler failures are due to lack of maintenance. Building owners defer critical upgrades due to capital constraints and lack of financing options.",
+        stat: "14%",
+        statLabel: "of failures due to lack of maintenance"
       }
     ]
   },
@@ -92,98 +116,163 @@ const businessPlan = {
       },
       {
         title: "Insurance Industry Data Hunger",
-        detail: "Carriers investing heavily in data-driven underwriting. Fire risk is a major line item they cannot accurately assess today.",
+        detail: "Carriers investing heavily in data-driven underwriting. Fire risk is a major line item they cannot accurately assess today. Fire insurance premiums growing at 10.8% CAGR.",
         icon: "Shield"
       },
       {
         title: "Contractor Consolidation",
-        detail: "Fire protection industry consolidating through PE rollups. Larger players need digital tools to manage multi-region operations.",
+        detail: "Fire protection industry consolidating through PE rollups. Larger players need digital tools to manage multi-region operations and standardize quality.",
         icon: "Users"
       },
       {
         title: "Regulatory Pressure",
-        detail: "Post-pandemic building safety regulations increasing. Jurisdictions requiring more detailed reporting and faster compliance verification.",
+        detail: "Post-pandemic building safety regulations increasing. Jurisdictions requiring more detailed reporting and faster compliance verification under NFPA 25.",
         icon: "Zap"
+      },
+      {
+        title: "Software Market Growth",
+        detail: "Fire sprinkler inspection software market growing at 13.9% CAGR, expected to reach $969M by 2033. Clear demand for digital solutions.",
+        icon: "BarChart3"
       }
     ]
   },
 
   marketSize: {
+    title: "Market Opportunity",
     tam: {
-      value: "$20B",
-      description: "Total addressable market: Fire protection equipment and services",
-      breakdown: [
-        { segment: "Fire Protection Equipment", value: "$12B", growth: "6.2% CAGR" },
-        { segment: "Fire System Services", value: "$5B", growth: "Inspection, maintenance, monitoring" },
-        { segment: "Commercial Fire Insurance", value: "$4B", growth: "Premium optimization opportunity" },
-        { segment: "Fire System Financing", value: "$2B", growth: "Upgrade and replacement lending" }
-      ]
+      value: "$26B",
+      label: "Total Addressable Market",
+      description: "U.S. Fire Protection System Market (2024)",
+      source: "Grand View Research"
     },
     sam: {
-      value: "$2.4B",
-      description: "Serviceable addressable market: Digital fire safety data and services",
-      breakdown: [
-        { segment: "Inspection Software", value: "$800M", growth: "Contractor SaaS opportunity" },
-        { segment: "Insurance Data Services", value: "$600M", growth: "Carrier integration value" },
-        { segment: "Property Mgmt Integration", value: "$500M", growth: "Compliance automation" },
-        { segment: "Financing Facilitation", value: "$500M", growth: "Origination fees on upgrades" }
-      ]
+      value: "$2.8B",
+      label: "Serviceable Addressable Market",
+      description: "Digital fire safety data and services opportunity",
+      source: "Industry analysis"
     },
     som: {
-      value: "$45M",
-      description: "Year 5 revenue target: 2,000 contractor partners, 50K buildings registered, 15 insurance integrations",
-      breakdown: [
-        { segment: "Contractor SaaS", value: "$18M", growth: "2,000 contractors @ $750/mo avg" },
-        { segment: "Insurance Data Fees", value: "$12M", growth: "15 carriers @ $800K/yr avg" },
-        { segment: "Property Manager Platform", value: "$9M", growth: "Enterprise compliance tools" },
-        { segment: "Financing Facilitation", value: "$6M", growth: "1.5% origination on $400M volume" }
+      value: "$52M",
+      label: "Serviceable Obtainable Market",
+      description: "Year 5 revenue target: 2,200 contractor partners, 58K buildings",
+      source: "Conservative capture estimate"
+    },
+    additionalMarkets: [
+      { name: "Fire Protection Installation Services", value: "$22.1B (2025)", cagr: "3.2%" },
+      { name: "Fire Insurance Premiums (US)", value: "$27.6B (2024)", cagr: "10.8%" },
+      { name: "Fire Inspection Software (Global)", value: "$321M (2024)", cagr: "13.9%" },
+      { name: "Commercial Property Insurance", value: "$89B (2024)", cagr: "6.5%" }
+    ],
+    keyMetrics: [
+      { label: "Fire protection contractors in US", value: "19,845" },
+      { label: "Average commercial inspection cost", value: "$300-$800" },
+      { label: "Sprinkler effectiveness rate", value: "91%" },
+      { label: "Death rate reduction with sprinklers", value: "90%" }
+    ]
+  },
+
+  competition: {
+    title: "Competitive Landscape",
+    overview: "Fire protection software is fragmented across inspection apps, compliance tools, and insurance platforms with no unified data layer.",
+    players: [
+      {
+        name: "BuildingReports",
+        type: "Inspection Platform",
+        marketShare: "~15% of digital inspections",
+        strengths: ["Established contractor base", "NFPA compliance", "Mobile inspection app"],
+        weaknesses: ["No insurance integration", "No financing", "Single-building focus", "Limited analytics"],
+        threat: "Low"
+      },
+      {
+        name: "Compliance Engine",
+        type: "PM Software",
+        marketShare: "Enterprise PM segment",
+        strengths: ["PM software integrations", "Multi-system tracking", "Enterprise focus"],
+        weaknesses: ["Scheduling only", "No contractor tools", "No risk scoring", "No insurance value"],
+        threat: "Low"
+      },
+      {
+        name: "Insurance Carrier In-House",
+        type: "Internal Solutions",
+        marketShare: "Top 5 carriers only",
+        strengths: ["Direct underwriting use", "Captive data source", "Existing relationships"],
+        weaknesses: ["Siloed by carrier", "No contractor incentive", "Limited coverage", "Slow development"],
+        threat: "Partner not competitor"
+      },
+      {
+        name: "Paper/Excel Status Quo",
+        type: "Manual Process",
+        marketShare: "70%+ of market",
+        strengths: ["No change required", "Familiar to contractors", "Low direct cost"],
+        weaknesses: ["No aggregation", "Compliance risk", "No analytics", "Time-consuming"],
+        threat: "Primary competitor"
+      }
+    ],
+    ourAdvantage: {
+      title: "FireShield's Unfair Advantages",
+      points: [
+        "Network effect: More contractors = more buildings = more data = better scores = more insurance value",
+        "Data moat: Only aggregated view of fire system quality across the U.S.",
+        "Insurance alignment: Direct value prop to carriers who desperately need risk data",
+        "Cap-Ex positioning: Fire suppression upgrades as capital investments with insurance-linked financing",
+        "No channel conflict: We help contractors succeed, not compete with them"
       ]
     }
   },
 
-  competition: {
-    overview: "Fire protection software is fragmented across inspection apps, compliance tools, and insurance platforms with no unified data layer.",
-    competitors: [
+  product: {
+    title: "Product Roadmap",
+    phases: [
       {
-        name: "BuildingReports",
-        description: "Inspection reporting platform for fire protection contractors. Strong in compliance documentation.",
-        strengths: ["Established contractor base", "NFPA compliance", "Mobile inspection app"],
-        weaknesses: ["No insurance integration", "No financing", "Single-building focus", "Limited analytics"],
-        marketShare: "~15% of digital inspections"
+        phase: "Phase 1: Foundation",
+        timeline: "Months 1-6",
+        deliverables: [
+          "Contractor onboarding platform (web + mobile)",
+          "Digital inspection forms with NFPA 25 compliance",
+          "Building registry with GPS tagging",
+          "Photo documentation and deficiency tracking",
+          "Basic reporting and compliance automation"
+        ],
+        milestone: "300 contractors onboarded, 8,000 buildings registered"
       },
       {
-        name: "Compliance Engine",
-        description: "Property management compliance software. Tracks inspection schedules but not actual system data.",
-        strengths: ["PM software integrations", "Multi-system tracking", "Enterprise focus"],
-        weaknesses: ["Scheduling only", "No contractor tools", "No risk scoring", "No insurance value"],
-        marketShare: "Enterprise PM segment"
+        phase: "Phase 2: Intelligence",
+        timeline: "Months 7-12",
+        deliverables: [
+          "Building Safety Score algorithm v1.0",
+          "Insurance carrier data portal and API",
+          "Property management integrations (Yardi, MRI, RealPage)",
+          "Contractor performance dashboards",
+          "Portfolio analytics for enterprise clients"
+        ],
+        milestone: "700 contractors, first insurance carrier pilot, $7M ARR"
       },
       {
-        name: "Insurance Carrier In-House",
-        description: "Some large carriers building internal fire risk databases from inspections they require.",
-        strengths: ["Direct underwriting use", "Captive data source", "Existing relationships"],
-        weaknesses: ["Siloed by carrier", "No contractor incentive", "Limited coverage", "Slow development"],
-        marketShare: "Top 5 carriers only"
-      },
-      {
-        name: "Paper/Excel Status Quo",
-        description: "Majority of market still uses paper inspection forms, PDF reports, and manual spreadsheet tracking.",
-        strengths: ["No change required", "Familiar to contractors", "Low direct cost"],
-        weaknesses: ["No aggregation", "Compliance risk", "No analytics", "Time-consuming"],
-        marketShare: "70%+ of market"
+        phase: "Phase 3: Scale",
+        timeline: "Year 2-3",
+        deliverables: [
+          "National contractor coverage (2,200+ contractors)",
+          "Real-time risk scoring API for insurance underwriting",
+          "Upgrade financing marketplace integration",
+          "Predictive maintenance recommendations",
+          "Expansion to adjacent systems (fire alarms, suppression)"
+        ],
+        milestone: "$52M ARR, 15+ insurance partnerships, market leader"
       }
-    ],
-    moat: "Network effects: More contractors = more buildings = more data = better scores = more insurance value = more contractor incentive. Registry becomes the authoritative source for fire system data that all parties rely on."
+    ]
   },
 
   businessModel: {
+    title: "Business Model",
     overview: "Four revenue streams: Contractor SaaS, insurance data services, property management platform, and upgrade financing facilitation.",
     revenueStreams: [
       {
         name: "Contractor SaaS",
-        description: "Subscription platform for fire protection contractors to manage inspections, reporting, and client relationships",
+        description: "Monthly subscription for fire protection contractors to manage inspections, reporting, and client relationships",
         pricing: "$299-$1,499/month based on volume",
         margin: "85%",
+        year1Revenue: "$1.1M",
+        year3Revenue: "$8M",
         details: [
           "Digital inspection forms",
           "Photo and deficiency tracking",
@@ -197,6 +286,8 @@ const businessPlan = {
         description: "Aggregated fire system data and building safety scores for commercial insurance underwriting",
         pricing: "$500K-$2M/year per carrier",
         margin: "75%",
+        year1Revenue: "$400K",
+        year3Revenue: "$6M",
         details: [
           "Building safety score API",
           "Portfolio risk analysis",
@@ -210,6 +301,8 @@ const businessPlan = {
         description: "Enterprise compliance and portfolio management tools for commercial property owners and managers",
         pricing: "$0.50-$2.00/building/month",
         margin: "80%",
+        year1Revenue: "$200K",
+        year3Revenue: "$2.5M",
         details: [
           "Portfolio dashboard",
           "Compliance tracking",
@@ -223,6 +316,8 @@ const businessPlan = {
         description: "Marketplace connecting building owners to lenders for fire system upgrades with insurance savings integration",
         pricing: "1-2% origination fee",
         margin: "70%",
+        year1Revenue: "$100K",
+        year3Revenue: "$1.5M",
         details: [
           "Lender matching",
           "ROI calculation",
@@ -233,172 +328,290 @@ const businessPlan = {
       }
     ],
     unitEconomics: {
-      ltv: "$33,000",
-      cac: "$3,000",
-      ltvCacRatio: "11:1",
-      paybackPeriod: "5 months",
-      grossMargin: "78%",
-      details: [
-        "Blended across contractor and enterprise segments",
-        "Contractor retention: 92% annual (sticky workflow tool)",
-        "Enterprise contracts: 4+ year average lifetime",
-        "CAC: Trade shows + inside sales + contractor referrals"
+      title: "Unit Economics Per Contractor",
+      metrics: [
+        { label: "Customer Acquisition Cost (CAC)", value: "$3,000", note: "Trade shows + inside sales + referrals" },
+        { label: "Average Revenue Per Contractor", value: "$750/month", note: "Blended across revenue streams" },
+        { label: "Gross Margin", value: "78%", note: "After support and data costs" },
+        { label: "Lifetime Value (LTV)", value: "$33,000", note: "92% annual retention, 4+ year lifetime" },
+        { label: "LTV:CAC Ratio", value: "11:1", note: "Strong unit economics" },
+        { label: "Payback Period", value: "5 months", note: "Fast capital efficiency" }
       ]
     }
   },
 
   financials: {
+    title: "Financial Projections",
     scenarios: {
-      withFinancing: {
+      withInsurance: {
         name: "With Insurance/Financing Cap-Ex Angle",
-        description: "Leverage Cap-Ex positioning: Fire suppression upgrades as capital investments with insurance-linked financing",
-        projections: [
-          { year: "Y1", revenue: "$1.8M", customers: "300 contractors, 8K buildings", highlights: "Platform launch, first insurance pilots" },
-          { year: "Y2", revenue: "$7M", customers: "700 contractors, 22K buildings", highlights: "Insurance integrations live, financing pilot" },
-          { year: "Y3", revenue: "$18M", customers: "1,200 contractors, 38K buildings", highlights: "National contractor coverage, financing scale" },
-          { year: "Y4", revenue: "$32M", customers: "1,700 contractors, 48K buildings", highlights: "Insurance standard, financing volume" },
-          { year: "Y5", revenue: "$52M", customers: "2,200 contractors, 58K buildings", highlights: "Market leader, M&A interest" }
+        description: "Full model with contractor network, insurance data, and upgrade financing facilitation",
+        years: [
+          { year: 1, revenue: "$1.8M", contractors: 300, buildings: "8K", arr: "$1.8M", burn: "$2.2M", runway: "18 months" },
+          { year: 2, revenue: "$7M", contractors: 700, buildings: "22K", arr: "$7M", burn: "$1M", runway: "24+ months" },
+          { year: 3, revenue: "$18M", contractors: 1200, buildings: "38K", arr: "$18M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$32M", contractors: 1700, buildings: "48K", arr: "$32M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$52M", contractors: 2200, buildings: "58K", arr: "$52M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$4M Seed",
         keyAssumptions: [
-          "Insurance carriers mandate FireShield data",
-          "Financing facilitation scales with registry",
-          "Premium reduction drives adoption",
-          "Network effects accelerate Year 3+"
+          "Insurance carriers mandate FireShield data for underwriting",
+          "Financing facilitation scales with registry coverage",
+          "Premium reduction drives contractor and building owner adoption",
+          "Network effects accelerate growth in Year 3+"
         ]
       },
-      withoutFinancing: {
+      withoutInsurance: {
         name: "Without Cap-Ex Financing Angle",
-        description: "Contractor SaaS and data services without insurance-linked upgrade financing",
-        projections: [
-          { year: "Y1", revenue: "$1.2M", customers: "200 contractors, 5K buildings", highlights: "Platform launch" },
-          { year: "Y2", revenue: "$4M", customers: "450 contractors, 14K buildings", highlights: "Regional expansion" },
-          { year: "Y3", revenue: "$10M", customers: "800 contractors, 26K buildings", highlights: "First insurance deals" },
-          { year: "Y4", revenue: "$18M", customers: "1,200 contractors, 36K buildings", highlights: "National presence" },
-          { year: "Y5", revenue: "$28M", customers: "1,600 contractors, 45K buildings", highlights: "Sustainable growth" }
+        description: "Contractor SaaS and property management tools without insurance-linked upgrade financing",
+        years: [
+          { year: 1, revenue: "$1.2M", contractors: 200, buildings: "5K", arr: "$1.2M", burn: "$1.8M", runway: "24 months" },
+          { year: 2, revenue: "$4M", contractors: 450, buildings: "14K", arr: "$4M", burn: "$800K", runway: "24 months" },
+          { year: 3, revenue: "$10M", contractors: 800, buildings: "26K", arr: "$10M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$18M", contractors: 1200, buildings: "36K", arr: "$18M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$28M", contractors: 1600, buildings: "45K", arr: "$28M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$2.5M Seed",
         keyAssumptions: [
-          "SaaS-only revenue model",
-          "Slower insurance adoption",
-          "No financing revenue stream",
-          "Organic contractor growth"
+          "SaaS-only revenue model with slower insurance adoption",
+          "Higher churn without insurance premium incentives (35% vs 25%)",
+          "No financing facilitation revenue stream",
+          "Organic contractor growth without carrier partnerships"
         ]
       }
     },
-    useOfFunds: [
-      { category: "Engineering & Product", percentage: 40, amount: "$1.6M", details: "Platform development, mobile apps, insurance APIs" },
-      { category: "Sales & Partnerships", percentage: 25, amount: "$1.0M", details: "Contractor acquisition, insurance BD, PM partnerships" },
-      { category: "Contractor Success", percentage: 15, amount: "$600K", details: "Onboarding, training, support, community" },
-      { category: "Data & Analytics", percentage: 12, amount: "$480K", details: "Scoring algorithms, risk models, benchmarking" },
-      { category: "Operations", percentage: 8, amount: "$320K", details: "G&A, legal, compliance, office" }
+    useOfFunds: {
+      title: "Use of $4M Seed Funds",
+      breakdown: [
+        { category: "Engineering & Product", amount: "$1.6M", percentage: 40, detail: "Platform development, mobile apps, insurance APIs, scoring algorithms" },
+        { category: "Sales & Partnerships", amount: "$1.0M", percentage: 25, detail: "Contractor acquisition, insurance BD, PM partnerships" },
+        { category: "Contractor Success", amount: "$600K", percentage: 15, detail: "Onboarding, training, support, community building" },
+        { category: "Data & Analytics", amount: "$480K", percentage: 12, detail: "Scoring algorithms, risk models, benchmarking tools" },
+        { category: "Operations", amount: "$320K", percentage: 8, detail: "G&A, legal, compliance, office" }
+      ]
+    }
+  },
+
+  goToMarket: {
+    title: "Go-to-Market Strategy",
+    phases: [
+      {
+        phase: "Land",
+        timeline: "Months 1-6",
+        strategy: "Geographic Concentration",
+        tactics: [
+          "Start in 5 metros with high commercial density (Houston, Dallas, Atlanta, Phoenix, Chicago)",
+          "Partner with regional fire protection associations (AFSA, NFSA chapters)",
+          "Offer free trial with immediate compliance automation value",
+          "Target contractors frustrated with paper processes and BuildingReports limitations"
+        ],
+        metrics: ["300 contractors onboarded", "85% activation rate", "NPS > 50"]
+      },
+      {
+        phase: "Expand",
+        timeline: "Months 7-12",
+        strategy: "Insurance Partnership Launch",
+        tactics: [
+          "Approach insurtech companies and MGAs with faster decision cycles",
+          "Target progressive carriers with data-driven underwriting initiatives",
+          "Offer free pilot data access in exchange for case study rights",
+          "Build relationships with commercial property insurance underwriters"
+        ],
+        metrics: ["2 insurance carrier pilots", "22,000 buildings in registry", "95% data accuracy"]
+      },
+      {
+        phase: "Dominate",
+        timeline: "Year 2+",
+        strategy: "National Rollout",
+        tactics: [
+          "Leverage insurance partnerships for credibility and co-marketing",
+          "Expand to adjacent markets: fire alarm contractors, suppression specialists",
+          "Launch upgrade financing marketplace with insurance savings integration",
+          "Build API ecosystem for third-party PropTech integrations"
+        ],
+        metrics: ["2,200+ contractors", "15+ insurance partnerships", "National coverage"]
+      }
+    ],
+    channels: [
+      { name: "Direct Sales", description: "Inside sales team targeting high-volume contractors", cost: "Medium", effectiveness: "High" },
+      { name: "Industry Associations", description: "AFSA, NFSA, regional fire protection associations", cost: "Low", effectiveness: "Very High" },
+      { name: "Insurance Referrals", description: "Carriers recommend FireShield for premium optimization", cost: "Low", effectiveness: "Very High" },
+      { name: "Trade Shows", description: "AFSA Convention, NFPA Conference, regional events", cost: "High", effectiveness: "High" },
+      { name: "Digital Marketing", description: "SEO, content marketing, targeted ads to contractor businesses", cost: "Medium", effectiveness: "Medium" }
     ]
   },
 
-  risks: [
-    {
-      risk: "Contractor Adoption Resistance",
-      severity: "High",
-      mitigation: "Free tier for small contractors. Demonstrate time savings and client retention benefits. Partner with industry associations for credibility."
-    },
-    {
-      risk: "Insurance Carrier Sales Cycle",
-      severity: "High",
-      mitigation: "Start with insurtech companies and MGAs with faster decision cycles. Pilot programs with measurable ROI before enterprise deals."
-    },
-    {
-      risk: "Data Quality Variability",
-      severity: "Medium",
-      mitigation: "Standardized forms with validation. Photo requirements for key data points. Contractor scoring based on data quality."
-    },
-    {
-      risk: "Regulatory Fragmentation",
-      severity: "Medium",
-      mitigation: "Start in states with standardized requirements. Build jurisdiction mapping into platform. Partner with NFPA for standards alignment."
-    },
-    {
-      risk: "Competitor Response",
-      severity: "Low",
-      mitigation: "First-mover advantage in aggregated data. Network effects create barriers. Insurance relationships are sticky once established."
-    },
-    {
-      risk: "Economic Downturn",
-      severity: "Low",
-      mitigation: "Fire inspections are legally required regardless of economy. Compliance spending is non-discretionary for building owners."
-    }
-  ],
-
-  milestones: [
-    { quarter: "Q1 2026", milestone: "Close seed round, hire core team", status: "target" },
-    { quarter: "Q2 2026", milestone: "Launch contractor platform with 100 beta partners", status: "target" },
-    { quarter: "Q3 2026", milestone: "5,000 buildings in registry, first PM integrations", status: "target" },
-    { quarter: "Q4 2026", milestone: "First insurance carrier pilot, 300 contractors", status: "target" },
-    { quarter: "Q1 2027", milestone: "Building Safety Score v1.0 launch", status: "target" },
-    { quarter: "Q2 2027", milestone: "15,000 buildings, 500 contractors, financing pilot", status: "target" },
-    { quarter: "Q3 2027", milestone: "Insurance carrier production integration", status: "target" },
-    { quarter: "Q4 2027", milestone: "Series A at $50-70M valuation", status: "target" }
-  ],
-
   team: {
-    hiring: [
-      { role: "CTO", priority: "Critical", timeline: "Immediate", description: "Platform architecture, mobile apps, insurance API integration" },
-      { role: "VP Contractor Success", priority: "Critical", timeline: "Q1 2026", description: "Contractor onboarding, training, community building" },
-      { role: "VP Sales", priority: "High", timeline: "Q2 2026", description: "Insurance BD, property management partnerships" },
-      { role: "Head of Data Science", priority: "High", timeline: "Q2 2026", description: "Building Safety Score algorithm, risk modeling" }
+    title: "Team Requirements",
+    currentNeeds: [
+      {
+        role: "CEO / Founder",
+        skills: "Fire protection or insurance industry experience, fundraising, network building",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "CTO",
+        skills: "Platform architecture, mobile apps, insurance API integration, data infrastructure",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "VP Contractor Success",
+        skills: "Contractor onboarding, training, community building, support operations",
+        status: "Seeking",
+        priority: "High"
+      },
+      {
+        role: "VP Sales",
+        skills: "Insurance BD, property management partnerships, enterprise sales",
+        status: "Seeking",
+        priority: "High"
+      }
+    ],
+    advisorNeeds: [
+      "Former fire protection contractor executive or AFSA/NFSA leader",
+      "Insurance industry executive (commercial property underwriting)",
+      "PropTech founder with PM software experience",
+      "Building code or NFPA standards expert"
+    ],
+    orgPlan: {
+      year1: "15 FTEs: 5 engineering, 4 sales, 3 contractor success, 3 G&A",
+      year2: "35 FTEs: 12 engineering, 10 sales, 8 contractor success, 5 G&A",
+      year3: "80 FTEs: 25 engineering, 25 sales, 18 contractor success, 12 G&A"
+    }
+  },
+
+  risks: {
+    title: "Risks & Mitigations",
+    risks: [
+      {
+        risk: "Contractor Adoption Resistance",
+        severity: "High",
+        likelihood: "Medium",
+        description: "Fire protection contractors are traditionally slow to adopt new technology. Many are small family businesses resistant to changing established paper workflows.",
+        mitigation: "Free tier for small contractors. Demonstrate immediate time savings (2+ hours per inspection). Partner with industry associations for credibility. Contractor referral incentives."
+      },
+      {
+        risk: "Insurance Carrier Sales Cycle",
+        severity: "High",
+        likelihood: "High",
+        description: "Insurance carriers have notoriously long procurement cycles (12-24 months). Could delay data revenue and insurance-linked incentives significantly.",
+        mitigation: "Start with insurtech companies and MGAs with faster decision cycles. Pilot programs with measurable ROI before enterprise deals. Build recurring SaaS revenue while carrier deals develop."
+      },
+      {
+        risk: "Data Quality Variability",
+        severity: "Medium",
+        likelihood: "Medium",
+        description: "Contractors may enter inaccurate data or skip data entry entirely, degrading the value of building safety scores and insurance products.",
+        mitigation: "Build data entry into workflow (required for report generation). Photo requirements for key data points. Contractor scoring based on data quality affects lead priority."
+      },
+      {
+        risk: "Regulatory Fragmentation",
+        severity: "Medium",
+        likelihood: "Medium",
+        description: "Fire safety regulations vary by state and jurisdiction. NFPA 25 adoption not universal. Compliance requirements differ significantly.",
+        mitigation: "Start in states with standardized NFPA 25 requirements. Build jurisdiction mapping into platform. Partner with NFPA for standards alignment and credibility."
+      },
+      {
+        risk: "BuildingReports Competitive Response",
+        severity: "Medium",
+        likelihood: "Low",
+        description: "BuildingReports could add insurance integration and building scoring to their existing platform, leveraging their installed contractor base.",
+        mitigation: "First-mover advantage in aggregated data and insurance partnerships. Network effects create barriers. Focus on data moat and insurance relationships they've avoided building."
+      },
+      {
+        risk: "Economic Downturn",
+        severity: "Low",
+        likelihood: "Medium",
+        description: "Recession could slow commercial building construction and reduce contractor volumes.",
+        mitigation: "Fire inspections are legally required regardless of economy. Compliance spending is non-discretionary for building owners. Insurance data value increases during hard markets."
+      }
+    ]
+  },
+
+  milestones: {
+    title: "Key Milestones",
+    items: [
+      { timeline: "Month 3", milestone: "Platform MVP live, first 50 contractors onboarded", status: "planned" },
+      { timeline: "Month 6", milestone: "300 contractors, 8,000 buildings in registry, compliance automation live", status: "planned" },
+      { timeline: "Month 9", milestone: "Building Safety Score v1.0 launch, first insurance carrier pilot", status: "planned" },
+      { timeline: "Month 12", milestone: "$1.8M ARR, 700 contractors, 2 insurance partnerships signed", status: "planned" },
+      { timeline: "Month 15", milestone: "Series A fundraise initiated, $3M ARR run rate", status: "planned" },
+      { timeline: "Month 18", milestone: "1,000 contractors, $5M ARR, Series A closed", status: "planned" },
+      { timeline: "Month 24", milestone: "$7M ARR, national coverage, upgrade financing pilot live", status: "planned" }
     ]
   },
 
   ask: {
-    amount: "$4M",
-    round: "Seed",
-    timeline: "Q1 2026",
-    terms: "Priced round, standard seed terms",
-    use: "Build registry platform, onboard contractor network, establish insurance carrier partnerships, launch financing pilot",
-    targetInvestors: [
-      "PropTech and construction tech investors",
-      "Insurance/insurtech focused funds",
-      "Commercial real estate VCs",
-      "Strategic angels from fire protection industry"
-    ]
+    title: "The Ask",
+    amount: "$4,000,000",
+    round: "Seed Round",
+    terms: "SAFE or Priced Round at $16M post-money valuation",
+    useOfFunds: [
+      "Build registry platform and mobile apps for contractor network",
+      "Acquire and onboard first 300 fire protection contractors",
+      "Launch insurance carrier partnership pilots in 2+ markets",
+      "Develop Building Safety Score algorithm and insurance data products"
+    ],
+    timeline: "18-month runway to Series A milestones",
+    seriesA: {
+      timing: "Month 15-18",
+      metrics: "$3-5M ARR, 700+ contractors, 2+ insurance partnerships",
+      raise: "$15-20M at $70-90M valuation"
+    }
   },
 
   sources: [
-    { name: "NFPA Fire Protection Industry Statistics", url: "https://www.nfpa.org/News-and-Research/Data-research-and-tools/US-Fire-Problem" },
-    { name: "IBISWorld Fire Protection Services", url: "https://www.ibisworld.com/united-states/market-research-reports/fire-protection-industry/" },
-    { name: "Insurance Information Institute - Fire Losses", url: "https://www.iii.org/fact-statistic/facts-statistics-fire" },
-    { name: "AFSA Fire Sprinkler Industry Data", url: "https://firesprinkler.org/advocacy/fire-sprinkler-statistics/" }
+    { name: "Grand View Research - U.S. Fire Protection System Market", url: "https://www.grandviewresearch.com/industry-analysis/us-fire-protection-system-market-report", detail: "$25.94B in 2024, 3.6% CAGR to 2030" },
+    { name: "IBISWorld - Fire Protection Contractors", url: "https://www.ibisworld.com/united-states/industry/fire-protection-and-security-system-installation-contractors/6486/", detail: "19,845 businesses, $22.1B market in 2025" },
+    { name: "Precedence Research - Fire Insurance Market", url: "https://www.precedenceresearch.com/fire-insurance-market", detail: "$27.6B US market in 2024, 10.8% CAGR" },
+    { name: "Dataintelo - Fire Sprinkler Inspection Software", url: "https://dataintelo.com/report/fire-sprinkler-inspection-software-market/amp", detail: "$321M in 2024, 13.9% CAGR to 2033" },
+    { name: "NFPA - U.S. Experience with Sprinklers", url: "https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/us-experience-with-sprinklers", detail: "91% effectiveness rate, 90% death reduction" },
+    { name: "NFSA - NFPA 25 Deficiencies", url: "https://nfsa.org/2025/05/27/nfpa-25-sprinkler-deficiencies/", detail: "14% of failures due to lack of maintenance" },
+    { name: "Fortune Business Insights - Fire Protection System Market", url: "https://www.fortunebusinessinsights.com/fire-protection-system-market-104820", detail: "Global market $68.9B in 2024" },
+    { name: "American Fire Sprinkler Association", url: "https://firesprinkler.org/facts-figures/", detail: "Industry statistics and fire sprinkler effectiveness data" }
   ]
 }
 
-function ExpandableSection({ title, children, defaultOpen = false }: {
-  title: React.ReactNode
-  children: React.ReactNode
-  defaultOpen?: boolean
-}) {
-  const [isOpen, setIsOpen] = useState(defaultOpen)
-
+// Helper Components
+function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle?: string }) {
   return (
-    <div className="border border-gray-700 rounded-lg overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-gray-800 flex items-center justify-between hover:bg-gray-750 transition-colors"
-      >
-        <div className="font-semibold text-lg text-white">{title}</div>
-        {isOpen ? <ChevronUp className="text-gray-400" /> : <ChevronDown className="text-gray-400" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-900">
-          {children}
+    <div className="mb-6">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+          <Icon className="w-5 h-5 text-orange-600" />
         </div>
-      )}
+        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+      </div>
+      {subtitle && <p className="text-gray-600 ml-13">{subtitle}</p>}
     </div>
   )
 }
 
-function StatCard({ value, label, icon: Icon }: { value: string; label: string; icon: any }) {
+function StatCard({ value, label, sublabel }: { value: string; label: string; sublabel?: string }) {
   return (
-    <div className="bg-gray-800 rounded-lg p-4 text-center">
-      <Icon className="w-6 h-6 text-orange-400 mx-auto mb-2" />
-      <div className="text-2xl font-bold text-white">{value}</div>
-      <div className="text-sm text-gray-400">{label}</div>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+      <div className="text-3xl font-bold text-orange-600">{value}</div>
+      <div className="text-sm font-medium text-gray-900 mt-1">{label}</div>
+      {sublabel && <div className="text-xs text-gray-500 mt-1">{sublabel}</div>}
+    </div>
+  )
+}
+
+function ExpandableSection({ title, children, defaultOpen = false }: { title: React.ReactNode; children: React.ReactNode; defaultOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+      >
+        <div className="font-medium text-gray-900">{title}</div>
+        {isOpen ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+      </button>
+      {isOpen && <div className="p-4 border-t border-gray-200">{children}</div>}
     </div>
   )
 }
@@ -407,162 +620,259 @@ export default function BusinessPlanPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'detailed' | 'financials'>('overview')
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-start gap-4">
-              <a href="/tokens/#framework" className="text-gray-400 hover:text-white transition-colors mt-1">
-                <ArrowLeft className="w-5 h-5" />
-              </a>
-              <div>
-                <h1 className="text-2xl font-bold text-orange-400">{businessPlan.companyName}</h1>
-                <p className="text-gray-400 text-sm">{businessPlan.tagline}</p>
+      <header className="bg-gradient-to-r from-orange-600 to-red-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <a
+            href="/tokens/#framework"
+            className="inline-flex items-center gap-2 text-orange-100 hover:text-white transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Cap-Ex Opportunities
+          </a>
+
+          <div className="flex items-start justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Flame className="w-6 h-6" />
+                </div>
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold">{businessPlan.companyName}</h1>
+                  <p className="text-orange-100">{businessPlan.tagline}</p>
+                </div>
               </div>
             </div>
-            <div className="text-right text-sm text-gray-500">
-              <div>{businessPlan.version}</div>
-              <div>{businessPlan.date}</div>
+            <div className="text-right">
+              <div className="text-sm text-orange-200">{businessPlan.version}</div>
+              <div className="text-sm text-orange-200">{businessPlan.date}</div>
+            </div>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.ask.amount}</div>
+              <div className="text-sm text-orange-100">Seed Round</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.marketSize.tam.value}</div>
+              <div className="text-sm text-orange-100">U.S. Market (2024)</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">19.8K</div>
+              <div className="text-sm text-orange-100">US Fire Contractors</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">11:1</div>
+              <div className="text-sm text-orange-100">LTV:CAC</div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Tab Navigation */}
-      <nav className="bg-gray-900 border-b border-gray-800 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex gap-1">
-            {[
-              { id: 'overview', label: 'Overview' },
-              { id: 'detailed', label: 'Detailed Plan' },
-              { id: 'financials', label: 'Financials' }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-3 text-sm font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? 'text-orange-400 border-b-2 border-orange-400'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-2 py-3">
+            <button
+              onClick={() => setActiveTab('overview')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'overview' ? 'bg-orange-100 text-orange-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <FileText className="w-4 h-4 inline mr-2" />
+              Executive Summary
+            </button>
+            <button
+              onClick={() => setActiveTab('detailed')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'detailed' ? 'bg-orange-100 text-orange-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <Briefcase className="w-4 h-4 inline mr-2" />
+              Full Plan
+            </button>
+            <button
+              onClick={() => setActiveTab('financials')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'financials' ? 'bg-orange-100 text-orange-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <LineChart className="w-4 h-4 inline mr-2" />
+              Financials
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {activeTab === 'overview' && (
           <div className="space-y-8">
-            <section className="bg-gradient-to-r from-orange-900/50 to-red-900/50 rounded-xl p-8 border border-orange-800">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Target className="text-orange-400" />
-                Executive Summary
-              </h2>
+            {/* Executive Summary */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={FileText} title="Executive Summary" />
+
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">The Problem</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.problem}</p>
+                <div className="space-y-4">
+                  <div className="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+                    <h4 className="font-semibold text-red-800 mb-2">The Problem</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.problem}</p>
+                  </div>
+
+                  <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                    <h4 className="font-semibold text-green-800 mb-2">Our Solution</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.solution}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">Our Solution</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.solution}</p>
-                </div>
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">Market Opportunity</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.market}</p>
-                </div>
-                <div>
-                  <h3 className="text-orange-400 font-semibold mb-2">The Ask</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.ask}</p>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <h4 className="font-semibold text-blue-800 mb-2">Market Opportunity</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.market}</p>
+                  </div>
+
+                  <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                    <h4 className="font-semibold text-purple-800 mb-2">The Ask</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.ask}</p>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold mb-6">Key Metrics</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <StatCard value="$20B" label="TAM" icon={Globe} />
-                <StatCard value="15K+" label="US Fire Protection Contractors" icon={Users} />
-                <StatCard value="11:1" label="LTV:CAC Ratio" icon={TrendingUp} />
-                <StatCard value="$4M" label="Seed Ask" icon={DollarSign} />
-              </div>
-            </section>
+            {/* Problem */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={AlertTriangle} title={businessPlan.problem.title} />
 
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <AlertTriangle className="text-orange-400" />
-                {businessPlan.problem.title}
-              </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {businessPlan.problem.points.map((point, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-semibold text-white">{point.title}</h3>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-orange-400">{point.stat}</div>
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600">{point.stat}</div>
                         <div className="text-xs text-gray-500">{point.statLabel}</div>
                       </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{point.title}</h4>
+                        <p className="text-sm text-gray-600 mt-1">{point.detail}</p>
+                      </div>
                     </div>
-                    <p className="text-gray-400 text-sm">{point.detail}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                <Lightbulb className="text-orange-400" />
-                {businessPlan.solution.title}
-              </h2>
-              <p className="text-gray-400 mb-6">{businessPlan.solution.tagline}</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {businessPlan.solution.pillars.map((pillar, i) => {
-                  const IconComponent = pillar.icon === 'ClipboardCheck' ? ClipboardCheck :
-                    pillar.icon === 'Building' ? Building :
-                    pillar.icon === 'Shield' ? Shield :
-                    pillar.icon === 'DollarSign' ? DollarSign : Flame
-                  return (
-                    <div key={i} className="bg-gray-800 rounded-lg p-5">
-                      <IconComponent className="w-8 h-8 text-orange-400 mb-3" />
-                      <h3 className="font-semibold text-white mb-2">{pillar.title}</h3>
-                      <p className="text-gray-400 text-sm mb-3">{pillar.description}</p>
-                      <ul className="space-y-1">
-                        {pillar.features.map((feature, j) => (
-                          <li key={j} className="text-xs text-gray-500 flex items-center gap-1">
-                            <CheckCircle className="w-3 h-3 text-orange-400" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+            {/* Solution */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Lightbulb} title={businessPlan.solution.title} subtitle={businessPlan.solution.tagline} />
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {businessPlan.solution.pillars.map((pillar, i) => (
+                  <div key={i} className="p-4 bg-orange-50 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-2">{pillar.title}</h4>
+                    <p className="text-sm text-gray-600 mb-3">{pillar.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {pillar.features.map((feature, j) => (
+                        <span key={j} className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">
+                          {feature}
+                        </span>
+                      ))}
                     </div>
-                  )
-                })}
+                  </div>
+                ))}
               </div>
             </section>
 
-            <section className="bg-gradient-to-r from-orange-900/30 to-red-900/30 rounded-xl p-8 border border-orange-800">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <DollarSign className="text-orange-400" />
-                The Ask
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-orange-400">{businessPlan.ask.amount}</div>
-                  <div className="text-gray-400">{businessPlan.ask.round} Round</div>
+            {/* Why Now */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Clock} title={businessPlan.whyNow.title} />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.whyNow.factors.map((factor, i) => (
+                  <div key={i} className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+                    <h4 className="font-semibold text-gray-900 mb-2">{factor.title}</h4>
+                    <p className="text-sm text-gray-600">{factor.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Market Size */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={PieChart} title={businessPlan.marketSize.title} />
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 bg-gradient-to-br from-orange-500 to-red-500 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.tam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.tam.label}</div>
+                  <div className="text-sm text-orange-100 mt-1">{businessPlan.marketSize.tam.description}</div>
                 </div>
-                <div className="md:col-span-2">
-                  <p className="text-gray-300 mb-4">{businessPlan.ask.use}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {businessPlan.ask.targetInvestors.map((investor, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">
-                        {investor}
-                      </span>
+                <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.sam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.sam.label}</div>
+                  <div className="text-sm text-green-100 mt-1">{businessPlan.marketSize.sam.description}</div>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.som.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.som.label}</div>
+                  <div className="text-sm text-purple-100 mt-1">{businessPlan.marketSize.som.description}</div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Adjacent Markets</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.additionalMarkets.map((market, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{market.name}</span>
+                        <span className="text-sm font-medium text-gray-900">{market.value}</span>
+                      </div>
                     ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Key Metrics</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.keyMetrics.map((metric, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{metric.label}</span>
+                        <span className="text-sm font-medium text-gray-900">{metric.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* The Ask */}
+            <section className="bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl shadow-sm p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl font-bold mb-2">{businessPlan.ask.title}</h2>
+                <div className="text-5xl font-bold mb-2">{businessPlan.ask.amount}</div>
+                <div className="text-xl text-orange-100">{businessPlan.ask.round}</div>
+                <div className="text-orange-200 mt-2">{businessPlan.ask.terms}</div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Use of Funds</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.ask.useOfFunds.map((use, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                        <span>{use}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Series A Target</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="text-orange-200">Timing:</span> {businessPlan.ask.seriesA.timing}</p>
+                    <p><span className="text-orange-200">Metrics:</span> {businessPlan.ask.seriesA.metrics}</p>
+                    <p><span className="text-orange-200">Raise:</span> {businessPlan.ask.seriesA.raise}</p>
                   </div>
                 </div>
               </div>
@@ -571,208 +881,555 @@ export default function BusinessPlanPage() {
         )}
 
         {activeTab === 'detailed' && (
-          <div className="space-y-4">
-            <ExpandableSection title={<div className="flex items-center gap-2"><Clock className="text-orange-400" /> Why Now?</div>} defaultOpen={true}>
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.whyNow.factors.map((factor, i) => {
-                  const IconComponent = factor.icon === 'TrendingUp' ? TrendingUp : factor.icon === 'Zap' ? Zap : factor.icon === 'Users' ? Users : Shield
-                  return (
-                    <div key={i} className="bg-gray-800 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <IconComponent className="w-5 h-5 text-orange-400" />
-                        <h3 className="font-semibold text-white">{factor.title}</h3>
-                      </div>
-                      <p className="text-gray-400 text-sm">{factor.detail}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </ExpandableSection>
+          <div className="space-y-8">
+            {/* Competition */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.competition.title} />
+              <p className="text-gray-600 mb-4">{businessPlan.competition.overview}</p>
 
-            <ExpandableSection title={<div className="flex items-center gap-2"><PieChart className="text-orange-400" /> Market Size</div>}>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { key: 'tam', label: 'TAM', data: businessPlan.marketSize.tam },
-                  { key: 'sam', label: 'SAM', data: businessPlan.marketSize.sam },
-                  { key: 'som', label: 'SOM (Y5)', data: businessPlan.marketSize.som }
-                ].map(({ key, label, data }) => (
-                  <div key={key} className="bg-gray-800 rounded-lg p-5">
-                    <div className="text-center mb-4">
-                      <div className="text-3xl font-bold text-orange-400">{data.value}</div>
-                      <div className="text-sm text-gray-400">{label}</div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Competitor</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Market Share</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Strengths</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Weaknesses</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Threat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {businessPlan.competition.players.map((player, i) => (
+                      <tr key={i} className="border-b border-gray-100">
+                        <td className="py-3 px-2">
+                          <div className="font-medium text-gray-900">{player.name}</div>
+                          <div className="text-xs text-gray-500">{player.type}</div>
+                        </td>
+                        <td className="py-3 px-2 text-sm">{player.marketShare}</td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.strengths.slice(0, 2).map((s, j) => (
+                              <li key={j}>+ {s}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.weaknesses.slice(0, 2).map((w, j) => (
+                              <li key={j}>- {w}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            player.threat === 'Partner not competitor' ? 'bg-blue-100 text-blue-700' :
+                            player.threat === 'Low' ? 'bg-green-100 text-green-700' :
+                            player.threat === 'Primary competitor' ? 'bg-red-100 text-red-700' :
+                            'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            {player.threat}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+                <h4 className="font-semibold text-orange-800 mb-2">{businessPlan.competition.ourAdvantage.title}</h4>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {businessPlan.competition.ourAdvantage.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Product Roadmap */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Wrench} title={businessPlan.product.title} />
+
+              <div className="space-y-6">
+                {businessPlan.product.phases.map((phase, i) => (
+                  <div key={i} className="border-l-4 border-orange-400 pl-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs font-medium">
+                        {phase.timeline}
+                      </span>
+                      <h4 className="font-semibold text-gray-900">{phase.phase}</h4>
                     </div>
-                    <p className="text-sm text-gray-400 mb-3">{data.description}</p>
-                    <div className="space-y-2">
-                      {data.breakdown.map((item, i) => (
-                        <div key={i} className="flex justify-between text-sm">
-                          <span className="text-gray-400">{item.segment}</span>
-                          <span className="text-white font-medium">{item.value}</span>
-                        </div>
+                    <ul className="grid md:grid-cols-2 gap-2 mb-3">
+                      {phase.deliverables.map((deliverable, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
+                          {deliverable}
+                        </li>
                       ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
-
-            <ExpandableSection title={<div className="flex items-center gap-2"><Users className="text-orange-400" /> Competitive Landscape</div>}>
-              <p className="text-gray-400 mb-4">{businessPlan.competition.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-4">
-                {businessPlan.competition.competitors.map((comp, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <h3 className="font-semibold text-white mb-2">{comp.name}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{comp.description}</p>
-                    <div className="grid grid-cols-2 gap-4 text-xs">
-                      <div>
-                        <div className="text-green-400 font-medium mb-1">Strengths</div>
-                        <ul className="text-gray-400 space-y-1">{comp.strengths.map((s, j) => <li key={j}>+ {s}</li>)}</ul>
-                      </div>
-                      <div>
-                        <div className="text-orange-400 font-medium mb-1">Weaknesses</div>
-                        <ul className="text-gray-400 space-y-1">{comp.weaknesses.map((w, j) => <li key={j}>- {w}</li>)}</ul>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-orange-900/30 rounded-lg p-4 border border-orange-800">
-                <h3 className="font-semibold text-orange-400 mb-2">Our Moat</h3>
-                <p className="text-gray-300">{businessPlan.competition.moat}</p>
-              </div>
-            </ExpandableSection>
-
-            <ExpandableSection title={<div className="flex items-center gap-2"><Briefcase className="text-orange-400" /> Business Model</div>}>
-              <p className="text-gray-400 mb-4">{businessPlan.businessModel.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                {businessPlan.businessModel.revenueStreams.map((stream, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{stream.name}</h3>
-                      <span className="text-orange-400 font-medium">{stream.pricing}</span>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-3">{stream.description}</p>
-                    <div className="text-xs text-gray-500 mb-2">Gross Margin: {stream.margin}</div>
-                    <ul className="text-xs text-gray-400 space-y-1">
-                      {stream.details.map((d, j) => (<li key={j} className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-orange-400" />{d}</li>))}
                     </ul>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-gray-800 rounded-lg p-6">
-                <h3 className="font-semibold text-white mb-4">Unit Economics</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
-                  <div className="text-center"><div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.ltv}</div><div className="text-xs text-gray-400">LTV</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.cac}</div><div className="text-xs text-gray-400">CAC</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.ltvCacRatio}</div><div className="text-xs text-gray-400">LTV:CAC</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.paybackPeriod}</div><div className="text-xs text-gray-400">Payback</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-orange-400">{businessPlan.businessModel.unitEconomics.grossMargin}</div><div className="text-xs text-gray-400">Gross Margin</div></div>
-                </div>
-                <ul className="text-sm text-gray-400 space-y-1">{businessPlan.businessModel.unitEconomics.details.map((d, i) => <li key={i}>• {d}</li>)}</ul>
-              </div>
-            </ExpandableSection>
-
-            <ExpandableSection title={<div className="flex items-center gap-2"><Shield className="text-orange-400" /> Risks & Mitigations</div>}>
-              <div className="space-y-3">
-                {businessPlan.risks.map((risk, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-white">{risk.risk}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${risk.severity === 'High' ? 'bg-red-900/50 text-red-400' : risk.severity === 'Medium' ? 'bg-yellow-900/50 text-yellow-400' : 'bg-green-900/50 text-green-400'}`}>{risk.severity}</span>
+                    <div className="p-2 bg-green-50 rounded text-sm">
+                      <span className="font-medium text-green-800">Milestone:</span>{' '}
+                      <span className="text-gray-700">{phase.milestone}</span>
                     </div>
-                    <p className="text-gray-400 text-sm"><strong className="text-gray-300">Mitigation:</strong> {risk.mitigation}</p>
                   </div>
                 ))}
               </div>
-            </ExpandableSection>
+            </section>
 
-            <ExpandableSection title={<div className="flex items-center gap-2"><Award className="text-orange-400" /> Milestones & Timeline</div>}>
-              <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-700" />
-                <div className="space-y-4">
-                  {businessPlan.milestones.map((m, i) => (
-                    <div key={i} className="relative pl-10">
-                      <div className="absolute left-2 w-4 h-4 rounded-full bg-orange-400" />
-                      <div className="bg-gray-800 rounded-lg p-4">
-                        <span className="text-orange-400 font-medium">{m.quarter}</span>
-                        <p className="text-gray-300">{m.milestone}</p>
+            {/* Business Model */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.businessModel.title} />
+              <p className="text-gray-600 mb-4">{businessPlan.businessModel.overview}</p>
+
+              <div className="grid gap-4 mb-6">
+                {businessPlan.businessModel.revenueStreams.map((stream, i) => (
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{stream.name}</h4>
+                        <p className="text-sm text-gray-600">{stream.description}</p>
+                      </div>
+                      <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs font-medium">
+                        {stream.margin} margin
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 mt-3 text-sm">
+                      <div>
+                        <span className="text-gray-500">Pricing:</span>
+                        <span className="ml-2 font-medium">{stream.pricing}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 1:</span>
+                        <span className="ml-2 font-medium">{stream.year1Revenue}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 3:</span>
+                        <span className="ml-2 font-medium">{stream.year3Revenue}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-4 bg-orange-50 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-3">{businessPlan.businessModel.unitEconomics.title}</h4>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl font-bold text-orange-600">{metric.value}</div>
+                      <div className="text-sm font-medium text-gray-900">{metric.label}</div>
+                      <div className="text-xs text-gray-500">{metric.note}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Go-to-Market */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.goToMarket.title} />
+
+              <div className="space-y-6">
+                {businessPlan.goToMarket.phases.map((phase, i) => (
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{phase.phase}: {phase.strategy}</h4>
+                        <span className="text-sm text-gray-500">{phase.timeline}</span>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Tactics</h5>
+                        <ul className="space-y-1">
+                          {phase.tactics.map((tactic, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                              <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
+                              {tactic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Success Metrics</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {phase.metrics.map((metric, j) => (
+                            <span key={j} className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
+                              {metric}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6">
+                <h4 className="font-medium text-gray-900 mb-3">Distribution Channels</h4>
+                <div className="grid md:grid-cols-3 gap-3">
+                  {businessPlan.goToMarket.channels.map((channel, i) => (
+                    <div key={i} className="p-3 border border-gray-200 rounded-lg">
+                      <h5 className="font-medium text-gray-900 text-sm">{channel.name}</h5>
+                      <p className="text-xs text-gray-600 mt-1">{channel.description}</p>
+                      <div className="flex gap-2 mt-2">
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.cost === 'Low' ? 'bg-green-100 text-green-700' :
+                          channel.cost === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-red-100 text-red-700'
+                        }`}>
+                          {channel.cost} cost
+                        </span>
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.effectiveness.includes('High') ? 'bg-green-100 text-green-700' :
+                          'bg-yellow-100 text-yellow-700'
+                        }`}>
+                          {channel.effectiveness}
+                        </span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            </ExpandableSection>
+            </section>
 
-            <ExpandableSection title={<div className="flex items-center gap-2"><Users className="text-orange-400" /> Team & Hiring</div>}>
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.team.hiring.map((hire, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{hire.role}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${hire.priority === 'Critical' ? 'bg-orange-900/50 text-orange-400' : 'bg-yellow-900/50 text-yellow-400'}`}>{hire.priority}</span>
+            {/* Team */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.team.title} />
+
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                {businessPlan.team.currentNeeds.map((need, i) => (
+                  <div key={i} className="p-4 border border-gray-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">{need.role}</h4>
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        need.priority === 'Critical' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
+                      }`}>
+                        {need.priority}
+                      </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-1">{hire.description}</p>
-                    <p className="text-xs text-gray-500">Timeline: {hire.timeline}</p>
+                    <p className="text-sm text-gray-600">{need.skills}</p>
+                    <span className="inline-block mt-2 px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">
+                      {need.status}
+                    </span>
                   </div>
                 ))}
               </div>
-            </ExpandableSection>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Advisory Board Needs</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.team.advisorNeeds.map((advisor, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                        <Award className="w-4 h-4 text-orange-500" />
+                        {advisor}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Organization Plan</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium text-gray-700">Year 1:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year1}</span></p>
+                    <p><span className="font-medium text-gray-700">Year 2:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year2}</span></p>
+                    <p><span className="font-medium text-gray-700">Year 3:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year3}</span></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Risks */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Shield} title={businessPlan.risks.title} />
+
+              <div className="space-y-4">
+                {businessPlan.risks.risks.map((risk, i) => (
+                  <ExpandableSection key={i} title={
+                    <div className="flex items-center gap-3">
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        risk.severity === 'High' ? 'bg-red-100 text-red-700' :
+                        risk.severity === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                        'bg-green-100 text-green-700'
+                      }`}>
+                        {risk.severity}
+                      </span>
+                      <span>{risk.risk}</span>
+                    </div>
+                  }>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Likelihood:</span>
+                        <span className="ml-2 text-sm text-gray-600">{risk.likelihood}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Description:</span>
+                        <p className="text-sm text-gray-600 mt-1">{risk.description}</p>
+                      </div>
+                      <div className="p-3 bg-green-50 rounded">
+                        <span className="text-sm font-medium text-green-800">Mitigation:</span>
+                        <p className="text-sm text-gray-700 mt-1">{risk.mitigation}</p>
+                      </div>
+                    </div>
+                  </ExpandableSection>
+                ))}
+              </div>
+            </section>
+
+            {/* Milestones */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.milestones.title} />
+
+              <div className="relative">
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-orange-200" />
+                <div className="space-y-4">
+                  {businessPlan.milestones.items.map((item, i) => (
+                    <div key={i} className="relative pl-10">
+                      <div className="absolute left-2 w-4 h-4 rounded-full bg-orange-500 border-2 border-white" />
+                      <div className="p-3 bg-gray-50 rounded-lg">
+                        <span className="text-sm font-medium text-orange-600">{item.timeline}</span>
+                        <p className="text-gray-700 mt-1">{item.milestone}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
           </div>
         )}
 
         {activeTab === 'financials' && (
           <div className="space-y-8">
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2"><LineChart className="text-orange-400" />Financial Projections</h2>
+            {/* Financial Projections */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={LineChart} title="Financial Projections" />
+
+              <div className="space-y-8">
+                {/* Scenario 1: With Insurance */}
+                <div className="p-4 bg-orange-50 rounded-lg border-2 border-orange-200">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-2 py-0.5 bg-orange-600 text-white rounded text-xs font-medium">RECOMMENDED</span>
+                    <h4 className="font-semibold text-gray-900">{businessPlan.financials.scenarios.withInsurance.name}</h4>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withInsurance.description}</p>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-orange-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Contractors</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Buildings</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Runway</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {businessPlan.financials.scenarios.withInsurance.years.map((year, i) => (
+                          <tr key={i} className="border-b border-orange-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.contractors.toLocaleString()}</td>
+                            <td className="py-2 px-3 text-right">{year.buildings}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                            <td className={`py-2 px-3 text-right ${year.runway === 'Profitable' ? 'text-green-600' : 'text-gray-600'}`}>
+                              {year.runway}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withInsurance.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-orange-500">•</span>
+                          {assumption}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-orange-600">
+                      Funding Required: {businessPlan.financials.scenarios.withInsurance.fundingRequired}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Scenario 2: Without Insurance */}
+                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <h4 className="font-semibold text-gray-900 mb-2">{businessPlan.financials.scenarios.withoutInsurance.name}</h4>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withoutInsurance.description}</p>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Contractors</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Buildings</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Runway</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {businessPlan.financials.scenarios.withoutInsurance.years.map((year, i) => (
+                          <tr key={i} className="border-b border-gray-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.contractors.toLocaleString()}</td>
+                            <td className="py-2 px-3 text-right">{year.buildings}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                            <td className={`py-2 px-3 text-right ${year.runway === 'Profitable' ? 'text-green-600' : 'text-gray-600'}`}>
+                              {year.runway}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withoutInsurance.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-gray-500">•</span>
+                          {assumption}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-gray-600">
+                      Funding Required: {businessPlan.financials.scenarios.withoutInsurance.fundingRequired}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Use of Funds */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.financials.useOfFunds.title} />
+
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-800 rounded-xl p-6 border-2 border-orange-600">
-                  <div className="flex items-center gap-2 mb-2"><Zap className="text-orange-400" /><h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withFinancing.name}</h3></div>
-                  <p className="text-gray-400 text-sm mb-4">{businessPlan.financials.scenarios.withFinancing.description}</p>
-                  <table className="w-full text-sm mb-4">
-                    <thead><tr className="border-b border-gray-700"><th className="text-left py-2 text-gray-400">Year</th><th className="text-right py-2 text-gray-400">Revenue</th><th className="text-right py-2 text-gray-400">Network</th></tr></thead>
-                    <tbody>{businessPlan.financials.scenarios.withFinancing.projections.map((proj, i) => (<tr key={i} className="border-b border-gray-700/50"><td className="py-2 text-white">{proj.year}</td><td className="py-2 text-right text-orange-400 font-medium">{proj.revenue}</td><td className="py-2 text-right text-gray-300">{proj.customers}</td></tr>))}</tbody>
-                  </table>
-                  <div className="text-xs text-gray-400"><div className="font-medium mb-1">Key Assumptions:</div><ul className="space-y-1">{businessPlan.financials.scenarios.withFinancing.keyAssumptions.map((a, i) => <li key={i}>• {a}</li>)}</ul></div>
-                </div>
-                <div className="bg-gray-800 rounded-xl p-6">
-                  <div className="flex items-center gap-2 mb-2"><Building2 className="text-gray-400" /><h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withoutFinancing.name}</h3></div>
-                  <p className="text-gray-400 text-sm mb-4">{businessPlan.financials.scenarios.withoutFinancing.description}</p>
-                  <table className="w-full text-sm mb-4">
-                    <thead><tr className="border-b border-gray-700"><th className="text-left py-2 text-gray-400">Year</th><th className="text-right py-2 text-gray-400">Revenue</th><th className="text-right py-2 text-gray-400">Network</th></tr></thead>
-                    <tbody>{businessPlan.financials.scenarios.withoutFinancing.projections.map((proj, i) => (<tr key={i} className="border-b border-gray-700/50"><td className="py-2 text-white">{proj.year}</td><td className="py-2 text-right text-orange-400 font-medium">{proj.revenue}</td><td className="py-2 text-right text-gray-300">{proj.customers}</td></tr>))}</tbody>
-                  </table>
-                  <div className="text-xs text-gray-400"><div className="font-medium mb-1">Key Assumptions:</div><ul className="space-y-1">{businessPlan.financials.scenarios.withoutFinancing.keyAssumptions.map((a, i) => <li key={i}>• {a}</li>)}</ul></div>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2"><PieChart className="text-orange-400" />Use of Funds</h2>
-              <div className="bg-gray-800 rounded-xl p-6">
-                <div className="grid md:grid-cols-5 gap-4 mb-6">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (<div key={i} className="text-center"><div className="text-2xl font-bold text-orange-400">{fund.percentage}%</div><div className="text-sm font-medium text-white">{fund.category}</div><div className="text-xs text-gray-400">{fund.amount}</div></div>))}
-                </div>
                 <div className="space-y-3">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (<div key={i} className="flex items-center gap-4"><div className="w-32 text-sm text-gray-400">{fund.category}</div><div className="flex-1 bg-gray-700 rounded-full h-4"><div className="bg-orange-500 h-4 rounded-full" style={{ width: `${fund.percentage}%` }} /></div><div className="w-24 text-sm text-right text-white">{fund.amount}</div></div>))}
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-16 text-right">
+                        <span className="text-lg font-bold text-orange-600">{item.percentage}%</span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="h-6 bg-gray-200 rounded overflow-hidden">
+                          <div
+                            className="h-full bg-orange-500 rounded"
+                            style={{ width: `${item.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="w-32">
+                        <div className="font-medium text-gray-900">{item.amount}</div>
+                        <div className="text-xs text-gray-500">{item.category}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="p-3 bg-gray-50 rounded">
+                      <h4 className="font-medium text-gray-900 text-sm">{item.category}</h4>
+                      <p className="text-xs text-gray-600 mt-1">{item.detail}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
 
-            <section>
-              <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><FileText className="text-orange-400" />Sources</h2>
-              <div className="bg-gray-800 rounded-lg p-4">
-                <ul className="space-y-2">{businessPlan.sources.map((source, i) => (<li key={i}><a href={source.url} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 flex items-center gap-2"><ExternalLink className="w-4 h-4" />{source.name}</a></li>))}</ul>
+            {/* Unit Economics Detail */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={BarChart3} title="Unit Economics" />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                  <div key={i} className="p-4 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg text-center">
+                    <div className="text-3xl font-bold text-orange-600">{metric.value}</div>
+                    <div className="text-sm font-medium text-gray-900 mt-1">{metric.label}</div>
+                    <div className="text-xs text-gray-500 mt-1">{metric.note}</div>
+                  </div>
+                ))}
               </div>
             </section>
           </div>
         )}
-      </main>
 
-      <footer className="bg-gray-900 border-t border-gray-800 mt-12">
-        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">
-          <p>{businessPlan.companyName} Business Plan • {businessPlan.version} • {businessPlan.date}</p>
-          <p className="mt-2">Part of the <a href="/tokens/#framework" className="text-orange-400 hover:text-orange-300">Ribbit Token Cap-Ex Framework</a></p>
+        {/* Sources */}
+        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
+          <SectionHeader icon={ExternalLink} title="Sources & References" />
+
+          <div className="grid md:grid-cols-2 gap-3">
+            {businessPlan.sources.map((source, i) => (
+              <a
+                key={i}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-medium text-gray-900 text-sm group-hover:text-orange-600 transition-colors">
+                      {source.name}
+                    </h4>
+                    <p className="text-xs text-gray-500 mt-1">{source.detail}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-orange-600 transition-colors flex-shrink-0" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 mt-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h3 className="text-xl font-bold mb-2">{businessPlan.companyName}</h3>
+          <p className="text-gray-400">{businessPlan.tagline}</p>
+          <p className="text-gray-500 text-sm mt-4">
+            {businessPlan.version} | {businessPlan.date}
+          </p>
+          <div className="mt-6">
+            <a
+              href="https://hyder.me/#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
+            >
+              <Briefcase className="w-5 h-5" />
+              Contact for Investment Inquiries
+            </a>
+          </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }

@@ -2,11 +2,34 @@
 
 import { useState } from 'react'
 import {
-  ArrowLeft, Target, TrendingUp, DollarSign, Users, Shield, AlertTriangle,
-  CheckCircle, ExternalLink, ChevronDown, ChevronUp, Building2, Zap, BarChart3,
-  Clock, Wrench, FileText, Briefcase, Lightbulb, Globe, Award, PieChart, LineChart, UtensilsCrossed
+  ArrowLeft,
+  Target,
+  TrendingUp,
+  DollarSign,
+  Users,
+  Shield,
+  AlertTriangle,
+  CheckCircle,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  Building2,
+  Zap,
+  BarChart3,
+  Clock,
+  Wrench,
+  Thermometer,
+  FileText,
+  Briefcase,
+  Lightbulb,
+  Globe,
+  Award,
+  PieChart,
+  LineChart,
+  UtensilsCrossed
 } from 'lucide-react'
 
+// Business Plan Data
 const businessPlan = {
   companyName: "KitchenPulse",
   tagline: "The Network of Record for Restaurant Equipment",
@@ -16,7 +39,7 @@ const businessPlan = {
   executiveSummary: {
     problem: "Walk-in coolers, fryers, hoods—all critical restaurant equipment serviced by fragmented local techs. Equipment failure = restaurant closure. Zero standardized maintenance tracking across 1M+ restaurants.",
     solution: "KitchenPulse aggregates service providers, tracks equipment lifecycles, and enables predictive maintenance with IoT sensors on critical equipment—becoming the equipment intelligence layer for restaurants and their financiers.",
-    market: "$45B restaurant equipment market with $8B annual service spend. Equipment finance companies need maintenance data. Chains and franchises desperately need visibility.",
+    market: "$98B commercial kitchen equipment market with $28B annual service spend. Equipment finance companies need maintenance data. Chains and franchises desperately need visibility.",
     ask: "$4M Seed Round to build equipment registry, onboard service network, and pilot with major restaurant chains."
   },
 
@@ -25,27 +48,27 @@ const businessPlan = {
     points: [
       {
         title: "Fragmented Service Network",
-        detail: "Thousands of local HVAC/refrigeration techs service restaurants. No standardization, no quality tracking, inconsistent pricing.",
+        detail: "Thousands of local HVAC/refrigeration techs service restaurants. No coordination, no standardization, no quality tracking. Every installer is an island.",
         stat: "10K+",
         statLabel: "independent service providers"
       },
       {
         title: "Equipment Failure = Lost Revenue",
-        detail: "A failed walk-in cooler means spoiled inventory ($5K-20K) plus closure. Average restaurant operates on 3-5% margins—can't absorb surprises.",
-        stat: "$15K",
-        statLabel: "average cost of major equipment failure"
+        detail: "A failed walk-in cooler means spoiled inventory ($20K-40K) plus closure. Average restaurant operates on 3-5% margins—can't absorb surprises.",
+        stat: "$28B",
+        statLabel: "annual repair spend"
       },
       {
         title: "No Lifecycle Visibility",
         detail: "Restaurants don't know equipment age, maintenance history, or replacement timelines. Equipment finance companies underwriting blind.",
-        stat: "0",
+        stat: "0%",
         statLabel: "centralized equipment databases"
       },
       {
         title: "Health Department Risk",
-        detail: "Equipment failures create food safety violations. One health department closure can destroy a restaurant. No proactive monitoring.",
-        stat: "60K",
-        statLabel: "restaurants closed annually for violations"
+        detail: "Equipment failures create food safety violations. 85% of food spoilage is due to temperature issues in walk-ins. One health department closure can destroy a restaurant.",
+        stat: "85%",
+        statLabel: "of spoilage from temp issues"
       }
     ]
   },
@@ -86,12 +109,12 @@ const businessPlan = {
     factors: [
       {
         title: "Restaurant Tech Adoption",
-        detail: "Toast, Square, and restaurant tech platforms have normalized SaaS in restaurants. Equipment is the next frontier.",
+        detail: "Toast, Square, and restaurant tech platforms have normalized SaaS in restaurants. 45% of commercial kitchens expected to implement smart tech by 2025.",
         icon: "TrendingUp"
       },
       {
         title: "IoT Costs Plummeting",
-        detail: "Temperature sensors under $20. Cellular connectivity under $5/mo. Makes equipment monitoring economically viable.",
+        detail: "Temperature sensors under $20. Cellular connectivity under $5/mo. 9.3M+ connected kitchen devices installed globally in 2024.",
         icon: "Zap"
       },
       {
@@ -100,302 +123,463 @@ const businessPlan = {
         icon: "Users"
       },
       {
-        title: "Supply Chain Awareness",
-        detail: "COVID showed restaurants the cost of equipment failure. Owners now understand value of redundancy and monitoring.",
-        icon: "Shield"
+        title: "Smart Kitchen Surge",
+        detail: "74% of operators prioritize equipment with embedded IoT diagnostics. Smart kitchen appliances growing 25% annually.",
+        icon: "Thermometer"
+      },
+      {
+        title: "Proven ROI",
+        detail: "IoT monitoring trims maintenance costs by 30% and cuts breakdowns by 70%. Smart temp monitoring reduced food waste 17%.",
+        icon: "Target"
       }
     ]
   },
 
   marketSize: {
+    title: "Market Opportunity",
     tam: {
-      value: "$53B",
-      description: "Total addressable market: Restaurant equipment + annual service",
-      breakdown: [
-        { segment: "Restaurant Equipment Sales", value: "$45B", growth: "4.2% CAGR" },
-        { segment: "Equipment Service & Maintenance", value: "$8B", growth: "5.5% CAGR" },
-        { segment: "IoT/Monitoring Solutions", value: "$850M", growth: "18% CAGR" }
-      ]
+      value: "$126B",
+      label: "Total Addressable Market",
+      description: "Global Commercial Kitchen Equipment 2026",
+      source: "Grand View Research"
     },
     sam: {
-      value: "$2.8B",
-      description: "Serviceable addressable market: Chain/franchise restaurants and equipment financiers",
-      breakdown: [
-        { segment: "Chain Restaurant Maintenance", value: "$1.6B", growth: "200K+ chain locations" },
-        { segment: "Equipment Finance Data", value: "$400M", growth: "Residual value modeling" },
-        { segment: "IoT Monitoring Services", value: "$800M", growth: "Critical equipment monitoring" }
-      ]
+      value: "$28B",
+      label: "Serviceable Addressable Market",
+      description: "U.S. Equipment Service & Repair Market",
+      source: "HVAC Services Market Report"
     },
     som: {
-      value: "$42M",
-      description: "Year 5 revenue target: 8,000 locations, 400 service providers, 25K IoT sensors",
-      breakdown: [
-        { segment: "Restaurant SaaS", value: "$19M", growth: "8K locations @ $200/mo avg" },
-        { segment: "Service Network Fees", value: "$12M", growth: "10% of service transactions" },
-        { segment: "IoT Monitoring", value: "$8M", growth: "25K sensors @ $25/mo" },
-        { segment: "Data Licensing", value: "$3M", growth: "Equipment finance, insurers" }
+      value: "$180M",
+      label: "Serviceable Obtainable Market",
+      description: "3% capture in 5 years",
+      source: "Conservative estimate"
+    },
+    additionalMarkets: [
+      { name: "U.S. Commercial Kitchen Equipment", value: "$98.6B (2025)", cagr: "6.2%" },
+      { name: "HVAC Maintenance Services (U.S.)", value: "$28.2B (2025)", cagr: "6.6%" },
+      { name: "Food Service Equipment Global", value: "$84.9B (2035)", cagr: "5.8%" },
+      { name: "Smart Kitchen Appliances", value: "$15B+ (2030)", cagr: "25%" }
+    ],
+    keyMetrics: [
+      { label: "Average walk-in cooler failure cost", value: "$20K-$40K" },
+      { label: "Annual restaurant repair spend", value: "$28B" },
+      { label: "Revenue lost to equipment downtime", value: "$46B/year" },
+      { label: "Energy used by restaurant refrigeration", value: "15-45%" }
+    ]
+  },
+
+  competition: {
+    title: "Competitive Landscape",
+    players: [
+      {
+        name: "86 Repairs",
+        type: "Facilities Platform",
+        marketShare: "2,000+ restaurants",
+        strengths: ["Restaurant focus", "Service network", "Good UX", "$24M+ raised"],
+        weaknesses: ["No IoT/sensors", "Limited equipment data", "Dispatch-only model", "No financing integration"],
+        threat: "Direct competitor"
+      },
+      {
+        name: "ResQ",
+        type: "Repair Platform",
+        marketShare: "Toronto-based",
+        strengths: ["Asset lifecycle management", "Restaurant specialization", "Canada footprint"],
+        weaknesses: ["Limited U.S. presence", "No predictive maintenance", "No equipment intelligence"],
+        threat: "Indirect competitor"
+      },
+      {
+        name: "ServiceChannel",
+        type: "Enterprise FM",
+        marketShare: "Large enterprise only",
+        strengths: ["Enterprise scale", "Established brand", "Broad capabilities"],
+        weaknesses: ["Not restaurant-specific", "Expensive", "Complex implementation", "No equipment intelligence"],
+        threat: "Low"
+      },
+      {
+        name: "Equipment OEMs",
+        type: "Hardware Makers",
+        marketShare: "Own service on new equipment",
+        strengths: ["Equipment expertise", "Existing relationships", "Parts supply"],
+        weaknesses: ["Sell and forget model", "No service network", "No cross-brand view", "Limited tech investment"],
+        threat: "Partners not competitors"
+      }
+    ],
+    ourAdvantage: {
+      title: "KitchenPulse's Unfair Advantages",
+      points: [
+        "Network effect: More restaurants = better service provider matching = better equipment data = more financing/insurance interest = more restaurants",
+        "Data moat: Only aggregated view of restaurant equipment health and service history",
+        "IoT-first: Predictive maintenance that competitors lack—30% cost reduction, 70% fewer breakdowns",
+        "Financing angle: Equipment financiers will pay for maintenance data to protect collateral",
+        "Insurance partnerships: Insurers offer discounts for monitored restaurants, driving adoption"
       ]
     }
   },
 
-  competition: {
-    overview: "No comprehensive platform exists for restaurant equipment lifecycle management. Point solutions exist for specific equipment types or functions.",
-    competitors: [
+  product: {
+    title: "Product Roadmap",
+    phases: [
       {
-        name: "86 Repairs",
-        description: "Facilities management platform for restaurants. Service dispatch focus, limited equipment intelligence.",
-        strengths: ["Restaurant focus", "Service network", "Good UX"],
-        weaknesses: ["No IoT/sensors", "Limited equipment data", "Dispatch-only model", "No financing integration"],
-        marketShare: "~2% of chains"
+        phase: "Phase 1: Foundation",
+        timeline: "Months 1-6",
+        deliverables: [
+          "Restaurant equipment registry platform (web + mobile)",
+          "Service provider onboarding and quality tracking",
+          "Maintenance scheduling and work order system",
+          "Basic reporting and compliance dashboards",
+          "Integration with top POS platforms (Toast, Square)"
+        ],
+        milestone: "200 locations, 50 service providers, MVP live"
       },
       {
-        name: "ServiceChannel",
-        description: "Enterprise facilities management. Too heavy/expensive for most restaurants.",
-        strengths: ["Enterprise scale", "Established brand", "Broad capabilities"],
-        weaknesses: ["Not restaurant-specific", "Expensive", "Complex implementation", "No equipment intelligence"],
-        marketShare: "Large enterprise only"
+        phase: "Phase 2: Intelligence",
+        timeline: "Months 7-12",
+        deliverables: [
+          "IoT sensor integration for walk-in coolers/freezers",
+          "Temperature monitoring and alerting system",
+          "Predictive maintenance algorithms",
+          "Equipment lifecycle analytics",
+          "Chain/franchise multi-location dashboards"
+        ],
+        milestone: "800 locations, first chain pilot, $1M ARR"
       },
       {
-        name: "Equipment OEMs",
-        description: "Hobart, True, etc. sell equipment but minimal lifecycle services.",
-        strengths: ["Equipment expertise", "Existing relationships", "Parts supply"],
-        weaknesses: ["Sell and forget model", "No service network", "No cross-brand view", "Limited tech investment"],
-        marketShare: "Own service on new equipment"
-      },
-      {
-        name: "POS Platforms (Toast, Square)",
-        description: "Could expand into equipment but not core focus. Potential partners or acquirers.",
-        strengths: ["Restaurant relationships", "Distribution", "Capital"],
-        weaknesses: ["Not core competency", "No equipment expertise", "Would likely partner/buy", "Focused on payments"],
-        marketShare: "N/A - potential partners"
+        phase: "Phase 3: Scale",
+        timeline: "Year 2-3",
+        deliverables: [
+          "National service provider coverage (500+ providers)",
+          "Equipment financing data products",
+          "Insurance risk scoring API",
+          "Advanced predictive maintenance ML models",
+          "Expansion to adjacent verticals (hotels, hospitals)"
+        ],
+        milestone: "8,000 locations, $15M ARR, market leader"
       }
-    ],
-    moat: "Network effects: More restaurants = better service provider matching = better equipment data = more financing/insurance interest = more restaurants."
+    ]
   },
 
   businessModel: {
-    overview: "Three revenue streams: Restaurant SaaS, service transaction fees, and data licensing to financiers/insurers.",
+    title: "Business Model",
     revenueStreams: [
       {
         name: "Restaurant SaaS",
         description: "Monthly subscription for equipment registry, maintenance scheduling, and compliance tracking",
         pricing: "$99-$499/location/month based on size",
         margin: "85%",
-        details: [
-          "Equipment inventory & tracking",
-          "Maintenance scheduling",
-          "Service provider access",
-          "Compliance dashboard",
-          "Multi-location management"
-        ]
+        year1Revenue: "$500K",
+        year3Revenue: "$4.5M"
       },
       {
         name: "Service Network Fees",
         description: "Transaction fees on service calls booked through platform",
         pricing: "8-12% of service invoice",
         margin: "90%",
-        details: [
-          "Vetted provider matching",
-          "Price transparency",
-          "Quality guarantees",
-          "Payment processing",
-          "Dispute resolution"
-        ]
+        year1Revenue: "$350K",
+        year3Revenue: "$4M"
       },
       {
         name: "IoT Monitoring",
         description: "Hardware + monitoring subscription for critical equipment",
         pricing: "$15-$50/sensor/month",
         margin: "65%",
-        details: [
-          "Temperature monitoring",
-          "Compressor analytics",
-          "Alert notifications",
-          "Predictive maintenance",
-          "API integration"
-        ]
+        year1Revenue: "$150K",
+        year3Revenue: "$3M"
       },
       {
         name: "Data Licensing",
         description: "Equipment lifecycle data for financiers, insurers, and manufacturers",
         pricing: "$50K-$250K annual contracts",
         margin: "95%",
-        details: [
-          "Residual value models",
-          "Failure rate analytics",
-          "Maintenance benchmarks",
-          "Risk scoring",
-          "Market intelligence"
-        ]
+        year1Revenue: "$200K",
+        year3Revenue: "$3.5M"
       }
     ],
     unitEconomics: {
-      ltv: "$8,400",
-      cac: "$700",
-      ltvCacRatio: "12:1",
-      paybackPeriod: "4 months",
-      grossMargin: "78%",
-      details: [
-        "Average location lifetime: 3.5 years",
-        "Monthly ARPU grows with IoT attachment",
-        "CAC: $400 digital + $300 sales",
-        "Service fees provide expansion revenue"
+      title: "Unit Economics Per Location",
+      metrics: [
+        { label: "Customer Acquisition Cost (CAC)", value: "$700", note: "Digital + sales + onboarding" },
+        { label: "Average Revenue Per Location (ARPL)", value: "$200/month", note: "Blended across revenue streams" },
+        { label: "Gross Margin", value: "78%", note: "After hardware and support costs" },
+        { label: "Lifetime Value (LTV)", value: "$8,400", note: "Assuming 3.5-year retention" },
+        { label: "LTV:CAC Ratio", value: "12:1", note: "Excellent unit economics" },
+        { label: "Payback Period", value: "4 months", note: "Very fast capital efficiency" }
       ]
     }
   },
 
   financials: {
+    title: "Financial Projections",
     scenarios: {
       withFinancing: {
-        name: "With Equipment Financing Angle",
-        description: "Partner with equipment finance companies for distribution and data licensing",
-        projections: [
-          { year: "Y1", revenue: "$1.8M", customers: "600 locations", highlights: "Platform launch, 2 chain pilots" },
-          { year: "Y2", revenue: "$7.5M", customers: "2,200 locations", highlights: "Finance partnerships, IoT launch" },
-          { year: "Y3", revenue: "$18M", customers: "4,500 locations", highlights: "National service network" },
-          { year: "Y4", revenue: "$32M", customers: "6,800 locations", highlights: "Data licensing growth" },
-          { year: "Y5", revenue: "$52M", customers: "9,500 locations", highlights: "Market leader, M&A interest" }
+        name: "With Equipment Financing Angle (Recommended)",
+        description: "Partner with equipment finance companies for distribution and data licensing revenue",
+        years: [
+          { year: 1, revenue: "$1.2M", shops: 600, arr: "$1.2M", burn: "$2.8M", runway: "17 months" },
+          { year: 2, revenue: "$5.5M", shops: 2200, arr: "$5.5M", burn: "$1.5M", runway: "Profitable" },
+          { year: 3, revenue: "$15M", shops: 4500, arr: "$15M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$28M", shops: 6800, arr: "$28M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$48M", shops: 9500, arr: "$48M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$4M Seed",
         keyAssumptions: [
           "Equipment financiers drive 30% of leads",
           "Data licensing accelerates Year 3+",
-          "IoT attachment reaches 40%",
+          "IoT attachment reaches 40% of locations",
           "Chain/franchise focus enables efficient expansion"
         ]
       },
       withoutFinancing: {
-        name: "Without Equipment Financing Angle",
-        description: "Direct restaurant sales with service network focus",
-        projections: [
-          { year: "Y1", revenue: "$1.2M", customers: "400 locations", highlights: "Platform launch, local markets" },
-          { year: "Y2", revenue: "$4.2M", customers: "1,400 locations", highlights: "Regional expansion" },
-          { year: "Y3", revenue: "$11M", customers: "3,200 locations", highlights: "Service network scaling" },
-          { year: "Y4", revenue: "$22M", customers: "5,200 locations", highlights: "IoT traction" },
-          { year: "Y5", revenue: "$38M", customers: "7,500 locations", highlights: "Sustainable growth" }
+        name: "Without Equipment Financing (Conservative)",
+        description: "Direct restaurant sales with service network focus only",
+        years: [
+          { year: 1, revenue: "$800K", shops: 400, arr: "$800K", burn: "$2M", runway: "24 months" },
+          { year: 2, revenue: "$3.2M", shops: 1400, arr: "$3.2M", burn: "$1M", runway: "18 months" },
+          { year: 3, revenue: "$9M", shops: 3200, arr: "$9M", burn: "$0", runway: "Profitable" },
+          { year: 4, revenue: "$18M", shops: 5200, arr: "$18M", burn: "$0", runway: "Profitable" },
+          { year: 5, revenue: "$32M", shops: 7500, arr: "$32M", burn: "$0", runway: "Profitable" }
         ],
+        fundingRequired: "$2.5M Seed",
         keyAssumptions: [
-          "Direct sales to chains and franchises",
+          "Direct sales to chains and franchises only",
           "Slower but higher-quality growth",
           "Service network is primary value prop",
-          "Data licensing develops organically"
+          "Data licensing develops organically Year 4+"
         ]
       }
     },
-    useOfFunds: [
-      { category: "Engineering & Product", percentage: 40, amount: "$1.6M", details: "Platform, IoT integration, mobile apps" },
-      { category: "Sales & Success", percentage: 30, amount: "$1.2M", details: "Chain sales, onboarding, support" },
-      { category: "Service Network", percentage: 15, amount: "$600K", details: "Provider recruitment, quality programs" },
-      { category: "Marketing", percentage: 10, amount: "$400K", details: "Industry events, content, partnerships" },
-      { category: "Operations", percentage: 5, amount: "$200K", details: "Legal, compliance, G&A" }
+    useOfFunds: {
+      title: "Use of $4M Seed Funds",
+      breakdown: [
+        { category: "Engineering & Product", amount: "$1.6M", percentage: 40, detail: "Platform, mobile apps, IoT integration, ML models" },
+        { category: "Sales & Success", amount: "$1.2M", percentage: 30, detail: "Chain sales, onboarding team, customer success" },
+        { category: "Service Network", amount: "$600K", percentage: 15, detail: "Provider recruitment, quality programs, support" },
+        { category: "Marketing", amount: "$400K", percentage: 10, detail: "Industry events, content, partnership marketing" },
+        { category: "G&A & Buffer", amount: "$200K", percentage: 5, detail: "Legal, compliance, office, contingency" }
+      ]
+    }
+  },
+
+  goToMarket: {
+    title: "Go-to-Market Strategy",
+    phases: [
+      {
+        phase: "Land",
+        timeline: "Months 1-6",
+        strategy: "Chain & Franchise Focus",
+        tactics: [
+          "Target QSR chains with 50-500 locations (decision makers, not individual owners)",
+          "Partner with major equipment distributors for referrals",
+          "Offer free pilot with immediate ROI tracking for first 3 chains",
+          "Focus on high-failure equipment categories (refrigeration, HVAC)"
+        ],
+        metrics: ["200 locations onboarded", "3 chain pilots", "NPS > 50"]
+      },
+      {
+        phase: "Expand",
+        timeline: "Months 7-12",
+        strategy: "IoT Upsell & Data Launch",
+        tactics: [
+          "Deploy IoT sensors to proven customers first",
+          "Launch equipment financier partnerships (2-3 partners)",
+          "Approach insurers with risk reduction data from IoT pilots",
+          "Expand service provider network to 150+ vetted techs"
+        ],
+        metrics: ["800 locations", "40% IoT attachment", "2 data partnerships"]
+      },
+      {
+        phase: "Dominate",
+        timeline: "Year 2+",
+        strategy: "National Scale & Data Moat",
+        tactics: [
+          "National service provider coverage across top 50 metros",
+          "Launch insurance discount program driving customer acquisition",
+          "Expand to adjacent verticals (hotels, hospitals, schools)",
+          "Build API for third-party integrations (POS, accounting)"
+        ],
+        metrics: ["8,000+ locations", "5+ data partnerships", "Adjacent vertical pilot"]
+      }
+    ],
+    channels: [
+      { name: "Direct Sales", description: "Enterprise sales team targeting chain/franchise decision makers", cost: "High", effectiveness: "Very High" },
+      { name: "Equipment Distributors", description: "Referrals bundled with new equipment sales", cost: "Low", effectiveness: "High" },
+      { name: "Equipment Financiers", description: "Financiers require KitchenPulse for maintenance tracking", cost: "Low", effectiveness: "Very High" },
+      { name: "Insurance Partners", description: "Insurers offer premium discounts for monitored restaurants", cost: "Low", effectiveness: "High" },
+      { name: "Trade Shows", description: "NRA Show, NAFEM, regional restaurant expos", cost: "Medium", effectiveness: "Medium" }
     ]
   },
 
-  risks: [
-    {
-      risk: "Restaurant Tech Fatigue",
-      severity: "High",
-      mitigation: "Integrate with existing POS/ops systems. Prove ROI in first 90 days. Start with chains who have IT resources."
-    },
-    {
-      risk: "Service Provider Quality",
-      severity: "High",
-      mitigation: "Rigorous vetting, ongoing quality scoring, customer feedback loops. Build quality reputation before scale."
-    },
-    {
-      risk: "IoT Hardware Complexity",
-      severity: "Medium",
-      mitigation: "Start with software-only value prop. IoT is upsell, not requirement. Partner with existing sensor manufacturers."
-    },
-    {
-      risk: "Chain Sales Cycles",
-      severity: "Medium",
-      mitigation: "Start with franchisees who can decide faster. Prove ROI at location level before corporate deals."
-    },
-    {
-      risk: "Competition from POS Platforms",
-      severity: "Medium",
-      mitigation: "Build equipment expertise moat they can't replicate quickly. Position as partner not competitor."
-    },
-    {
-      risk: "Economic Sensitivity",
-      severity: "Low",
-      mitigation: "Equipment maintenance is non-discretionary. Actually saves money vs emergency repairs. Recession-resistant positioning."
-    }
-  ],
-
-  milestones: [
-    { quarter: "Q1 2026", milestone: "Close seed round, hire core team", status: "target" },
-    { quarter: "Q2 2026", milestone: "Launch platform with 200 locations, 50 service providers", status: "target" },
-    { quarter: "Q3 2026", milestone: "First chain pilot (500+ locations)", status: "target" },
-    { quarter: "Q4 2026", milestone: "IoT sensor pilot, 800 locations", status: "target" },
-    { quarter: "Q1 2027", milestone: "Equipment financier partnership", status: "target" },
-    { quarter: "Q2 2027", milestone: "2,000 locations, 150 service providers", status: "target" },
-    { quarter: "Q3 2027", milestone: "Data licensing first contracts", status: "target" },
-    { quarter: "Q4 2027", milestone: "Series A at $50-70M valuation", status: "target" }
-  ],
-
   team: {
-    hiring: [
-      { role: "CTO", priority: "Critical", timeline: "Immediate", description: "Platform architecture, IoT systems, integrations" },
-      { role: "VP Sales", priority: "Critical", timeline: "Q2 2026", description: "Chain/franchise sales, enterprise relationships" },
-      { role: "Head of Service Network", priority: "High", timeline: "Q2 2026", description: "Provider recruitment, quality assurance" },
-      { role: "VP Product", priority: "High", timeline: "Q3 2026", description: "Product strategy, IoT roadmap" }
+    title: "Team Requirements",
+    currentNeeds: [
+      {
+        role: "CEO / Founder",
+        skills: "Restaurant industry experience, fundraising, vision, network building",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "CTO",
+        skills: "Platform architecture, IoT systems, mobile apps, integrations",
+        status: "Seeking",
+        priority: "Critical"
+      },
+      {
+        role: "VP Sales",
+        skills: "Enterprise restaurant sales, chain/franchise relationships",
+        status: "Seeking",
+        priority: "High"
+      },
+      {
+        role: "Head of Service Network",
+        skills: "Service provider recruitment, quality assurance, operations",
+        status: "Seeking",
+        priority: "High"
+      }
+    ],
+    advisorNeeds: [
+      "Former executive from 86 Repairs, ServiceTitan, or similar platform",
+      "Restaurant chain operations leader (VP Ops from major QSR)",
+      "Equipment finance industry veteran",
+      "Commercial refrigeration/HVAC expert"
+    ],
+    orgPlan: {
+      year1: "15 FTEs: 5 engineering, 5 sales, 3 ops, 2 G&A",
+      year2: "35 FTEs: 12 engineering, 14 sales, 6 ops, 3 G&A",
+      year3: "80 FTEs: 25 engineering, 35 sales, 12 ops, 8 G&A"
+    }
+  },
+
+  risks: {
+    title: "Risks & Mitigations",
+    risks: [
+      {
+        risk: "Restaurant Tech Fatigue",
+        severity: "High",
+        likelihood: "Medium",
+        description: "Restaurants are overwhelmed with tech vendors. Adding another platform faces resistance from operators with limited time and tech resources.",
+        mitigation: "Integrate with existing POS/ops systems (Toast, Square). Prove ROI in first 90 days. Start with chains who have IT resources. Free pilot removes risk."
+      },
+      {
+        risk: "86 Repairs Competition",
+        severity: "High",
+        likelihood: "Medium",
+        description: "86 Repairs has $24M+ in funding and 2,000+ restaurant customers. They could add IoT and equipment intelligence features.",
+        mitigation: "Move fast on IoT differentiation—our predictive maintenance moat. Focus on data licensing revenue they haven't pursued. Build equipment financier relationships first."
+      },
+      {
+        risk: "Service Provider Quality",
+        severity: "High",
+        likelihood: "Medium",
+        description: "Poor service quality from network providers damages brand and causes customer churn.",
+        mitigation: "Rigorous vetting, ongoing quality scoring, customer feedback loops. Build quality reputation before scale. Money-back guarantee on service quality."
+      },
+      {
+        risk: "IoT Hardware Complexity",
+        severity: "Medium",
+        likelihood: "Medium",
+        description: "Hardware deployment is harder than software. Installation, connectivity, and maintenance of sensors adds complexity.",
+        mitigation: "Start with software-only value prop. IoT is upsell, not requirement. Partner with existing sensor manufacturers (Emerson, Carrier) vs build own."
+      },
+      {
+        risk: "Chain Sales Cycles",
+        severity: "Medium",
+        likelihood: "High",
+        description: "Enterprise restaurant chains have 6-12 month sales cycles with multiple stakeholders and pilots.",
+        mitigation: "Start with franchisees who can decide faster. Prove ROI at location level before corporate deals. Build case studies rapidly."
+      },
+      {
+        risk: "Economic Sensitivity",
+        severity: "Low",
+        likelihood: "Medium",
+        description: "Restaurant industry is cyclical. Economic downturn could slow new restaurant tech purchases.",
+        mitigation: "Equipment maintenance is non-discretionary—actually saves money vs emergency repairs. Recession-resistant positioning as cost reduction tool."
+      }
+    ]
+  },
+
+  milestones: {
+    title: "Key Milestones",
+    items: [
+      { timeline: "Month 3", milestone: "Platform MVP live, first 50 locations onboarded", status: "planned" },
+      { timeline: "Month 6", milestone: "200 locations, 50 service providers, 3 chain pilots active", status: "planned" },
+      { timeline: "Month 9", milestone: "IoT sensor pilot launched, 500 locations on platform", status: "planned" },
+      { timeline: "Month 12", milestone: "$1.2M ARR, 800 locations, first equipment financier partnership", status: "planned" },
+      { timeline: "Month 15", milestone: "2,000 locations, $2.5M ARR run rate, Series A initiated", status: "planned" },
+      { timeline: "Month 18", milestone: "Series A closed ($12-15M at $50-70M valuation)", status: "planned" },
+      { timeline: "Month 24", milestone: "$5.5M ARR, 4,000 locations, cash flow positive", status: "planned" }
     ]
   },
 
   ask: {
-    amount: "$4M",
-    round: "Seed",
-    timeline: "Q1 2026",
-    terms: "Priced round, standard seed terms",
-    use: "Build platform, onboard service network, pilot with major chains, prove equipment intelligence value",
-    targetInvestors: [
-      "Restaurant tech investors",
-      "Vertical SaaS specialists",
-      "IoT/industrial tech funds",
-      "Strategic angels from restaurant/equipment industry"
-    ]
+    title: "The Ask",
+    amount: "$4,000,000",
+    round: "Seed Round",
+    terms: "SAFE or Priced Round at $16M post-money valuation",
+    useOfFunds: [
+      "Build platform and mobile apps for restaurant equipment tracking",
+      "Onboard first 200 locations and 50 service providers",
+      "Launch IoT sensor pilot for walk-in cooler monitoring",
+      "Secure 2+ equipment financier data partnerships"
+    ],
+    timeline: "18-month runway to Series A milestones",
+    seriesA: {
+      timing: "Month 15-18",
+      metrics: "$2-3M ARR, 2,000+ locations, 2+ data partnerships",
+      raise: "$12-18M at $50-80M valuation"
+    }
   },
 
   sources: [
-    { name: "IBISWorld Restaurant Equipment", url: "https://www.ibisworld.com/united-states/market-research-reports/commercial-food-service-equipment-industry/" },
-    { name: "Restaurant Business Online", url: "https://www.restaurantbusinessonline.com" },
-    { name: "National Restaurant Association", url: "https://restaurant.org/research-and-media/research/industry-statistics/" },
-    { name: "86 Repairs", url: "https://www.86repairs.com" }
+    { name: "Grand View Research - Commercial Kitchen Equipment", url: "https://www.grandviewresearch.com/industry-analysis/commercial-kitchen-equipment-appliances-market", detail: "$98.3B in 2024, 7.3% CAGR to 2030" },
+    { name: "Mordor Intelligence - Commercial Kitchen Market", url: "https://www.mordorintelligence.com/industry-reports/commercial-kitchen-appliances-market", detail: "$133B forecast by 2030, 6.18% CAGR" },
+    { name: "HVAC Maintenance Services Market Report", url: "https://www.grandviewresearch.com/industry-analysis/hvac-maintenance-services-market-report", detail: "$78.5B global, 5.8% CAGR" },
+    { name: "86 Repairs - PitchBook Profile", url: "https://pitchbook.com/profiles/company/266584-96", detail: "$24M+ raised, 2,000+ restaurants" },
+    { name: "Restaurant Business Online - 86 Repairs Funding", url: "https://www.restaurantbusinessonline.com/technology/86-repairs-raises-152m-equipment-management-service", detail: "$28B annual repair spend, $46B revenue lost" },
+    { name: "Envigilance - Restaurant Equipment Monitoring", url: "https://envigilance.com/commercial-restaurant-monitoring/", detail: "Walk-in failures cost $20K-$40K" },
+    { name: "xtraCHEF - Equipment Failure Costs", url: "https://xtrachef.com/resources/calculating-the-cost-of-restaurant-equipment-failures/", detail: "Equipment downtime cost analysis" },
+    { name: "Future Market Insights - Food Service Equipment", url: "https://www.futuremarketinsights.com/reports/foodservice-equipment-market", detail: "$84.96B by 2035 global market" }
   ]
 }
 
-function ExpandableSection({ title, children, defaultOpen = false }: {
-  title: React.ReactNode
-  children: React.ReactNode
-  defaultOpen?: boolean
-}) {
-  const [isOpen, setIsOpen] = useState(defaultOpen)
-
+// Helper Components
+function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle?: string }) {
   return (
-    <div className="border border-gray-700 rounded-lg overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-gray-800 flex items-center justify-between hover:bg-gray-750 transition-colors"
-      >
-        <div className="font-semibold text-lg text-white">{title}</div>
-        {isOpen ? <ChevronUp className="text-gray-400" /> : <ChevronDown className="text-gray-400" />}
-      </button>
-      {isOpen && (
-        <div className="px-6 py-4 bg-gray-900">
-          {children}
+    <div className="mb-6">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
+          <Icon className="w-5 h-5 text-red-600" />
         </div>
-      )}
+        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+      </div>
+      {subtitle && <p className="text-gray-600 ml-13">{subtitle}</p>}
     </div>
   )
 }
 
-function StatCard({ value, label, icon: Icon }: { value: string; label: string; icon: any }) {
+function StatCard({ value, label, sublabel }: { value: string; label: string; sublabel?: string }) {
   return (
-    <div className="bg-gray-800 rounded-lg p-4 text-center">
-      <Icon className="w-6 h-6 text-red-400 mx-auto mb-2" />
-      <div className="text-2xl font-bold text-white">{value}</div>
-      <div className="text-sm text-gray-400">{label}</div>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+      <div className="text-3xl font-bold text-red-600">{value}</div>
+      <div className="text-sm font-medium text-gray-900 mt-1">{label}</div>
+      {sublabel && <div className="text-xs text-gray-500 mt-1">{sublabel}</div>}
+    </div>
+  )
+}
+
+function ExpandableSection({ title, children, defaultOpen = false }: { title: React.ReactNode; children: React.ReactNode; defaultOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+      >
+        <div className="font-medium text-gray-900">{title}</div>
+        {isOpen ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+      </button>
+      {isOpen && <div className="p-4 border-t border-gray-200">{children}</div>}
     </div>
   )
 }
@@ -404,162 +588,259 @@ export default function BusinessPlanPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'detailed' | 'financials'>('overview')
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-start gap-4">
-              <a href="/tokens/#framework" className="text-gray-400 hover:text-white transition-colors mt-1">
-                <ArrowLeft className="w-5 h-5" />
-              </a>
-              <div>
-                <h1 className="text-2xl font-bold text-red-400">{businessPlan.companyName}</h1>
-                <p className="text-gray-400 text-sm">{businessPlan.tagline}</p>
+      <header className="bg-gradient-to-r from-red-600 to-orange-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <a
+            href="/tokens/#framework"
+            className="inline-flex items-center gap-2 text-red-100 hover:text-white transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Cap-Ex Opportunities
+          </a>
+
+          <div className="flex items-start justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <UtensilsCrossed className="w-6 h-6" />
+                </div>
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold">{businessPlan.companyName}</h1>
+                  <p className="text-red-100">{businessPlan.tagline}</p>
+                </div>
               </div>
             </div>
-            <div className="text-right text-sm text-gray-500">
-              <div>{businessPlan.version}</div>
-              <div>{businessPlan.date}</div>
+            <div className="text-right">
+              <div className="text-sm text-red-200">{businessPlan.version}</div>
+              <div className="text-sm text-red-200">{businessPlan.date}</div>
+            </div>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.ask.amount}</div>
+              <div className="text-sm text-red-100">Seed Round</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">{businessPlan.marketSize.sam.value}</div>
+              <div className="text-sm text-red-100">U.S. Service Market</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">6.6%</div>
+              <div className="text-sm text-red-100">Market CAGR</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
+              <div className="text-2xl font-bold">12:1</div>
+              <div className="text-sm text-red-100">LTV:CAC</div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Tab Navigation */}
-      <nav className="bg-gray-900 border-b border-gray-800 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex gap-1">
-            {[
-              { id: 'overview', label: 'Overview' },
-              { id: 'detailed', label: 'Detailed Plan' },
-              { id: 'financials', label: 'Financials' }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-3 text-sm font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? 'text-red-400 border-b-2 border-red-400'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-2 py-3">
+            <button
+              onClick={() => setActiveTab('overview')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'overview' ? 'bg-red-100 text-red-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <FileText className="w-4 h-4 inline mr-2" />
+              Executive Summary
+            </button>
+            <button
+              onClick={() => setActiveTab('detailed')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'detailed' ? 'bg-red-100 text-red-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <Briefcase className="w-4 h-4 inline mr-2" />
+              Full Plan
+            </button>
+            <button
+              onClick={() => setActiveTab('financials')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'financials' ? 'bg-red-100 text-red-700' : 'text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              <LineChart className="w-4 h-4 inline mr-2" />
+              Financials
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {activeTab === 'overview' && (
           <div className="space-y-8">
-            <section className="bg-gradient-to-r from-red-900/50 to-orange-900/50 rounded-xl p-8 border border-red-800">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Target className="text-red-400" />
-                Executive Summary
-              </h2>
+            {/* Executive Summary */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={FileText} title="Executive Summary" />
+
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-red-400 font-semibold mb-2">The Problem</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.problem}</p>
+                <div className="space-y-4">
+                  <div className="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+                    <h4 className="font-semibold text-red-800 mb-2">The Problem</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.problem}</p>
+                  </div>
+
+                  <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                    <h4 className="font-semibold text-green-800 mb-2">Our Solution</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.solution}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-red-400 font-semibold mb-2">Our Solution</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.solution}</p>
-                </div>
-                <div>
-                  <h3 className="text-red-400 font-semibold mb-2">Market Opportunity</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.market}</p>
-                </div>
-                <div>
-                  <h3 className="text-red-400 font-semibold mb-2">The Ask</h3>
-                  <p className="text-gray-300">{businessPlan.executiveSummary.ask}</p>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <h4 className="font-semibold text-blue-800 mb-2">Market Opportunity</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.market}</p>
+                  </div>
+
+                  <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                    <h4 className="font-semibold text-purple-800 mb-2">The Ask</h4>
+                    <p className="text-sm text-gray-700">{businessPlan.executiveSummary.ask}</p>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold mb-6">Key Metrics</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <StatCard value="$53B" label="TAM" icon={Globe} />
-                <StatCard value="1M+" label="US Restaurants" icon={Users} />
-                <StatCard value="12:1" label="LTV:CAC Ratio" icon={TrendingUp} />
-                <StatCard value="$4M" label="Seed Ask" icon={DollarSign} />
-              </div>
-            </section>
+            {/* Problem */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={AlertTriangle} title={businessPlan.problem.title} />
 
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <AlertTriangle className="text-red-400" />
-                {businessPlan.problem.title}
-              </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {businessPlan.problem.points.map((point, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-semibold text-white">{point.title}</h3>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-red-400">{point.stat}</div>
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600">{point.stat}</div>
                         <div className="text-xs text-gray-500">{point.statLabel}</div>
                       </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{point.title}</h4>
+                        <p className="text-sm text-gray-600 mt-1">{point.detail}</p>
+                      </div>
                     </div>
-                    <p className="text-gray-400 text-sm">{point.detail}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-                <Lightbulb className="text-red-400" />
-                {businessPlan.solution.title}
-              </h2>
-              <p className="text-gray-400 mb-6">{businessPlan.solution.tagline}</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {businessPlan.solution.pillars.map((pillar, i) => {
-                  const IconComponent = pillar.icon === 'UtensilsCrossed' ? UtensilsCrossed :
-                    pillar.icon === 'Wrench' ? Wrench :
-                    pillar.icon === 'BarChart3' ? BarChart3 :
-                    pillar.icon === 'Shield' ? Shield : UtensilsCrossed
-                  return (
-                    <div key={i} className="bg-gray-800 rounded-lg p-5">
-                      <IconComponent className="w-8 h-8 text-red-400 mb-3" />
-                      <h3 className="font-semibold text-white mb-2">{pillar.title}</h3>
-                      <p className="text-gray-400 text-sm mb-3">{pillar.description}</p>
-                      <ul className="space-y-1">
-                        {pillar.features.map((feature, j) => (
-                          <li key={j} className="text-xs text-gray-500 flex items-center gap-1">
-                            <CheckCircle className="w-3 h-3 text-red-400" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+            {/* Solution */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Lightbulb} title={businessPlan.solution.title} subtitle={businessPlan.solution.tagline} />
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {businessPlan.solution.pillars.map((pillar, i) => (
+                  <div key={i} className="p-4 bg-red-50 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-2">{pillar.title}</h4>
+                    <p className="text-sm text-gray-600 mb-3">{pillar.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {pillar.features.map((feature, j) => (
+                        <span key={j} className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs">
+                          {feature}
+                        </span>
+                      ))}
                     </div>
-                  )
-                })}
+                  </div>
+                ))}
               </div>
             </section>
 
-            <section className="bg-gradient-to-r from-red-900/30 to-orange-900/30 rounded-xl p-8 border border-red-800">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <DollarSign className="text-red-400" />
-                The Ask
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-red-400">{businessPlan.ask.amount}</div>
-                  <div className="text-gray-400">{businessPlan.ask.round} Round</div>
+            {/* Why Now */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Clock} title={businessPlan.whyNow.title} />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.whyNow.factors.map((factor, i) => (
+                  <div key={i} className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+                    <h4 className="font-semibold text-gray-900 mb-2">{factor.title}</h4>
+                    <p className="text-sm text-gray-600">{factor.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Market Size */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={PieChart} title={businessPlan.marketSize.title} />
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.tam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.tam.label}</div>
+                  <div className="text-sm text-red-100 mt-1">{businessPlan.marketSize.tam.description}</div>
                 </div>
-                <div className="md:col-span-2">
-                  <p className="text-gray-300 mb-4">{businessPlan.ask.use}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {businessPlan.ask.targetInvestors.map((investor, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">
-                        {investor}
-                      </span>
+                <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.sam.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.sam.label}</div>
+                  <div className="text-sm text-green-100 mt-1">{businessPlan.marketSize.sam.description}</div>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg text-center">
+                  <div className="text-3xl font-bold">{businessPlan.marketSize.som.value}</div>
+                  <div className="font-medium">{businessPlan.marketSize.som.label}</div>
+                  <div className="text-sm text-purple-100 mt-1">{businessPlan.marketSize.som.description}</div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Adjacent Markets</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.additionalMarkets.map((market, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{market.name}</span>
+                        <span className="text-sm font-medium text-gray-900">{market.value}</span>
+                      </div>
                     ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Key Metrics</h4>
+                  <div className="space-y-2">
+                    {businessPlan.marketSize.keyMetrics.map((metric, i) => (
+                      <div key={i} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="text-sm text-gray-700">{metric.label}</span>
+                        <span className="text-sm font-medium text-gray-900">{metric.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* The Ask */}
+            <section className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-xl shadow-sm p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl font-bold mb-2">{businessPlan.ask.title}</h2>
+                <div className="text-5xl font-bold mb-2">{businessPlan.ask.amount}</div>
+                <div className="text-xl text-red-100">{businessPlan.ask.round}</div>
+                <div className="text-red-200 mt-2">{businessPlan.ask.terms}</div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Use of Funds</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.ask.useOfFunds.map((use, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                        <span>{use}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                  <h4 className="font-semibold mb-3">Series A Target</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="text-red-200">Timing:</span> {businessPlan.ask.seriesA.timing}</p>
+                    <p><span className="text-red-200">Metrics:</span> {businessPlan.ask.seriesA.metrics}</p>
+                    <p><span className="text-red-200">Raise:</span> {businessPlan.ask.seriesA.raise}</p>
                   </div>
                 </div>
               </div>
@@ -568,208 +849,553 @@ export default function BusinessPlanPage() {
         )}
 
         {activeTab === 'detailed' && (
-          <div className="space-y-4">
-            <ExpandableSection title={<div className="flex items-center gap-2"><Clock className="text-red-400" /> Why Now?</div>} defaultOpen={true}>
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.whyNow.factors.map((factor, i) => {
-                  const IconComponent = factor.icon === 'TrendingUp' ? TrendingUp : factor.icon === 'Zap' ? Zap : factor.icon === 'Users' ? Users : Shield
-                  return (
-                    <div key={i} className="bg-gray-800 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <IconComponent className="w-5 h-5 text-red-400" />
-                        <h3 className="font-semibold text-white">{factor.title}</h3>
-                      </div>
-                      <p className="text-gray-400 text-sm">{factor.detail}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </ExpandableSection>
+          <div className="space-y-8">
+            {/* Competition */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.competition.title} />
 
-            <ExpandableSection title={<div className="flex items-center gap-2"><PieChart className="text-red-400" /> Market Size</div>}>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { key: 'tam', label: 'TAM', data: businessPlan.marketSize.tam },
-                  { key: 'sam', label: 'SAM', data: businessPlan.marketSize.sam },
-                  { key: 'som', label: 'SOM (Y5)', data: businessPlan.marketSize.som }
-                ].map(({ key, label, data }) => (
-                  <div key={key} className="bg-gray-800 rounded-lg p-5">
-                    <div className="text-center mb-4">
-                      <div className="text-3xl font-bold text-red-400">{data.value}</div>
-                      <div className="text-sm text-gray-400">{label}</div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Competitor</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Market Position</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Strengths</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Weaknesses</th>
+                      <th className="text-left py-3 px-2 font-medium text-gray-900">Threat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {businessPlan.competition.players.map((player, i) => (
+                      <tr key={i} className="border-b border-gray-100">
+                        <td className="py-3 px-2">
+                          <div className="font-medium text-gray-900">{player.name}</div>
+                          <div className="text-xs text-gray-500">{player.type}</div>
+                        </td>
+                        <td className="py-3 px-2 text-sm">{player.marketShare}</td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.strengths.slice(0, 2).map((s, j) => (
+                              <li key={j}>+ {s}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <ul className="text-xs text-gray-600 space-y-1">
+                            {player.weaknesses.slice(0, 2).map((w, j) => (
+                              <li key={j}>- {w}</li>
+                            ))}
+                          </ul>
+                        </td>
+                        <td className="py-3 px-2">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            player.threat === 'Partners not competitors' ? 'bg-blue-100 text-blue-700' :
+                            player.threat === 'Low' ? 'bg-green-100 text-green-700' :
+                            player.threat === 'Indirect competitor' ? 'bg-yellow-100 text-yellow-700' :
+                            'bg-red-100 text-red-700'
+                          }`}>
+                            {player.threat}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 p-4 bg-red-50 rounded-lg">
+                <h4 className="font-semibold text-red-800 mb-2">{businessPlan.competition.ourAdvantage.title}</h4>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {businessPlan.competition.ourAdvantage.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Product Roadmap */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Wrench} title={businessPlan.product.title} />
+
+              <div className="space-y-6">
+                {businessPlan.product.phases.map((phase, i) => (
+                  <div key={i} className="border-l-4 border-red-400 pl-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium">
+                        {phase.timeline}
+                      </span>
+                      <h4 className="font-semibold text-gray-900">{phase.phase}</h4>
                     </div>
-                    <p className="text-sm text-gray-400 mb-3">{data.description}</p>
-                    <div className="space-y-2">
-                      {data.breakdown.map((item, i) => (
-                        <div key={i} className="flex justify-between text-sm">
-                          <span className="text-gray-400">{item.segment}</span>
-                          <span className="text-white font-medium">{item.value}</span>
-                        </div>
+                    <ul className="grid md:grid-cols-2 gap-2 mb-3">
+                      {phase.deliverables.map((deliverable, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                          <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
+                          {deliverable}
+                        </li>
                       ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ExpandableSection>
-
-            <ExpandableSection title={<div className="flex items-center gap-2"><Users className="text-red-400" /> Competitive Landscape</div>}>
-              <p className="text-gray-400 mb-4">{businessPlan.competition.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-4">
-                {businessPlan.competition.competitors.map((comp, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <h3 className="font-semibold text-white mb-2">{comp.name}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{comp.description}</p>
-                    <div className="grid grid-cols-2 gap-4 text-xs">
-                      <div>
-                        <div className="text-green-400 font-medium mb-1">Strengths</div>
-                        <ul className="text-gray-400 space-y-1">{comp.strengths.map((s, j) => <li key={j}>+ {s}</li>)}</ul>
-                      </div>
-                      <div>
-                        <div className="text-red-400 font-medium mb-1">Weaknesses</div>
-                        <ul className="text-gray-400 space-y-1">{comp.weaknesses.map((w, j) => <li key={j}>- {w}</li>)}</ul>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-red-900/30 rounded-lg p-4 border border-red-800">
-                <h3 className="font-semibold text-red-400 mb-2">Our Moat</h3>
-                <p className="text-gray-300">{businessPlan.competition.moat}</p>
-              </div>
-            </ExpandableSection>
-
-            <ExpandableSection title={<div className="flex items-center gap-2"><Briefcase className="text-red-400" /> Business Model</div>}>
-              <p className="text-gray-400 mb-4">{businessPlan.businessModel.overview}</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                {businessPlan.businessModel.revenueStreams.map((stream, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{stream.name}</h3>
-                      <span className="text-red-400 font-medium">{stream.pricing}</span>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-3">{stream.description}</p>
-                    <div className="text-xs text-gray-500 mb-2">Gross Margin: {stream.margin}</div>
-                    <ul className="text-xs text-gray-400 space-y-1">
-                      {stream.details.map((d, j) => (<li key={j} className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-red-400" />{d}</li>))}
                     </ul>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-gray-800 rounded-lg p-6">
-                <h3 className="font-semibold text-white mb-4">Unit Economics</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
-                  <div className="text-center"><div className="text-2xl font-bold text-red-400">{businessPlan.businessModel.unitEconomics.ltv}</div><div className="text-xs text-gray-400">LTV</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-red-400">{businessPlan.businessModel.unitEconomics.cac}</div><div className="text-xs text-gray-400">CAC</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-red-400">{businessPlan.businessModel.unitEconomics.ltvCacRatio}</div><div className="text-xs text-gray-400">LTV:CAC</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-red-400">{businessPlan.businessModel.unitEconomics.paybackPeriod}</div><div className="text-xs text-gray-400">Payback</div></div>
-                  <div className="text-center"><div className="text-2xl font-bold text-red-400">{businessPlan.businessModel.unitEconomics.grossMargin}</div><div className="text-xs text-gray-400">Gross Margin</div></div>
-                </div>
-                <ul className="text-sm text-gray-400 space-y-1">{businessPlan.businessModel.unitEconomics.details.map((d, i) => <li key={i}>• {d}</li>)}</ul>
-              </div>
-            </ExpandableSection>
-
-            <ExpandableSection title={<div className="flex items-center gap-2"><Shield className="text-red-400" /> Risks & Mitigations</div>}>
-              <div className="space-y-3">
-                {businessPlan.risks.map((risk, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-white">{risk.risk}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${risk.severity === 'High' ? 'bg-red-900/50 text-red-400' : risk.severity === 'Medium' ? 'bg-yellow-900/50 text-yellow-400' : 'bg-green-900/50 text-green-400'}`}>{risk.severity}</span>
+                    <div className="p-2 bg-green-50 rounded text-sm">
+                      <span className="font-medium text-green-800">Milestone:</span>{' '}
+                      <span className="text-gray-700">{phase.milestone}</span>
                     </div>
-                    <p className="text-gray-400 text-sm"><strong className="text-gray-300">Mitigation:</strong> {risk.mitigation}</p>
                   </div>
                 ))}
               </div>
-            </ExpandableSection>
+            </section>
 
-            <ExpandableSection title={<div className="flex items-center gap-2"><Award className="text-red-400" /> Milestones & Timeline</div>}>
-              <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-700" />
-                <div className="space-y-4">
-                  {businessPlan.milestones.map((m, i) => (
-                    <div key={i} className="relative pl-10">
-                      <div className="absolute left-2 w-4 h-4 rounded-full bg-red-400" />
-                      <div className="bg-gray-800 rounded-lg p-4">
-                        <span className="text-red-400 font-medium">{m.quarter}</span>
-                        <p className="text-gray-300">{m.milestone}</p>
+            {/* Business Model */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.businessModel.title} />
+
+              <div className="grid gap-4 mb-6">
+                {businessPlan.businessModel.revenueStreams.map((stream, i) => (
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{stream.name}</h4>
+                        <p className="text-sm text-gray-600">{stream.description}</p>
+                      </div>
+                      <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs font-medium">
+                        {stream.margin} margin
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 mt-3 text-sm">
+                      <div>
+                        <span className="text-gray-500">Pricing:</span>
+                        <span className="ml-2 font-medium">{stream.pricing}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 1:</span>
+                        <span className="ml-2 font-medium">{stream.year1Revenue}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Year 3:</span>
+                        <span className="ml-2 font-medium">{stream.year3Revenue}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-4 bg-red-50 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-3">{businessPlan.businessModel.unitEconomics.title}</h4>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl font-bold text-red-600">{metric.value}</div>
+                      <div className="text-sm font-medium text-gray-900">{metric.label}</div>
+                      <div className="text-xs text-gray-500">{metric.note}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Go-to-Market */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.goToMarket.title} />
+
+              <div className="space-y-6">
+                {businessPlan.goToMarket.phases.map((phase, i) => (
+                  <div key={i} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{phase.phase}: {phase.strategy}</h4>
+                        <span className="text-sm text-gray-500">{phase.timeline}</span>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Tactics</h5>
+                        <ul className="space-y-1">
+                          {phase.tactics.map((tactic, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                              <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
+                              {tactic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-700 mb-2">Success Metrics</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {phase.metrics.map((metric, j) => (
+                            <span key={j} className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
+                              {metric}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6">
+                <h4 className="font-medium text-gray-900 mb-3">Distribution Channels</h4>
+                <div className="grid md:grid-cols-3 gap-3">
+                  {businessPlan.goToMarket.channels.map((channel, i) => (
+                    <div key={i} className="p-3 border border-gray-200 rounded-lg">
+                      <h5 className="font-medium text-gray-900 text-sm">{channel.name}</h5>
+                      <p className="text-xs text-gray-600 mt-1">{channel.description}</p>
+                      <div className="flex gap-2 mt-2">
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.cost === 'Low' ? 'bg-green-100 text-green-700' :
+                          channel.cost === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-red-100 text-red-700'
+                        }`}>
+                          {channel.cost} cost
+                        </span>
+                        <span className={`px-1.5 py-0.5 rounded text-xs ${
+                          channel.effectiveness.includes('High') ? 'bg-green-100 text-green-700' :
+                          'bg-yellow-100 text-yellow-700'
+                        }`}>
+                          {channel.effectiveness}
+                        </span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            </ExpandableSection>
+            </section>
 
-            <ExpandableSection title={<div className="flex items-center gap-2"><Users className="text-red-400" /> Team & Hiring</div>}>
-              <div className="grid md:grid-cols-2 gap-4">
-                {businessPlan.team.hiring.map((hire, i) => (
-                  <div key={i} className="bg-gray-800 rounded-lg p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-white">{hire.role}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${hire.priority === 'Critical' ? 'bg-red-900/50 text-red-400' : 'bg-yellow-900/50 text-yellow-400'}`}>{hire.priority}</span>
+            {/* Team */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Users} title={businessPlan.team.title} />
+
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                {businessPlan.team.currentNeeds.map((need, i) => (
+                  <div key={i} className="p-4 border border-gray-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">{need.role}</h4>
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        need.priority === 'Critical' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
+                      }`}>
+                        {need.priority}
+                      </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-1">{hire.description}</p>
-                    <p className="text-xs text-gray-500">Timeline: {hire.timeline}</p>
+                    <p className="text-sm text-gray-600">{need.skills}</p>
+                    <span className="inline-block mt-2 px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs">
+                      {need.status}
+                    </span>
                   </div>
                 ))}
               </div>
-            </ExpandableSection>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Advisory Board Needs</h4>
+                  <ul className="space-y-2">
+                    {businessPlan.team.advisorNeeds.map((advisor, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                        <Award className="w-4 h-4 text-red-500" />
+                        {advisor}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-3">Organization Plan</h4>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium text-gray-700">Year 1:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year1}</span></p>
+                    <p><span className="font-medium text-gray-700">Year 2:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year2}</span></p>
+                    <p><span className="font-medium text-gray-700">Year 3:</span> <span className="text-gray-600">{businessPlan.team.orgPlan.year3}</span></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Risks */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Shield} title={businessPlan.risks.title} />
+
+              <div className="space-y-4">
+                {businessPlan.risks.risks.map((risk, i) => (
+                  <ExpandableSection key={i} title={
+                    <div className="flex items-center gap-3">
+                      <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                        risk.severity === 'High' ? 'bg-red-100 text-red-700' :
+                        risk.severity === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                        'bg-green-100 text-green-700'
+                      }`}>
+                        {risk.severity}
+                      </span>
+                      <span>{risk.risk}</span>
+                    </div>
+                  }>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Likelihood:</span>
+                        <span className="ml-2 text-sm text-gray-600">{risk.likelihood}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">Description:</span>
+                        <p className="text-sm text-gray-600 mt-1">{risk.description}</p>
+                      </div>
+                      <div className="p-3 bg-green-50 rounded">
+                        <span className="text-sm font-medium text-green-800">Mitigation:</span>
+                        <p className="text-sm text-gray-700 mt-1">{risk.mitigation}</p>
+                      </div>
+                    </div>
+                  </ExpandableSection>
+                ))}
+              </div>
+            </section>
+
+            {/* Milestones */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={Target} title={businessPlan.milestones.title} />
+
+              <div className="relative">
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-red-200" />
+                <div className="space-y-4">
+                  {businessPlan.milestones.items.map((item, i) => (
+                    <div key={i} className="relative pl-10">
+                      <div className="absolute left-2 w-4 h-4 rounded-full bg-red-500 border-2 border-white" />
+                      <div className="p-3 bg-gray-50 rounded-lg">
+                        <span className="text-sm font-medium text-red-600">{item.timeline}</span>
+                        <p className="text-gray-700 mt-1">{item.milestone}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
           </div>
         )}
 
         {activeTab === 'financials' && (
           <div className="space-y-8">
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2"><LineChart className="text-red-400" />Financial Projections</h2>
+            {/* Financial Projections */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={LineChart} title="Financial Projections" />
+
+              <div className="space-y-8">
+                {/* Scenario 1: With Financing */}
+                <div className="p-4 bg-red-50 rounded-lg border-2 border-red-200">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-2 py-0.5 bg-red-600 text-white rounded text-xs font-medium">RECOMMENDED</span>
+                    <h4 className="font-semibold text-gray-900">{businessPlan.financials.scenarios.withFinancing.name}</h4>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withFinancing.description}</p>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-red-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Locations</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">ARR</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Runway</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {businessPlan.financials.scenarios.withFinancing.years.map((year, i) => (
+                          <tr key={i} className="border-b border-red-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.shops.toLocaleString()}</td>
+                            <td className="py-2 px-3 text-right">{year.arr}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                            <td className={`py-2 px-3 text-right ${year.runway === 'Profitable' ? 'text-green-600' : 'text-gray-600'}`}>
+                              {year.runway}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withFinancing.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-red-500">•</span>
+                          {assumption}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-red-600">
+                      Funding Required: {businessPlan.financials.scenarios.withFinancing.fundingRequired}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Scenario 2: Without Financing */}
+                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <h4 className="font-semibold text-gray-900 mb-2">{businessPlan.financials.scenarios.withoutFinancing.name}</h4>
+                  <p className="text-sm text-gray-600 mb-4">{businessPlan.financials.scenarios.withoutFinancing.description}</p>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-2 px-3 font-medium text-gray-900">Year</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Revenue</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Locations</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">ARR</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Net Burn</th>
+                          <th className="text-right py-2 px-3 font-medium text-gray-900">Runway</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {businessPlan.financials.scenarios.withoutFinancing.years.map((year, i) => (
+                          <tr key={i} className="border-b border-gray-100">
+                            <td className="py-2 px-3 font-medium">Year {year.year}</td>
+                            <td className="py-2 px-3 text-right">{year.revenue}</td>
+                            <td className="py-2 px-3 text-right">{year.shops.toLocaleString()}</td>
+                            <td className="py-2 px-3 text-right">{year.arr}</td>
+                            <td className={`py-2 px-3 text-right ${year.burn === '$0' ? 'text-green-600' : 'text-red-600'}`}>
+                              {year.burn}
+                            </td>
+                            <td className={`py-2 px-3 text-right ${year.runway === 'Profitable' ? 'text-green-600' : 'text-gray-600'}`}>
+                              {year.runway}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-white rounded">
+                    <h5 className="text-sm font-medium text-gray-900 mb-2">Key Assumptions</h5>
+                    <ul className="grid md:grid-cols-2 gap-1">
+                      {businessPlan.financials.scenarios.withoutFinancing.keyAssumptions.map((assumption, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
+                          <span className="text-gray-500">•</span>
+                          {assumption}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-3 text-center">
+                    <span className="text-lg font-bold text-gray-600">
+                      Funding Required: {businessPlan.financials.scenarios.withoutFinancing.fundingRequired}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Use of Funds */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={DollarSign} title={businessPlan.financials.useOfFunds.title} />
+
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-800 rounded-xl p-6 border-2 border-red-600">
-                  <div className="flex items-center gap-2 mb-2"><Zap className="text-red-400" /><h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withFinancing.name}</h3></div>
-                  <p className="text-gray-400 text-sm mb-4">{businessPlan.financials.scenarios.withFinancing.description}</p>
-                  <table className="w-full text-sm mb-4">
-                    <thead><tr className="border-b border-gray-700"><th className="text-left py-2 text-gray-400">Year</th><th className="text-right py-2 text-gray-400">Revenue</th><th className="text-right py-2 text-gray-400">Locations</th></tr></thead>
-                    <tbody>{businessPlan.financials.scenarios.withFinancing.projections.map((proj, i) => (<tr key={i} className="border-b border-gray-700/50"><td className="py-2 text-white">{proj.year}</td><td className="py-2 text-right text-red-400 font-medium">{proj.revenue}</td><td className="py-2 text-right text-gray-300">{proj.customers}</td></tr>))}</tbody>
-                  </table>
-                  <div className="text-xs text-gray-400"><div className="font-medium mb-1">Key Assumptions:</div><ul className="space-y-1">{businessPlan.financials.scenarios.withFinancing.keyAssumptions.map((a, i) => <li key={i}>• {a}</li>)}</ul></div>
-                </div>
-                <div className="bg-gray-800 rounded-xl p-6">
-                  <div className="flex items-center gap-2 mb-2"><Building2 className="text-gray-400" /><h3 className="text-xl font-bold text-white">{businessPlan.financials.scenarios.withoutFinancing.name}</h3></div>
-                  <p className="text-gray-400 text-sm mb-4">{businessPlan.financials.scenarios.withoutFinancing.description}</p>
-                  <table className="w-full text-sm mb-4">
-                    <thead><tr className="border-b border-gray-700"><th className="text-left py-2 text-gray-400">Year</th><th className="text-right py-2 text-gray-400">Revenue</th><th className="text-right py-2 text-gray-400">Locations</th></tr></thead>
-                    <tbody>{businessPlan.financials.scenarios.withoutFinancing.projections.map((proj, i) => (<tr key={i} className="border-b border-gray-700/50"><td className="py-2 text-white">{proj.year}</td><td className="py-2 text-right text-red-400 font-medium">{proj.revenue}</td><td className="py-2 text-right text-gray-300">{proj.customers}</td></tr>))}</tbody>
-                  </table>
-                  <div className="text-xs text-gray-400"><div className="font-medium mb-1">Key Assumptions:</div><ul className="space-y-1">{businessPlan.financials.scenarios.withoutFinancing.keyAssumptions.map((a, i) => <li key={i}>• {a}</li>)}</ul></div>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2"><PieChart className="text-red-400" />Use of Funds</h2>
-              <div className="bg-gray-800 rounded-xl p-6">
-                <div className="grid md:grid-cols-5 gap-4 mb-6">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (<div key={i} className="text-center"><div className="text-2xl font-bold text-red-400">{fund.percentage}%</div><div className="text-sm font-medium text-white">{fund.category}</div><div className="text-xs text-gray-400">{fund.amount}</div></div>))}
-                </div>
                 <div className="space-y-3">
-                  {businessPlan.financials.useOfFunds.map((fund, i) => (<div key={i} className="flex items-center gap-4"><div className="w-32 text-sm text-gray-400">{fund.category}</div><div className="flex-1 bg-gray-700 rounded-full h-4"><div className="bg-red-500 h-4 rounded-full" style={{ width: `${fund.percentage}%` }} /></div><div className="w-24 text-sm text-right text-white">{fund.amount}</div></div>))}
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-16 text-right">
+                        <span className="text-lg font-bold text-red-600">{item.percentage}%</span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="h-6 bg-gray-200 rounded overflow-hidden">
+                          <div
+                            className="h-full bg-red-500 rounded"
+                            style={{ width: `${item.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="w-32">
+                        <div className="font-medium text-gray-900">{item.amount}</div>
+                        <div className="text-xs text-gray-500">{item.category}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  {businessPlan.financials.useOfFunds.breakdown.map((item, i) => (
+                    <div key={i} className="p-3 bg-gray-50 rounded">
+                      <h4 className="font-medium text-gray-900 text-sm">{item.category}</h4>
+                      <p className="text-xs text-gray-600 mt-1">{item.detail}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
 
-            <section>
-              <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><FileText className="text-red-400" />Sources</h2>
-              <div className="bg-gray-800 rounded-lg p-4">
-                <ul className="space-y-2">{businessPlan.sources.map((source, i) => (<li key={i}><a href={source.url} target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 flex items-center gap-2"><ExternalLink className="w-4 h-4" />{source.name}</a></li>))}</ul>
+            {/* Unit Economics Detail */}
+            <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <SectionHeader icon={BarChart3} title="Unit Economics" />
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {businessPlan.businessModel.unitEconomics.metrics.map((metric, i) => (
+                  <div key={i} className="p-4 bg-gradient-to-br from-red-50 to-orange-50 rounded-lg text-center">
+                    <div className="text-3xl font-bold text-red-600">{metric.value}</div>
+                    <div className="text-sm font-medium text-gray-900 mt-1">{metric.label}</div>
+                    <div className="text-xs text-gray-500 mt-1">{metric.note}</div>
+                  </div>
+                ))}
               </div>
             </section>
           </div>
         )}
-      </main>
 
-      <footer className="bg-gray-900 border-t border-gray-800 mt-12">
-        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">
-          <p>{businessPlan.companyName} Business Plan • {businessPlan.version} • {businessPlan.date}</p>
-          <p className="mt-2">Part of the <a href="/tokens/#framework" className="text-red-400 hover:text-red-300">Ribbit Token Cap-Ex Framework</a></p>
+        {/* Sources */}
+        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
+          <SectionHeader icon={ExternalLink} title="Sources & References" />
+
+          <div className="grid md:grid-cols-2 gap-3">
+            {businessPlan.sources.map((source, i) => (
+              <a
+                key={i}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-medium text-gray-900 text-sm group-hover:text-red-600 transition-colors">
+                      {source.name}
+                    </h4>
+                    <p className="text-xs text-gray-500 mt-1">{source.detail}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-red-600 transition-colors flex-shrink-0" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 mt-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h3 className="text-xl font-bold mb-2">{businessPlan.companyName}</h3>
+          <p className="text-gray-400">{businessPlan.tagline}</p>
+          <p className="text-gray-500 text-sm mt-4">
+            {businessPlan.version} | {businessPlan.date}
+          </p>
+          <div className="mt-6">
+            <a
+              href="https://hyder.me/#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors"
+            >
+              <Briefcase className="w-5 h-5" />
+              Contact for Investment Inquiries
+            </a>
+          </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }
