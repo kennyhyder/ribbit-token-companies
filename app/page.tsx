@@ -309,11 +309,24 @@ function FrameworkSection() {
       {/* Framework Header */}
       <section className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-6">
-          <div className="flex items-center gap-3 mb-2">
-            <Zap className="w-6 h-6" />
-            <h2 className="text-2xl font-bold">{nicksFramework.title}</h2>
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <Zap className="w-6 h-6" />
+                <h2 className="text-2xl font-bold">{nicksFramework.title}</h2>
+              </div>
+              <p className="text-amber-100">{nicksFramework.subtitle}</p>
+            </div>
+            <a
+              href="https://hyder.me/decks/framework/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors text-sm font-medium"
+            >
+              <FileText className="w-4 h-4" />
+              View Pitch Deck
+            </a>
           </div>
-          <p className="text-amber-100">{nicksFramework.subtitle}</p>
         </div>
 
         <div className="p-6">
